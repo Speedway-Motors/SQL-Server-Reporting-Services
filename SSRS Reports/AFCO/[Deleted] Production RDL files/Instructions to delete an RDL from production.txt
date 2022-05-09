@@ -1,0 +1,18 @@
+PJC - 03/12/2015
+
+
+1) copy the rdl file to be deleted from it's current folder and paste it into this folder
+
+2) right-click the rdl file within it's project and select Delete
+
+3) save the project
+
+4) UPDATE THE "SSRS Production Report Mapping.xlsx" file with a note that it was deleted, who requested deletion, and case#.
+
+5) Delete the rdl from the production (and any linked copies) from report server
+
+
+
+
+
+

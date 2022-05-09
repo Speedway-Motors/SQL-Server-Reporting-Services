@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "ECommerce", "ECommerce.rptproj", "{1315A9B1-90BB-47D5-BF7E-2489D3FE8DFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Production|Default = Production|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1315A9B1-90BB-47D5-BF7E-2489D3FE8DFE}.Debug|Default.ActiveCfg = Debug
+		{1315A9B1-90BB-47D5-BF7E-2489D3FE8DFE}.Debug|Default.Build.0 = Debug
+		{1315A9B1-90BB-47D5-BF7E-2489D3FE8DFE}.Debug|Default.Deploy.0 = Debug
+		{1315A9B1-90BB-47D5-BF7E-2489D3FE8DFE}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{1315A9B1-90BB-47D5-BF7E-2489D3FE8DFE}.DebugLocal|Default.Build.0 = DebugLocal
+		{1315A9B1-90BB-47D5-BF7E-2489D3FE8DFE}.Production|Default.ActiveCfg = Production
+		{1315A9B1-90BB-47D5-BF7E-2489D3FE8DFE}.Production|Default.Build.0 = Production
+		{1315A9B1-90BB-47D5-BF7E-2489D3FE8DFE}.Production|Default.Deploy.0 = Production
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70AAC9F1-C4B9-4202-9B8A-9B32E4035FEA}
+	EndGlobalSection
+EndGlobal

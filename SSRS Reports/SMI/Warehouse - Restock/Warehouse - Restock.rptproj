@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ToolsVersion="2.0">
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+  <DataSources>
+    <ProjectItem>
+      <Name>dw.speedway2.com.rds</Name>
+      <FullPath>dw.speedway2.com.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SMI.rds</Name>
+      <FullPath>SMI.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SMIDW.rds</Name>
+      <FullPath>SMIDW.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SMISQLLIVE.rds</Name>
+      <FullPath>SMISQLLIVE.rds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSets />
+  <Reports>
+    <ProjectItem>
+      <Name>12 Month Sales by Bin - TEMP SMHD-21687.rdl</Name>
+      <FullPath>12 Month Sales by Bin - TEMP SMHD-21687.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>12 Month Sales by Bin.rdl</Name>
+      <FullPath>12 Month Sales by Bin.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>FHCDetail.rdl</Name>
+      <FullPath>FHCDetail.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Inventory Fails and Commits.rdl</Name>
+      <FullPath>Inventory Fails and Commits.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Parts Not Returned - AFCO only - TEMP.rdl</Name>
+      <FullPath>Parts Not Returned - AFCO only - TEMP.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Parts Not Returned - PROD COPY 2019-07-08.rdl</Name>
+      <FullPath>Parts Not Returned - PROD COPY 2019-07-08.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Parts Not Returned.rdl</Name>
+      <FullPath>Parts Not Returned.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Pick Bin by Aisle.rdl</Name>
+      <FullPath>Pick Bin by Aisle.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Picking Bin Changes (Min Unit Max).rdl</Name>
+      <FullPath>Picking Bin Changes (Min Unit Max).rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Qty Verification for Recent Out of Stock SKUs.rdl</Name>
+      <FullPath>Qty Verification for Recent Out of Stock SKUs.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Rough Draft - Inventory Fail Details by Zone.rdl</Name>
+      <FullPath>Rough Draft - Inventory Fail Details by Zone.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>sub - CID Transaction History.rdl</Name>
+      <FullPath>sub - CID Transaction History.rdl</FullPath>
+    </ProjectItem>
+  </Reports>
+  <Configurations>
+    <Configuration>
+      <Name>Debug</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Debug</OutputPath>
+        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+        <TargetServerURL>http://lnk-sql-live-1/Reports/</TargetServerURL>
+        <TargetFolder>Speedway/Warehouse - Restock</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>DebugLocal</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\DebugLocal</OutputPath>
+        <TargetServerVersion>SSRS2008</TargetServerVersion>
+        <TargetFolder>Warehouse - Restock</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>Production</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Production</OutputPath>
+        <TargetServerVersion>SSRS2008</TargetServerVersion>
+        <TargetFolder>Warehouse - Restock</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>

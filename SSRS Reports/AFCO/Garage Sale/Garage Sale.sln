@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Garage Sale", "Garage Sale.rptproj", "{DCAC53D4-C205-4233-ACF1-FB0132B08282}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Production|Default = Production|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCAC53D4-C205-4233-ACF1-FB0132B08282}.Debug|Default.ActiveCfg = Debug
+		{DCAC53D4-C205-4233-ACF1-FB0132B08282}.Debug|Default.Build.0 = Debug
+		{DCAC53D4-C205-4233-ACF1-FB0132B08282}.Debug|Default.Deploy.0 = Debug
+		{DCAC53D4-C205-4233-ACF1-FB0132B08282}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{DCAC53D4-C205-4233-ACF1-FB0132B08282}.DebugLocal|Default.Build.0 = DebugLocal
+		{DCAC53D4-C205-4233-ACF1-FB0132B08282}.Production|Default.ActiveCfg = Production
+		{DCAC53D4-C205-4233-ACF1-FB0132B08282}.Production|Default.Build.0 = Production
+		{DCAC53D4-C205-4233-ACF1-FB0132B08282}.Production|Default.Deploy.0 = Production
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0FFA21DC-DFFF-4590-AAF3-489EE3703571}
+	EndGlobalSection
+EndGlobal

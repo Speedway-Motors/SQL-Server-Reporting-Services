@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="tng">
+  <ConnectionProperties>
+    <Extension>ODBC</Extension>
+    <ConnectString>DSN=TNGReplica</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>716322dd-759d-46ae-ae30-26b4bd333f66</DataSourceID>
+</RptDataSource>

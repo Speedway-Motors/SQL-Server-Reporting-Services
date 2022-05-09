@@ -1,0 +1,2947 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="AFCOSQLLIVE">
+      <DataSourceReference>AFCOSQLLIVE</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>6043a71b-65a2-43e9-a010-e27a5253e921</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>AFCOSQLLIVE</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@PPSalesStart">
+            <Value>=Parameters!PPSalesStart.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@PPSalesEnd">
+            <Value>=Parameters!PPSalesEnd.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@PPRtnStart">
+            <Value>=Parameters!PPRtnStart.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@PPRtnEnd">
+            <Value>=Parameters!PPRtnEnd.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CPSalesStart">
+            <Value>=Parameters!CPSalesStart.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CPSalesEnd">
+            <Value>=Parameters!CPSalesEnd.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CPRtnStart">
+            <Value>=Parameters!CPRtnStart.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CPRtnEnd">
+            <Value>=Parameters!CPRtnEnd.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>-- Case 6858 
+
+SELECT ISNULL(Y1.Geo, Y2.Geo) AS Geo
+     , ISNULL(Y1.ShipTo, Y2.ShipTo) AS ShipTo
+     , Y1.OrdCnt AS Y1OrdCnt
+     , Y2.OrdCnt AS Y2OrdCnt
+     , Y1.NetRev AS Y1NetRev
+     , Y1.NetCost AS Y1NetCost
+     , Y1.GrossProfit AS Y1GM
+     , Y2.NetRev AS Y2NetRev
+     , Y2.NetCost AS Y2NetCost
+     , Y2.GrossProfit AS Y2GM
+FROM (SELECT ISNULL(SALES.Geo, RTNS.Geo) AS Geo --to allow filtering by region
+           , ISNULL(SALES.ShipTo, RTNS.ShipTo) AS ShipTo
+           , SALES.Orders AS OrdCnt
+           , ISNULL(SALES.Merch, 0) - ISNULL(RTNS.MerchRef, 0) AS NetRev
+           , ISNULL(SALES.Cost, 0) - ISNULL(RTNS.CostRef, 0) AS NetCost
+           , (ISNULL(SALES.Merch, 0) - ISNULL(RTNS.MerchRef, 0)) 
+            - (ISNULL(SALES.Cost, 0) - ISNULL(RTNS.CostRef, 0)) AS GrossProfit
+           --   Margin calculation to be done on report side to exclude divide by zero error
+      FROM (SELECT (CASE WHEN O.ixCustomer = '16878' THEN 'NON-US'
+				         WHEN O.ixCustomer = '10533' THEN 'NON-US' 
+                         WHEN O.sShipToCountry IN ('US', 'USA') THEN 'US'
+                         ELSE 'NON-US'
+                    END) AS Geo 
+                 , (CASE WHEN O.ixCustomer = '16878' THEN 'BRAZIL'
+                         WHEN O.ixCustomer = '10533' THEN 'GERMANY'
+                         WHEN O.sShipToCountry IN ('US', 'USA') THEN O.sShipToState
+			             ELSE O.sShipToCountry
+                    END) AS ShipTo
+                 , COUNT (*) AS Orders 
+                 , ISNULL (SUM(O.mMerchandise), 0) AS Merch
+                 , ISNULL (SUM(O.mMerchandiseCost), 0) AS Cost 
+            FROM tblOrder O 
+            WHERE O.dtShippedDate BETWEEN @PPSalesStart AND @PPSalesEnd -- '01/01/10' AND '12/31/10'
+              AND O.sOrderStatus = 'Shipped'
+              AND O.mMerchandise &gt; 0 
+            GROUP BY (CASE WHEN O.ixCustomer = '16878' THEN 'NON-US'
+				  		   WHEN O.ixCustomer = '10533' THEN 'NON-US' 
+                           WHEN O.sShipToCountry IN ('US', 'USA') THEN 'US'
+                           ELSE 'NON-US'
+                      END)  
+				    , (CASE WHEN O.ixCustomer = '16878' THEN 'BRAZIL'
+                            WHEN O.ixCustomer = '10533' THEN 'GERMANY'
+                            WHEN O.sShipToCountry IN ('US', 'USA') THEN O.sShipToState
+			                ELSE O.sShipToCountry
+                       END) 
+           ) AS SALES 
+
+      FULL OUTER JOIN (SELECT (CASE WHEN O.ixCustomer = '16878' THEN 'NON-US'
+                                    WHEN O.ixCustomer = '10533' THEN 'NON-US' 
+                                    WHEN O.sShipToCountry IN ('US', 'USA') THEN 'US'
+                                    ELSE 'NON-US'
+                               END) AS Geo 
+                             , (CASE WHEN O.ixCustomer = '16878' THEN 'BRAZIL'
+									 WHEN O.ixCustomer = '10533' THEN 'GERMANY'
+									 WHEN O.sShipToCountry IN ('US', 'USA') THEN O.sShipToState
+									 ELSE O.sShipToCountry
+								END) AS ShipTo
+						     , ISNULL(SUM(CMM.mMerchandise),0) AS MerchRef
+							 , ISNULL(SUM(CMM.mMerchandiseCost),0) AS CostRef
+					   FROM tblCreditMemoMaster CMM 
+					   LEFT JOIN tblOrder O ON O.ixOrder = CMM.ixOrder 
+					   WHERE flgCanceled = '0'
+						 AND dtCreateDate BETWEEN @PPRtnStart AND @PPRtnEnd -- '01/01/10' AND '12/31/10'
+						-- AND CMM.ixOrder &lt;&gt; 'FSCR' -- PER TED H. THESE SHOULD NOT BE EXCLUDED
+						 AND CMM.mMerchandise &gt; 0 
+					   GROUP BY (CASE WHEN O.ixCustomer = '16878' THEN 'NON-US'
+								      WHEN O.ixCustomer = '10533' THEN 'NON-US' 
+									  WHEN O.sShipToCountry IN ('US', 'USA') THEN 'US'
+									  ELSE 'NON-US'
+								 END) 
+							    , (CASE WHEN O.ixCustomer = '16878' THEN 'BRAZIL'
+										WHEN O.ixCustomer = '10533' THEN 'GERMANY'
+										WHEN O.sShipToCountry IN ('US', 'USA') THEN O.sShipToState
+									    ELSE O.sShipToCountry
+								   END) 
+					  ) AS RTNS ON RTNS.ShipTo = SALES.ShipTo 
+
+      GROUP BY ISNULL(SALES.Geo, RTNS.Geo)
+             , ISNULL(SALES.ShipTo, RTNS.ShipTo) 
+             , SALES.Orders 
+             , ISNULL(SALES.Merch, 0) - ISNULL(RTNS.MerchRef, 0) 
+             , ISNULL(SALES.Cost, 0) - ISNULL(RTNS.CostRef, 0) 
+             , (ISNULL(SALES.Merch, 0) - ISNULL(RTNS.MerchRef, 0)) 
+               - (ISNULL(SALES.Cost, 0) - ISNULL(RTNS.CostRef, 0))
+     ) AS Y1     
+       
+FULL OUTER JOIN (SELECT ISNULL(SALES.Geo, RTNS.Geo) AS Geo --to allow filtering by region
+					  , ISNULL(SALES.ShipTo, RTNS.ShipTo) AS ShipTo
+					  , SALES.Orders AS OrdCnt
+					  , ISNULL(SALES.Merch, 0) - ISNULL(RTNS.MerchRef, 0) AS NetRev
+					  , ISNULL(SALES.Cost, 0) - ISNULL(RTNS.CostRef, 0) AS NetCost
+					  , (ISNULL(SALES.Merch, 0) - ISNULL(RTNS.MerchRef, 0)) 
+					   - (ISNULL(SALES.Cost, 0) - ISNULL(RTNS.CostRef, 0)) AS GrossProfit
+					  --   Margin calculation to be done on report side to exclude divide by zero error
+				 FROM (SELECT (CASE WHEN O.ixCustomer = '16878' THEN 'NON-US'
+								    WHEN O.ixCustomer = '10533' THEN 'NON-US' 
+									WHEN O.sShipToCountry IN ('US', 'USA') THEN 'US'
+									ELSE 'NON-US'
+							   END) AS Geo 
+							, (CASE WHEN O.ixCustomer = '16878' THEN 'BRAZIL'
+									WHEN O.ixCustomer = '10533' THEN 'GERMANY'
+									WHEN O.sShipToCountry IN ('US', 'USA') THEN O.sShipToState
+									ELSE O.sShipToCountry
+							   END) AS ShipTo
+							, COUNT (*) AS Orders 
+							, ISNULL (SUM(O.mMerchandise), 0) AS Merch
+							, ISNULL (SUM(O.mMerchandiseCost), 0) AS Cost 
+					   FROM tblOrder O 
+					   WHERE O.dtShippedDate BETWEEN @CPSalesStart AND @CPSalesEnd -- '01/01/11' AND '12/31/11'
+						 AND O.sOrderStatus ='Shipped'
+						 AND O.mMerchandise &gt; 0 
+					   GROUP BY (CASE WHEN O.ixCustomer = '16878' THEN 'NON-US'
+									  WHEN O.ixCustomer = '10533' THEN 'NON-US' 
+									  WHEN O.sShipToCountry IN ('US', 'USA') THEN 'US'
+									  ELSE 'NON-US'
+								 END)  
+								,(CASE WHEN O.ixCustomer = '16878' THEN 'BRAZIL'
+                                       WHEN O.ixCustomer = '10533' THEN 'GERMANY'
+                                       WHEN O.sShipToCountry IN ('US', 'USA') THEN O.sShipToState
+			                           ELSE O.sShipToCountry
+                                  END) 
+					  ) AS SALES 
+
+				 FULL OUTER JOIN (SELECT (CASE WHEN O.ixCustomer = '16878' THEN 'NON-US'
+											   WHEN O.ixCustomer = '10533' THEN 'NON-US' 
+											   WHEN O.sShipToCountry IN ('US', 'USA') THEN 'US'
+											   ELSE 'NON-US'
+											   END) AS Geo 
+										 , (CASE WHEN O.ixCustomer = '16878' THEN 'BRAZIL'
+												 WHEN O.ixCustomer = '10533' THEN 'GERMANY'
+											     WHEN O.sShipToCountry IN ('US', 'USA') THEN O.sShipToState
+												 ELSE O.sShipToCountry
+										    END) AS ShipTo
+										 , ISNULL(SUM(CMM.mMerchandise),0) AS MerchRef
+										 , ISNULL(SUM(CMM.mMerchandiseCost),0) AS CostRef
+								  FROM tblCreditMemoMaster CMM 
+								  LEFT JOIN tblOrder O ON O.ixOrder = CMM.ixOrder 
+								  WHERE flgCanceled = '0'
+									AND dtCreateDate BETWEEN @CPRtnStart AND @CPRtnEnd -- '01/01/11' AND '12/31/11'
+									-- AND CMM.ixOrder &lt;&gt; 'FSCR' -- PER TED H. THESE SHOULD NOT BE EXCLUDED
+									AND CMM.mMerchandise &gt; 0 
+								  GROUP BY (CASE WHEN O.ixCustomer = '16878' THEN 'NON-US'
+												 WHEN O.ixCustomer = '10533' THEN 'NON-US' 
+												 WHEN O.sShipToCountry IN ('US', 'USA') THEN 'US'
+											     ELSE 'NON-US'
+											END) 
+                                           , (CASE WHEN O.ixCustomer = '16878' THEN 'BRAZIL'
+												   WHEN O.ixCustomer = '10533' THEN 'GERMANY'
+												   WHEN O.sShipToCountry IN ('US', 'USA') THEN O.sShipToState
+												   ELSE O.sShipToCountry
+											  END) 
+								 ) AS RTNS ON RTNS.ShipTo = SALES.ShipTo 
+
+				 GROUP BY ISNULL(SALES.Geo, RTNS.Geo)
+					    , ISNULL(SALES.ShipTo, RTNS.ShipTo) 
+						, SALES.Orders 
+						, ISNULL(SALES.Merch, 0) - ISNULL(RTNS.MerchRef, 0) 
+						, ISNULL(SALES.Cost, 0) - ISNULL(RTNS.CostRef, 0) 
+						, (ISNULL(SALES.Merch, 0) - ISNULL(RTNS.MerchRef, 0)) 
+							- (ISNULL(SALES.Cost, 0) - ISNULL(RTNS.CostRef, 0))
+			    ) AS Y2 ON Y2.ShipTo = Y1.ShipTo
+ 
+GROUP BY ISNULL(Y1.Geo, Y2.Geo)
+       , ISNULL(Y1.ShipTo, Y2.ShipTo) 
+	   , Y1.OrdCnt 
+	   , Y2.OrdCnt 
+	   , Y1.NetRev 
+	   , Y1.NetCost 
+	   , Y1.GrossProfit 
+	   , Y2.NetRev 
+	   , Y2.NetCost 
+	   , Y2.GrossProfit 
+		
+ORDER BY Geo, ShipTo</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Geo">
+          <DataField>Geo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShipTo">
+          <DataField>ShipTo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Y1OrdCnt">
+          <DataField>Y1OrdCnt</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Y2OrdCnt">
+          <DataField>Y2OrdCnt</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Y1NetRev">
+          <DataField>Y1NetRev</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Y1NetCost">
+          <DataField>Y1NetCost</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Y1GM">
+          <DataField>Y1GM</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Y2NetRev">
+          <DataField>Y2NetRev</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Y2NetCost">
+          <DataField>Y2NetCost</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Y2GM">
+          <DataField>Y2GM</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="table1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.9in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.87708in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.14583in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox24">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox24</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox25">
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!ShipTo.Value</SortExpression>
+                            <SortExpressionScope>table1_ShipTo</SortExpressionScope>
+                            <SortTarget>DataSet1</SortTarget>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox25</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox26">
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Y2OrdCnt.Value</SortExpression>
+                            <SortExpressionScope>table1_ShipTo</SortExpressionScope>
+                            <SortTarget>DataSet1</SortTarget>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox26</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox27">
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Y1OrdCnt.Value</SortExpression>
+                            <SortExpressionScope>table1_ShipTo</SortExpressionScope>
+                            <SortTarget>DataSet1</SortTarget>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox27</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox28">
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Y2NetRev.Value</SortExpression>
+                            <SortExpressionScope>table1_ShipTo</SortExpressionScope>
+                            <SortTarget>DataSet1</SortTarget>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox28</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox29">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox29</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox30">
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Y2GM.Value</SortExpression>
+                            <SortExpressionScope>table1_ShipTo</SortExpressionScope>
+                            <SortTarget>DataSet1</SortTarget>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox30</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox31">
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Y1NetRev.Value</SortExpression>
+                            <SortExpressionScope>table1_ShipTo</SortExpressionScope>
+                            <SortTarget>DataSet1</SortTarget>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox31</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox32">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox32</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox33">
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Y1GM.Value</SortExpression>
+                            <SortExpressionScope>table1_ShipTo</SortExpressionScope>
+                            <SortTarget>DataSet1</SortTarget>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox33</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.53417in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Geographical Location</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox2</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>RoyalBlue</Color>
+                            </TopBorder>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox4">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Ship To</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox4</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>RoyalBlue</Color>
+                            </TopBorder>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Current Period Order Count</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox6</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>RoyalBlue</Color>
+                            </TopBorder>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox7">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Previous Period</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Order Count</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox7</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>RoyalBlue</Color>
+                            </TopBorder>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox8">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Current Period Net Revenue</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox8</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>RoyalBlue</Color>
+                            </TopBorder>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox9">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Current Period Net Cost</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox9</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>RoyalBlue</Color>
+                            </TopBorder>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox10">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Current Period Gross Margin</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox10</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>RoyalBlue</Color>
+                            </TopBorder>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox11">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Previous Period Net Revenue</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox11</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>RoyalBlue</Color>
+                            </TopBorder>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox12">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Previous Period Net Cost</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox12</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>RoyalBlue</Color>
+                            </TopBorder>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox13">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Previous Period Gross Margin</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox13</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>RoyalBlue</Color>
+                            </TopBorder>
+                            <BackgroundColor>RoyalBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.21in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Geo">
+                          <CanGrow>true</CanGrow>
+                          <ToggleImage>
+                            <InitialState>true</InitialState>
+                          </ToggleImage>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Geo.Value</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Geo</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox14">
+                          <CanGrow>true</CanGrow>
+                          <ToggleImage>
+                            <InitialState>true</InitialState>
+                          </ToggleImage>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox14</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Y2OrdCnt">
+                          <CanGrow>true</CanGrow>
+                          <ToggleImage>
+                            <InitialState>true</InitialState>
+                          </ToggleImage>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y2OrdCnt.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0;(#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Y2OrdCnt</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Color>White</Color>
+                            </LeftBorder>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Y1OrdCnt">
+                          <CanGrow>true</CanGrow>
+                          <ToggleImage>
+                            <InitialState>true</InitialState>
+                          </ToggleImage>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y1OrdCnt.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0;(#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Y1OrdCnt</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Color>White</Color>
+                            </LeftBorder>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Y2NetRev">
+                          <CanGrow>true</CanGrow>
+                          <ToggleImage>
+                            <InitialState>true</InitialState>
+                          </ToggleImage>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y2NetRev.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>'$'#,0;('$'#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Y2NetRev</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Color>White</Color>
+                            </LeftBorder>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Y2NetCost">
+                          <CanGrow>true</CanGrow>
+                          <ToggleImage>
+                            <InitialState>true</InitialState>
+                          </ToggleImage>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y2NetCost.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>'$'#,0;('$'#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Y2NetCost</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Color>White</Color>
+                            </LeftBorder>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Y2GM">
+                          <CanGrow>true</CanGrow>
+                          <ToggleImage>
+                            <InitialState>true</InitialState>
+                          </ToggleImage>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y2GM.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>'$'#,0;('$'#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Y2GM</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Color>White</Color>
+                            </LeftBorder>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Y1NetRev">
+                          <CanGrow>true</CanGrow>
+                          <ToggleImage>
+                            <InitialState>true</InitialState>
+                          </ToggleImage>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y1NetRev.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>'$'#,0;('$'#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Y1NetRev</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Color>White</Color>
+                            </LeftBorder>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Y1NetCost">
+                          <CanGrow>true</CanGrow>
+                          <ToggleImage>
+                            <InitialState>true</InitialState>
+                          </ToggleImage>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y1NetCost.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>'$'#,0;('$'#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Y1NetCost</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Color>White</Color>
+                            </LeftBorder>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Y1GM">
+                          <CanGrow>true</CanGrow>
+                          <ToggleImage>
+                            <InitialState>true</InitialState>
+                          </ToggleImage>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y1GM.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>'$'#,0;('$'#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Y1GM</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Color>White</Color>
+                            </LeftBorder>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.21in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox23">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox23</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ShipTo">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ShipTo.Value</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ShipTo</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Y2OrdCnt1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y2OrdCnt.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Format>#,0;(#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Y2OrdCnt1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Y1OrdCnt1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y1OrdCnt.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Format>#,0;(#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Y1OrdCnt1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Y2NetRev1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y2NetRev.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Format>'$'#,0;('$'#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Y2NetRev1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Y2NetCost1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y2NetCost.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Format>'$'#,0;('$'#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Y2NetCost1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Y2GM1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y2GM.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Format>'$'#,0;('$'#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Y2GM1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Y1NetRev1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y1NetRev.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Format>'$'#,0;('$'#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Y1NetRev1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Y1NetCost1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y1NetCost.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Format>'$'#,0;('$'#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Y1NetCost1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Y1GM1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y1GM.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Format>'$'#,0;('$'#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Y1GM1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox34">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox34</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>White</Color>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>White</Color>
+                            </BottomBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox5">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Totals</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox15">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y2OrdCnt.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0;(#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox15</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Color>White</Color>
+                            </LeftBorder>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox16">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y1OrdCnt.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0;(#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox16</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Color>White</Color>
+                            </LeftBorder>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox17">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y2NetRev.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>'$'#,0;('$'#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox17</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Color>White</Color>
+                            </LeftBorder>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox18">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y2NetCost.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>'$'#,0;('$'#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox18</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Color>White</Color>
+                            </LeftBorder>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox19">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y2GM.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>'$'#,0;('$'#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox19</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Color>White</Color>
+                            </LeftBorder>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox20">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y1NetRev.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>'$'#,0;('$'#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox20</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Color>White</Color>
+                            </LeftBorder>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox21">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y1NetCost.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>'$'#,0;('$'#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox21</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Color>White</Color>
+                            </LeftBorder>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox22">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Y1GM.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Tahoma</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>'$'#,0;('$'#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox22</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Color>White</Color>
+                            </LeftBorder>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
+                </TablixMember>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
+                </TablixMember>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <FixedData>true</FixedData>
+                  <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
+                </TablixMember>
+                <TablixMember>
+                  <FixedData>true</FixedData>
+                  <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
+                  <KeepTogether>true</KeepTogether>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="table1_Geo">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Geo.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Geo.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixMembers>
+                    <TablixMember>
+                      <KeepWithGroup>After</KeepWithGroup>
+                      <KeepTogether>true</KeepTogether>
+                    </TablixMember>
+                    <TablixMember>
+                      <Group Name="table1_ShipTo">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!ShipTo.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!ShipTo.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <TablixMembers>
+                        <TablixMember>
+                          <KeepTogether>true</KeepTogether>
+                        </TablixMember>
+                      </TablixMembers>
+                      <Visibility>
+                        <ToggleItem>Geo</ToggleItem>
+                      </Visibility>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember>
+                  <KeepWithGroup>Before</KeepWithGroup>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet1</DataSetName>
+            <Top>0.06944in</Top>
+            <Height>1.35in</Height>
+            <Width>9.77708in</Width>
+            <Style />
+          </Tablix>
+        </ReportItems>
+        <Height>1.41944in</Height>
+        <Style />
+      </Body>
+      <Width>10in</Width>
+      <Page>
+        <PageHeader>
+          <Height>0.90736in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="textbox1">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Sales by Country and State</Value>
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>16pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>RoyalBlue</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>textbox1</rd:DefaultName>
+              <Top>0.1493in</Top>
+              <Left>3in</Left>
+              <Height>0.34264in</Height>
+              <Width>3.125in</Width>
+              <Style>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Image Name="Image1">
+              <Source>Embedded</Source>
+              <Value>AFCO230x70</Value>
+              <Sizing>FitProportional</Sizing>
+              <Height>0.47806in</Height>
+              <Width>1.41792in</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+            <Textbox Name="Textbox23">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Previous Period" &amp; " = " &amp; Parameters!PPSalesStart.Value &amp; " - " &amp; Parameters!PPSalesEnd.Value</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox16</rd:DefaultName>
+              <Top>0.71986in</Top>
+              <Left>2.56667in</Left>
+              <Height>0.1875in</Height>
+              <Width>3.99861in</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox35">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Current Period" &amp; " = " &amp; Parameters!CPSalesStart.Value &amp; " - " &amp; Parameters!CPSalesEnd.Value</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox16</rd:DefaultName>
+              <Top>0.515in</Top>
+              <Left>2.5632in</Left>
+              <Height>0.17708in</Height>
+              <Width>3.99861in</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>0.53889in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="textbox59">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="generated by: " &amp; User!UserID</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.06944in</Top>
+              <Height>0.2in</Height>
+              <Width>2.9in</Width>
+              <Style>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="textbox32">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Format(Globals!ExecutionTime, "MM/dd/yyyy hh:mm tt")</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.33889in</Top>
+              <Height>0.2in</Height>
+              <Width>2.9in</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="textbox72">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=IIf(System.DateTime.Now.Subtract(Globals!ExecutionTime).TotalSeconds &lt; 1, "0s",
+(
+IIf(System.DateTime.Now.Subtract(Globals!ExecutionTime).Minutes &gt; 0, System.DateTime.Now.Subtract(Globals!ExecutionTime).Minutes &amp; "m", "") +
+IIf(System.DateTime.Now.Subtract(Globals!ExecutionTime).Seconds &gt; 0, System.DateTime.Now.Subtract(Globals!ExecutionTime).Seconds &amp; "s", ""))
+)</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Color>Gainsboro</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.08194in</Top>
+              <Left>4.76875in</Left>
+              <Height>0.1875in</Height>
+              <Width>0.9in</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="textbox24">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>ver. 15.2.1</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Color>Gray</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>textbox24</rd:DefaultName>
+              <Top>0.35139in</Top>
+              <Left>4.375in</Left>
+              <Height>0.1875in</Height>
+              <Width>1.625in</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="textbox33">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="page " &amp; Globals.PageNumber &amp; " of " &amp; Globals.TotalPages</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.28889in</Top>
+              <Left>8.2in</Left>
+              <Height>0.25in</Height>
+              <Width>1.8in</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <PageHeight>8.5in</PageHeight>
+        <PageWidth>11in</PageWidth>
+        <InteractiveHeight>99in</InteractiveHeight>
+        <InteractiveWidth>8.5in</InteractiveWidth>
+        <LeftMargin>0.25in</LeftMargin>
+        <RightMargin>0.25in</RightMargin>
+        <TopMargin>0.25in</TopMargin>
+        <BottomMargin>0.25in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="CPSalesStart">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=DateSerial(Year((Now)), 1, 1)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Current Period Start</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CPSalesEnd">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=DateAdd("d",-1,DateValue(Now))</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Current Period End</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CPRtnStart">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=Parameters!CPSalesStart.Value</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CPRtn Start</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="CPRtnEnd">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=Parameters!CPSalesEnd.Value</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CPRtn End</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="PPSalesStart">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=DateAdd(DateInterval.Year,-1,Parameters!CPSalesStart.Value)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Previous Period Start</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PPSalesEnd">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=DateAdd(DateInterval.Year,-1,Parameters!CPSalesEnd.Value)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Previous Period End</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PPRtnStart">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=Parameters!PPSalesStart.Value</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PPRtn Start</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="PPRtnEnd">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=Parameters!PPSalesEnd.Value</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PPRtn End</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+  </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>2</NumberOfColumns>
+      <NumberOfRows>4</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>CPSalesStart</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>CPSalesEnd</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>CPRtnStart</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>CPRtnEnd</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>PPSalesStart</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>PPSalesEnd</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>PPRtnStart</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>PPRtnEnd</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <EmbeddedImages>
+    <EmbeddedImage Name="AFCO230x70">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>8f36d032-89bf-4a32-9ad3-9985eecca332</rd:ReportID>
+</Report>

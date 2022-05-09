@@ -1,0 +1,920 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox7">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Please Email VERIFICATION of pricing and shipment dates!</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontFamily>Courier New</FontFamily>
+                  <FontSize>14pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>2.75in</Top>
+        <Left>0.3125in</Left>
+        <Height>0.3125in</Height>
+        <Width>7.4375in</Width>
+        <Style>
+          <VerticalAlign>Bottom</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>1. ACCEPTANCE: Acceptance of this order shall be unqualified, unconditional, in accordance with the terms hereof or incorporated
+herein. By filling this order, or any part thereof, Seller here by agrees to be bound hereby. Speedway Motors,Inc.("BUYER") shall
+not be bound by terms added or varying herefrom unless such provision is expressly agreed to in writing and signed by BUYER.
+ 
+2. Time is of the essence of this order. Deliveries must be made as set forth herein. Partial delivery or performance will not 
+extend the final delivery date unless agreed to in writing by BUYER.  If the receipt of merchandise is delayed through no fault of
+BUYER, BUYER reserves the right, at its option, to cancel the entire order or that part not delivered, or to extend the time for
+delivery or payment. Acceptance of the merchandise on any delivery date shall not waive BUYER's right to recover for late delivery.
+Title shall pass on delivery of the merchandise to the location. The risk of loss or damage in transit shall be upon the Seller.
+ 
+3. Delivery shall not be complete until the merchandise has been inspected and acceptance of BUYER.  Any merchandise rejected by BUYER as defective or not conforming to this order shall be returned at Seller's expense.  Seller shall bear all risk of loss.
+ 
+4. This order shall not be executed at a price higher than that specified on the face hereof.
+ 
+5. The balance of this order shall be deemed cancelled when ninety percent of the order quantity of confirming goods has been received and accepted.  Overshipments must be pre-approved in writing by BUYER.
+
+6. No additional charges for packing, boxing, palletizing or cartage will be paid by BUYER.  Loss of, or damage to any goods not packed in such a manner as to insure proper protection to same shall be borne by seller.
+
+7. The bankruptcy, receivership, or insolvency of Seller shall permit BUYER to terminate this order forthwith upon notice.
+
+8. Seller warrants that it owns the merchandise described herein and that all merchandise furnished shall; conform to specifications, samples or other descriptions approved by BUYER; perform as represented by Seller; will be merchantable and fit and fit for the purpose ordered; and will be free from defects in material and workmanship.  This warranty will run to BUYER  and its customers.  Any merchandise furnished which does not function according to Seller's published specifications at the time of use by BUYER's customer, is returnable by BUYER to Seller for cash or full credit at BUYER's option.  Packing  and shipping for such returns shall be at Seller's cost.  
+ 
+9. Seller will indemnify BUYER, and its employees, agents, customers, and invitees against all liability, loss, cost, damage, or
+expense occurring arising out of or in connection with the use or performance of the merchandise contained in this order which is
+occasioned by the actions or omissions of Seller or its suppliers. Seller will maintain and carry liability insurance, and all
+statutorily required insurance in amounts satisfactory to and with companies approved by BUYER.  Seller will furnish certificates
+of insurance indicating the foregoing coverage.
+
+10. Seller warrants that the merchandise shipped pursuant to this order has been manufactured, packaged, labeled, sold, and registered in compliance with all federal, state, and local laws, including all pertinent regulations and orders of any supervising
+governmental agency.  Seller agrees to provide all certificates of compliance, including but not limited to Material Safety Data 
+Sheets (MSDS). Seller further agrees to indemnify BUYER and its customers from any damages or loss, including expenses suffered,
+directly or indirectly, because of Seller's noncompliance herein.
+
+11. Seller warrants that the manufacture, sale and use of the merchandise ordered hereby will not infringe any U.S. or Foreign
+patent rights. Seller shall indemnify BUYER and its customers against all suits, costs and expense (including attorneys fees),
+by reason of infringement or alleged infringement of any patent arising out of the sale or use of the merchandise hereby ordered.
+
+12. Seller may not delegate or subcontract any duties, nor assign any rights under this order without the prior written consent
+of BUYER. Any such attempted delegation or assignment shall be void.  BUYER shall be entitled to offset any claims from this or
+any other transaction with Seller against any sums due Seller hereunder.
+
+13. The rights and remedies of BUYER herein shall be in addition to any other rights and remedies provided in law or equity.
+Failure or delay by BUYER to exercise any right or remedy hereunder shall not be a waiver thereof. This order is to be governed
+by and construed under the laws of the State of Nebraska.</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>3.125in</Top>
+        <Left>0.4375in</Left>
+        <Height>3.8125in</Height>
+        <Width>6.875in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox33">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>FAX #:</Value>
+                <Style>
+                  <FontFamily>Courier New</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>2.375in</Top>
+        <Left>4.9375in</Left>
+        <Height>0.125in</Height>
+        <Width>0.625in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Color>White</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>1pt</PaddingRight>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox37">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>800 #:</Value>
+                <Style>
+                  <FontFamily>Courier New</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>2.5in</Top>
+        <Left>4.9375in</Left>
+        <Height>0.125in</Height>
+        <Width>0.625in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Color>White</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>1pt</PaddingRight>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox90">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!SellerFaxNum.Value)</Value>
+                <Style>
+                  <FontFamily>Courier New</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>2.375in</Top>
+        <Left>5.625in</Left>
+        <Height>0.125in</Height>
+        <Width>1.875in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Color>White</Color>
+            <Style>Solid</Style>
+          </Border>
+          <BottomBorder>
+            <Style>None</Style>
+          </BottomBorder>
+          <LeftBorder>
+            <Style>Solid</Style>
+          </LeftBorder>
+          <RightBorder>
+            <Style>Solid</Style>
+          </RightBorder>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox92">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!SellerPhoneNum.Value)</Value>
+                <Style>
+                  <FontFamily>Courier New</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>2.5in</Top>
+        <Left>5.625in</Left>
+        <Height>0.125in</Height>
+        <Width>1.875in</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Color>White</Color>
+            <Style>Solid</Style>
+          </Border>
+          <BottomBorder>
+            <Style>None</Style>
+          </BottomBorder>
+          <LeftBorder>
+            <Style>Solid</Style>
+          </LeftBorder>
+          <RightBorder>
+            <Style>Solid</Style>
+          </RightBorder>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+      </Textbox>
+      <Image Name="image1">
+        <Source>External</Source>
+        <Value>Speedway-210x72.jpg</Value>
+        <Top>0.125in</Top>
+        <Left>0.4375in</Left>
+        <Height>0.75in</Height>
+        <Width>2.1875in</Width>
+        <ZIndex>6</ZIndex>
+        <Style />
+      </Image>
+      <Textbox Name="textbox75">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!BillToName.Value)</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontFamily>Courier New</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>1.0625in</Top>
+        <Left>0.4375in</Left>
+        <Height>0.125in</Height>
+        <Width>1.875in</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox78">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!BillToAddr1.Value)</Value>
+                <Style>
+                  <FontFamily>Courier New</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>1.1875in</Top>
+        <Left>0.4375in</Left>
+        <Height>0.125in</Height>
+        <Width>1.875in</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox85">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!BillToCSZ.Value)</Value>
+                <Style>
+                  <FontFamily>Courier New</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>1.3125in</Top>
+        <Left>0.4375in</Left>
+        <Height>0.125in</Height>
+        <Width>1.875in</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>ISSUED by:</Value>
+                <Style>
+                  <FontFamily>Courier New</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>1.4375in</Top>
+        <Left>4.9375in</Left>
+        <Height>0.125in</Height>
+        <Width>1in</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Color>White</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>1pt</PaddingRight>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!IssuedBy.Value)</Value>
+                <Style>
+                  <FontFamily>Courier New</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>1.4375in</Top>
+        <Left>6in</Left>
+        <Height>0.125in</Height>
+        <Width>1.75in</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>PURCHASE ORDER #:</Value>
+                <Style>
+                  <FontFamily>Courier New</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>1.0625in</Top>
+        <Left>4.9375in</Left>
+        <Height>0.125in</Height>
+        <Width>1.875in</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+      </Textbox>
+      <Line Name="line1">
+        <Top>3.0625in</Top>
+        <Height>0in</Height>
+        <Width>7.75in</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="line2">
+        <Top>2.75in</Top>
+        <Height>0in</Height>
+        <Width>7.75in</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Textbox Name="textbox6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!PONum.Value)</Value>
+                <Style>
+                  <FontFamily>Courier New</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>1.0625in</Top>
+        <Left>6.8125in</Left>
+        <Height>0.125in</Height>
+        <Width>0.875in</Width>
+        <ZIndex>15</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox35">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>ATTN:</Value>
+                <Style>
+                  <FontFamily>Courier New</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>2.5625in</Top>
+        <Height>0.125in</Height>
+        <Width>0.5625in</Width>
+        <ZIndex>16</ZIndex>
+        <Style>
+          <Border>
+            <Color>White</Color>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox91">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!SellerSalesPhoneNum.Value)</Value>
+                <Style>
+                  <FontFamily>Courier New</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>2.5625in</Top>
+        <Left>0.625in</Left>
+        <Height>0.125in</Height>
+        <Width>1.875in</Width>
+        <ZIndex>17</ZIndex>
+        <Style>
+          <Border>
+            <Color>White</Color>
+            <Style>Solid</Style>
+          </Border>
+          <BottomBorder>
+            <Style>None</Style>
+          </BottomBorder>
+          <LeftBorder>
+            <Style>Solid</Style>
+          </LeftBorder>
+          <RightBorder>
+            <Style>Solid</Style>
+          </RightBorder>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>rev.10.38</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <Color>LightGrey</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox2</rd:DefaultName>
+        <Top>7in</Top>
+        <Left>3.375in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>18</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Tablix Name="table1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>3.125in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.125in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox73">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=First(Fields!Vendor.Value, "table1")</Value>
+                              <Style>
+                                <FontFamily>Courier New</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>3</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.125in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox76">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=First(Fields!VAddr1.Value, "table1")</Value>
+                              <Style>
+                                <FontFamily>Courier New</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.125in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox79">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=First(Fields!VAddr2.Value, "table1")</Value>
+                              <Style>
+                                <FontFamily>Courier New</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.125in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox82">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=First(Fields!VCSZ.Value, "table1")</Value>
+                              <Style>
+                                <FontFamily>Courier New</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="table1_Details_Group">
+                <DataElementName>Detail</DataElementName>
+              </Group>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+              <DataElementName>Detail_Collection</DataElementName>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <Top>1.9375in</Top>
+        <Height>0.5in</Height>
+        <Width>3.125in</Width>
+        <ZIndex>19</ZIndex>
+        <Style />
+      </Tablix>
+    </ReportItems>
+    <Height>7.25in</Height>
+    <Style />
+  </Body>
+  <Width>7.75in</Width>
+  <Page>
+    <LeftMargin>0.25in</LeftMargin>
+    <RightMargin>0.1in</RightMargin>
+    <TopMargin>0.25in</TopMargin>
+    <BottomMargin>0.25in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="SMI">
+      <DataSourceReference>SMI</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>eb66eb54-8177-456d-81e1-a6690dcb39b6</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="SMI">
+      <Query>
+        <DataSourceName>SMI</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@POParent">
+            <Value>=Parameters!POParent.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@POChild">
+            <Value>=Parameters!POChild.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>EXEC spExecPOReport @POParent = @POParent, @POChild = NULL</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="POParent">
+          <DataField>POParent</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="POChild">
+          <DataField>POChild</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PONum">
+          <DataField>PONum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VendorNum">
+          <DataField>VendorNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Vendor">
+          <DataField>Vendor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VAddr1">
+          <DataField>VAddr1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VAddr2">
+          <DataField>VAddr2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VCSZ">
+          <DataField>VCSZ</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShipToName">
+          <DataField>ShipToName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShipToAddr1">
+          <DataField>ShipToAddr1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShipToAddr2">
+          <DataField>ShipToAddr2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShipToCSZ">
+          <DataField>ShipToCSZ</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToName">
+          <DataField>BillToName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToAddr1">
+          <DataField>BillToAddr1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToAddr2">
+          <DataField>BillToAddr2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillToCSZ">
+          <DataField>BillToCSZ</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IssueDate">
+          <DataField>IssueDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExtCustNum">
+          <DataField>ExtCustNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IssuedBy">
+          <DataField>IssuedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShipVia">
+          <DataField>ShipVia</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FreightTerms">
+          <DataField>FreightTerms</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PaymentTerms">
+          <DataField>PaymentTerms</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="flgBLanket">
+          <DataField>flgBLanket</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="Buyer">
+          <DataField>Buyer</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BuyerPhoneNum">
+          <DataField>BuyerPhoneNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BuyerFax">
+          <DataField>BuyerFax</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BuyerEmail">
+          <DataField>BuyerEmail</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SellerContact">
+          <DataField>SellerContact</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SellerPhoneNum">
+          <DataField>SellerPhoneNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SellerFaxNum">
+          <DataField>SellerFaxNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SellerSalesPhoneNum">
+          <DataField>SellerSalesPhoneNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BuyerNotes">
+          <DataField>BuyerNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="POParent">
+      <DataType>String</DataType>
+      <Prompt>POParent</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="POChild">
+      <DataType>String</DataType>
+      <Prompt>POChild</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>520d2c00-6575-4b0a-bd5a-fb4dac24965a</rd:ReportID>
+</Report>

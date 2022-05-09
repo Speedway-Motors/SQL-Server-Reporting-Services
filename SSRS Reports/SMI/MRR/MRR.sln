@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "MRR", "MRR.rptproj", "{1F4C61D6-46D3-4914-A372-7537A41BA7C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Production|Default = Production|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F4C61D6-46D3-4914-A372-7537A41BA7C1}.Debug|Default.ActiveCfg = Debug
+		{1F4C61D6-46D3-4914-A372-7537A41BA7C1}.Debug|Default.Build.0 = DebugLocal
+		{1F4C61D6-46D3-4914-A372-7537A41BA7C1}.Debug|Default.Deploy.0 = DebugLocal
+		{1F4C61D6-46D3-4914-A372-7537A41BA7C1}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{1F4C61D6-46D3-4914-A372-7537A41BA7C1}.DebugLocal|Default.Build.0 = DebugLocal
+		{1F4C61D6-46D3-4914-A372-7537A41BA7C1}.Production|Default.ActiveCfg = Production
+		{1F4C61D6-46D3-4914-A372-7537A41BA7C1}.Production|Default.Build.0 = Production
+		{1F4C61D6-46D3-4914-A372-7537A41BA7C1}.Production|Default.Deploy.0 = Production
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

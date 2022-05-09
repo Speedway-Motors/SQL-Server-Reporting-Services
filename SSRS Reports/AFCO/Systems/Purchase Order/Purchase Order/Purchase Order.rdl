@@ -1,0 +1,2298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="SMI">
+      <rd:DataSourceID>fe527e3f-b077-47f4-908a-908b02cb928b</rd:DataSourceID>
+      <DataSourceReference>SMI</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="POParent">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>POParent</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="POChild">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>POChild</Prompt>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="VendorNum">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>VendorNum</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Vendor">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Vendor</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="VAddr1">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>VAddr1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="VAddr2">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>VAddr2</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="VCSZ">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>VCSZ</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ShipToName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ShipToName</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ShipToAddr1">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ShipToAddr1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ShipToAddr2">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ShipToAddr2</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ShipToCSZ">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ShipToCSZ</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BillToName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>BillToName</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BillToAddr1">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>BillToAddr1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BillToAddr2">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>BillToAddr2</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BillToCSZ">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>BillToCSZ</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="IssuedDate">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>IssuedDate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="IssuedBy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>IssuedBy</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ExtCustNum">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ExtCustNum</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ShipVia">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ShipVia</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FreightTerms">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>FreightTerms</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PaymentTerms">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>PaymentTerms</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Buyer">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Buyer</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BuyerPhoneNum">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>BuyerPhoneNum</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BuyerFax">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>BuyerFax</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BuyerEmail">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>BuyerEmail</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SellerContact">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>SellerContact</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SellerPhoneNum">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>SellerPhoneNum</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SellerFaxNum">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>SellerFaxNum</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SellerSalesPhoneNum">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>SellerSalesPhoneNum</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BuyerNotes">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>BuyerNotes</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.0625in</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.1in</RightMargin>
+  <LeftMargin>0.25in</LeftMargin>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox59">
+        <Top>1.3125in</Top>
+        <Width>2.5in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>33</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>5.75in</Left>
+        <Height>0.1875in</Height>
+        <Value>Ship at your earliest convenience</Value>
+      </Textbox>
+      <Textbox Name="textbox55">
+        <Top>1.3125in</Top>
+        <Width>1.875in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>32</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>3.875in</Left>
+        <Height>0.1875in</Height>
+        <Value>=Parameters!PaymentTerms.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox54">
+        <Top>1.3125in</Top>
+        <Width>2in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>31</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>1.875in</Left>
+        <Height>0.1875in</Height>
+        <Value>=Parameters!FreightTerms.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox53">
+        <Top>1.3125in</Top>
+        <Width>1.875in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>30</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.1875in</Height>
+        <Value>=Parameters!ShipVia.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox50">
+        <Top>1.125in</Top>
+        <Width>2.5in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+        </Style>
+        <ZIndex>29</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>5.75in</Left>
+        <Height>0.1875in</Height>
+        <Value>Expected Ship Date</Value>
+      </Textbox>
+      <Textbox Name="textbox49">
+        <Top>1.125in</Top>
+        <Width>1.875in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+        </Style>
+        <ZIndex>28</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>3.875in</Left>
+        <Height>0.1875in</Height>
+        <Value>Payment Terms</Value>
+      </Textbox>
+      <Textbox Name="textbox48">
+        <Top>1.125in</Top>
+        <Width>2in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+        </Style>
+        <ZIndex>27</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>1.875in</Left>
+        <Height>0.1875in</Height>
+        <Value>Freight Terms</Value>
+      </Textbox>
+      <Textbox Name="textbox46">
+        <Top>1.125in</Top>
+        <Width>1.875in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+        </Style>
+        <ZIndex>26</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.1875in</Height>
+        <Value>Ship Via</Value>
+      </Textbox>
+      <Textbox Name="textbox66">
+        <Top>1in</Top>
+        <Style>
+          <BackgroundColor>DarkGray</BackgroundColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+            <Left>Solid</Left>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+        </Style>
+        <ZIndex>25</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>9.375in</Left>
+        <Height>0.17833in</Height>
+        <Value>=Parameters!IssuedBy.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox65">
+        <Top>1in</Top>
+        <Width>1.0625in</Width>
+        <Style>
+          <BackgroundColor>Yellow</BackgroundColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+        </Style>
+        <ZIndex>24</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>8.3125in</Left>
+        <Height>0.17833in</Height>
+        <Value>=Parameters!ExtCustNum.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox64">
+        <Top>0.84in</Top>
+        <Style>
+          <BackgroundColor>DarkGray</BackgroundColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+            <Left>Solid</Left>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+        </Style>
+        <ZIndex>23</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>9.375in</Left>
+        <Height>0.17833in</Height>
+        <Value>Issued By</Value>
+      </Textbox>
+      <Textbox Name="textbox63">
+        <Top>0.84in</Top>
+        <Width>1.0625in</Width>
+        <Style>
+          <BackgroundColor>DarkGray</BackgroundColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+        </Style>
+        <ZIndex>22</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>8.3125in</Left>
+        <Height>0.17833in</Height>
+        <Value>Customer#</Value>
+      </Textbox>
+      <Textbox Name="textbox61">
+        <Top>0.66in</Top>
+        <Style>
+          <BackgroundColor>DarkGray</BackgroundColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+        </Style>
+        <ZIndex>21</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>9.375in</Left>
+        <Height>0.17833in</Height>
+        <Value>=Parameters!IssuedDate.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox60">
+        <Top>0.66in</Top>
+        <Width>1.0625in</Width>
+        <Style>
+          <BackgroundColor>DarkGray</BackgroundColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+        </Style>
+        <ZIndex>20</ZIndex>
+        <Left>8.3125in</Left>
+        <Height>0.17833in</Height>
+        <Value>=Parameters!POParent.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox68">
+        <Top>0.4925in</Top>
+        <Style>
+          <BackgroundColor>DarkGray</BackgroundColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+        </Style>
+        <ZIndex>19</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>9.375in</Left>
+        <Height>0.17833in</Height>
+        <Value>Issued Date</Value>
+      </Textbox>
+      <Textbox Name="textbox67">
+        <Top>0.4925in</Top>
+        <Width>1.0625in</Width>
+        <Style>
+          <BackgroundColor>DarkGray</BackgroundColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+        </Style>
+        <ZIndex>18</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>8.3125in</Left>
+        <Height>0.17833in</Height>
+        <Value>PO#</Value>
+      </Textbox>
+      <Textbox Name="textbox85">
+        <Top>0.875in</Top>
+        <Width>1.875in</Width>
+        <Style>
+          <BorderStyle>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Top>None</Top>
+            <Bottom>Solid</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>17</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>6.375in</Left>
+        <Height>0.125in</Height>
+        <Value>=Parameters!BillToCSZ.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox81">
+        <Top>0.75in</Top>
+        <Width>1.875in</Width>
+        <Style>
+          <BorderStyle>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Top>None</Top>
+            <Bottom>None</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>16</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>6.375in</Left>
+        <Height>0.125in</Height>
+        <Value>=Parameters!BillToAddr2.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox78">
+        <Top>0.625in</Top>
+        <Width>1.875in</Width>
+        <Style>
+          <BorderStyle>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Top>None</Top>
+            <Bottom>None</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>15</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>6.375in</Left>
+        <Height>0.125in</Height>
+        <Value>=Parameters!BillToAddr1.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox75">
+        <Top>0.5in</Top>
+        <Width>1.875in</Width>
+        <Style>
+          <BorderStyle>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Top>None</Top>
+            <Bottom>None</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>14</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>6.375in</Left>
+        <Height>0.125in</Height>
+        <Value>=Parameters!BillToName.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox72">
+        <Top>0.3125in</Top>
+        <Width>1.875in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+        </Style>
+        <ZIndex>13</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>6.375in</Left>
+        <Height>0.1875in</Height>
+        <Value>Bill To Address</Value>
+      </Textbox>
+      <Textbox Name="textbox84">
+        <Top>0.875in</Top>
+        <Width>1.8125in</Width>
+        <Style>
+          <BorderStyle>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Top>None</Top>
+            <Bottom>Solid</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>12</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>4.5625in</Left>
+        <Height>0.125in</Height>
+        <Value>=Parameters!ShipToCSZ.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox80">
+        <Top>0.75in</Top>
+        <Width>1.8125in</Width>
+        <Style>
+          <BorderStyle>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Top>None</Top>
+            <Bottom>None</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>11</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>4.5625in</Left>
+        <Height>0.125in</Height>
+        <Value>=Parameters!ShipToAddr2.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox77">
+        <Top>0.625in</Top>
+        <Width>1.8125in</Width>
+        <Style>
+          <BorderStyle>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Top>None</Top>
+            <Bottom>None</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>10</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>4.5625in</Left>
+        <Height>0.125in</Height>
+        <Value>=Parameters!ShipToAddr1.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox74">
+        <Top>0.5in</Top>
+        <Width>1.8125in</Width>
+        <Style>
+          <BorderStyle>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Top>None</Top>
+            <Bottom>None</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>9</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>4.5625in</Left>
+        <Height>0.125in</Height>
+        <Value>=Parameters!ShipToName.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox70">
+        <Top>0.3125in</Top>
+        <Width>1.8125in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+        </Style>
+        <ZIndex>8</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>4.5625in</Left>
+        <Height>0.1875in</Height>
+        <Value>Ship To Address</Value>
+      </Textbox>
+      <Textbox Name="textbox82">
+        <Top>0.875in</Top>
+        <Width>2.375in</Width>
+        <Style>
+          <BorderStyle>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Top>None</Top>
+            <Bottom>Solid</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>7</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>2.1875in</Left>
+        <Height>0.125in</Height>
+        <Value>=Parameters!VCSZ.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox79">
+        <Top>0.75in</Top>
+        <Width>2.375in</Width>
+        <Style>
+          <BorderStyle>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Top>None</Top>
+            <Bottom>None</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>6</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>2.1875in</Left>
+        <Height>0.125in</Height>
+        <Value>=Parameters!VAddr2.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox76">
+        <Top>0.625in</Top>
+        <Width>2.375in</Width>
+        <Style>
+          <BorderStyle>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Top>None</Top>
+            <Bottom>None</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>2.1875in</Left>
+        <Height>0.125in</Height>
+        <Value>=Parameters!VAddr1.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox69">
+        <Top>0.3125in</Top>
+        <Width>2.375in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>2.1875in</Left>
+        <Height>0.1875in</Height>
+        <Value>="Seller: # " &amp; Parameters!VendorNum.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox73">
+        <Top>0.5in</Top>
+        <Width>2.375in</Width>
+        <Style>
+          <BorderStyle>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Top>None</Top>
+            <Bottom>None</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>2.1875in</Left>
+        <Height>0.125in</Height>
+        <Value>=Parameters!Vendor.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox25">
+        <Top>0.32in</Top>
+        <Width>1.25in</Width>
+        <Style>
+          <BackgroundColor>DarkGray</BackgroundColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+          <NumeralVariant>2</NumeralVariant>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>8.8125in</Left>
+        <Height>0.17833in</Height>
+        <Value>="page " &amp; Globals.PageNumber &amp; " of " &amp; Globals.TotalPages</Value>
+      </Textbox>
+      <Textbox Name="textbox40">
+        <Width>2.25in</Width>
+        <Style>
+          <FontSize>16pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>4.125in</Left>
+        <Height>0.25in</Height>
+        <Value>Purchase Order</Value>
+      </Textbox>
+      <Image Name="image2">
+        <Sizing>AutoSize</Sizing>
+        <Top>0.25in</Top>
+        <Width>2.1875in</Width>
+        <Source>External</Source>
+        <Style />
+        <Height>0.75in</Height>
+        <Value>Speedway-210x72.jpg</Value>
+      </Image>
+    </ReportItems>
+    <Height>1.625in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <BottomMargin>0.25in</BottomMargin>
+  <rd:ReportID>07b82ed1-207a-4bac-839f-7a9413716e21</rd:ReportID>
+  <PageWidth>11in</PageWidth>
+  <DataSets>
+    <DataSet Name="SMI">
+      <Fields>
+        <Field Name="PONum">
+          <DataField>PONum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Line">
+          <DataField>Line</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="QTY">
+          <DataField>QTY</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="UnitMeas">
+          <DataField>UnitMeas</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PartNum">
+          <DataField>PartNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SKUDescr">
+          <DataField>SKUDescr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpectedDeliveryDate">
+          <DataField>ExpectedDeliveryDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UnitCost">
+          <DataField>UnitCost</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalCost">
+          <DataField>TotalCost</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalWeight">
+          <DataField>TotalWeight</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="flgBlanket">
+          <DataField>flgBlanket</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>SMI</DataSourceName>
+        <CommandText>select
+	   POD.ixPO				PONum,
+	   POD.iOrdinality		Line,
+	   POD.iQuantity		QTY,
+	   POD.ixUnitofMeasurement	UnitMeas,
+	   POD.ixSKU		PartNum,
+	   SKU.sDescription		SKUDescr,
+
+	   dbo.displayDate(D.dtDate)	ExpectedDeliveryDate,
+	   POD.mCost		UnitCost,
+	   POD.iQuantity*POD.mCost	TotalCost,
+                   POD.iQuantity* SKU.dWeight TotalWeight,
+                   (select flgBlanket from tblPOMaster where ixPO = @POParent) flgBlanket
+from tblPODetail POD
+	left join tblSKU SKU on POD.ixSKU = SKU.ixSKU
+	left join tblDate D on POD.ixExpectedDeliveryDate = D.ixDate
+                left join tblPOMaster POM on POD.ixPO = POM.ixPO
+where POD.ixPO in (@POChild)   --      '88889'blanket PO    '65369' 21items           '65874' 44items         '65665' 250items       
+order by POD.ixPO, POD.iOrdinality</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@POParent">
+            <Value>=Parameters!POParent.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@POChild">
+            <Value>=Parameters!POChild.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>10.5in</Width>
+  <Body>
+    <ReportItems>
+      <Table Name="table1">
+        <DataSetName>SMI</DataSetName>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="PONum">
+                      <rd:DefaultName>PONum</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "White", "Silver")</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>0.25pt</Default>
+                          <Left>2pt</Left>
+                          <Right>2pt</Right>
+                        </BorderWidth>
+                        <FontFamily>Courier New</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>8</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!PONum.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Line">
+                      <rd:DefaultName>Line</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "White", "Silver")</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>0.25pt</Default>
+                          <Left>2pt</Left>
+                          <Right>2pt</Right>
+                        </BorderWidth>
+                        <FontFamily>Courier New</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Line.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="QTY">
+                      <rd:DefaultName>QTY</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "White", "Silver")</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>0.25pt</Default>
+                          <Left>2pt</Left>
+                          <Right>2pt</Right>
+                        </BorderWidth>
+                        <FontFamily>Courier New</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <Format>###,###</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!QTY.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="UnitMeas">
+                      <rd:DefaultName>UnitMeas</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "White", "Silver")</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>0.25pt</Default>
+                          <Left>2pt</Left>
+                          <Right>2pt</Right>
+                        </BorderWidth>
+                        <FontFamily>Courier New</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!UnitMeas.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox11">
+                      <Style>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "White", "Silver")</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>0.25pt</Default>
+                          <Left>2pt</Left>
+                          <Right>2pt</Right>
+                        </BorderWidth>
+                        <FontFamily>Courier New</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!PartNum.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="SKUDescr">
+                      <rd:DefaultName>SKUDescr</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "White", "Silver")</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>0.25pt</Default>
+                          <Left>2pt</Left>
+                          <Right>2pt</Right>
+                        </BorderWidth>
+                        <FontFamily>Courier New</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!SKUDescr.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="ExpectedDeliveryDate">
+                      <rd:DefaultName>ExpectedDeliveryDate</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "White", "Silver")</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>0.25pt</Default>
+                          <Left>2pt</Left>
+                          <Right>2pt</Right>
+                        </BorderWidth>
+                        <FontFamily>Courier New</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <Format>c3</Format>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ExpectedDeliveryDate.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="UnitCost">
+                      <rd:DefaultName>UnitCost</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "White", "Silver")</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>0.25pt</Default>
+                          <Left>2pt</Left>
+                          <Right>2pt</Right>
+                        </BorderWidth>
+                        <FontFamily>Courier New</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <Format>c3</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!UnitCost.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox19">
+                      <Style>
+                        <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "White", "Silver")</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>0.25pt</Default>
+                          <Left>2pt</Left>
+                          <Right>2pt</Right>
+                        </BorderWidth>
+                        <FontFamily>Courier New</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <Format>c3</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!TotalCost.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.18979in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>2pt</Left>
+                          <Right>2pt</Right>
+                        </BorderWidth>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>35</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>PO#</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>2pt</Left>
+                          <Right>2pt</Right>
+                        </BorderWidth>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>34</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Line</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox4">
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>2pt</Left>
+                          <Right>2pt</Right>
+                        </BorderWidth>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>33</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Qty</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox8">
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>2pt</Left>
+                          <Right>2pt</Right>
+                        </BorderWidth>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>32</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Unit</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox10">
+                      <rd:DefaultName>textbox10</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>2pt</Left>
+                          <Right>2pt</Right>
+                        </BorderWidth>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>31</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Part#</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox15">
+                      <rd:DefaultName>textbox15</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>2pt</Left>
+                          <Right>2pt</Right>
+                        </BorderWidth>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>30</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Description</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox24">
+                      <rd:DefaultName>textbox24</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>2pt</Left>
+                          <Right>2pt</Right>
+                        </BorderWidth>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>29</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Expected</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox17">
+                      <rd:DefaultName>textbox17</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>2pt</Left>
+                          <Right>2pt</Right>
+                        </BorderWidth>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>28</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Unit Cost</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox12">
+                      <rd:DefaultName>textbox12</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>2pt</Left>
+                          <Right>2pt</Right>
+                        </BorderWidth>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>27</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Total $</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25305in</Height>
+            </TableRow>
+          </TableRows>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>0.8125in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.4375in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.5625in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.4375in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.125in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>3.375in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Visibility>
+              <Hidden>=iif (Fields!flgBlanket.Value=1,False,True)</Hidden>
+            </Visibility>
+            <Width>0.75in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.8125in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.1875in</Width>
+          </TableColumn>
+        </TableColumns>
+        <Footer>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox1">
+                      <rd:DefaultName>textbox1</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>17</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox6">
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>16</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox7">
+                      <rd:DefaultName>textbox7</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>15</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox9">
+                      <rd:DefaultName>textbox9</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>14</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox13">
+                      <rd:DefaultName>textbox13</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>13</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox34">
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <FontWeight>700</FontWeight>
+                        <Format>###,###</Format>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>12</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Total Estimated Weight:</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <rd:DefaultName>textbox5</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>11</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox31">
+                      <rd:DefaultName>textbox31</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>10</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox30">
+                      <rd:DefaultName>textbox30</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <FontWeight>700</FontWeight>
+                        <Format>###,###</Format>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>9</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Purchase Total:</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.1875in</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox16">
+                      <rd:DefaultName>textbox16</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <ZIndex>26</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox20">
+                      <rd:DefaultName>textbox20</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <ZIndex>25</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox21">
+                      <rd:DefaultName>textbox21</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <ZIndex>24</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox22">
+                      <rd:DefaultName>textbox22</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <ZIndex>23</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox23">
+                      <rd:DefaultName>textbox23</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <ZIndex>22</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox14">
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <Format>###,###.##</Format>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <ZIndex>21</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Sum(Fields!TotalWeight.Value, "SMI")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox26">
+                      <rd:DefaultName>textbox26</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <ZIndex>20</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox18">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <ZIndex>19</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox29">
+                      <rd:DefaultName>textbox29</rd:DefaultName>
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <Format>c3</Format>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <ZIndex>18</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Sum(Fields!TotalCost.Value, "SMI")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.1875in</Height>
+            </TableRow>
+          </TableRows>
+        </Footer>
+      </Table>
+    </ReportItems>
+    <Height>0.81784in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Image Name="image1">
+        <Sizing>AutoSize</Sizing>
+        <Top>1.0625in</Top>
+        <Width>8.95833in</Width>
+        <Source>External</Source>
+        <Style />
+        <ZIndex>18</ZIndex>
+        <Left>1.5in</Left>
+        <Height>0.3125in</Height>
+        <Value>Font_Shot.JPG</Value>
+      </Image>
+      <Textbox Name="textbox44">
+        <Top>0.5in</Top>
+        <Width>0.5625in</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>17</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.125in</Left>
+        <Height>0.25in</Height>
+        <Value>Notes:</Value>
+      </Textbox>
+      <Textbox Name="textbox92">
+        <Top>0.6875in</Top>
+        <Style>
+          <BackgroundColor>Yellow</BackgroundColor>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Bottom>None</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>16</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>8.625in</Left>
+        <Height>0.17in</Height>
+        <Value>=Parameters!SellerSalesPhoneNum.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox91">
+        <Top>0.5in</Top>
+        <Style>
+          <BackgroundColor>Yellow</BackgroundColor>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Bottom>None</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>15</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>8.625in</Left>
+        <Height>0.17in</Height>
+        <Value>=Parameters!SellerFaxNum.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox90">
+        <Top>0.3125in</Top>
+        <Style>
+          <BackgroundColor>Yellow</BackgroundColor>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Bottom>None</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>14</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>8.625in</Left>
+        <Height>0.17in</Height>
+        <Value>=Parameters!SellerPhoneNum.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox32">
+        <Top>0.125in</Top>
+        <Style>
+          <BackgroundColor>Yellow</BackgroundColor>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Bottom>None</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>13</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>8.625in</Left>
+        <Height>0.17in</Height>
+        <Value>=Parameters!SellerContact.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox37">
+        <Top>0.6875in</Top>
+        <Width>1in</Width>
+        <Style>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>1pt</PaddingRight>
+        </Style>
+        <ZIndex>12</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>7.5625in</Left>
+        <Height>0.17in</Height>
+        <Value>Sales Phone:</Value>
+      </Textbox>
+      <Textbox Name="textbox35">
+        <Top>0.5in</Top>
+        <Width>0.9375in</Width>
+        <Style>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>1pt</PaddingRight>
+        </Style>
+        <ZIndex>11</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>7.5625in</Left>
+        <Height>0.17in</Height>
+        <Value>Fax:</Value>
+      </Textbox>
+      <Textbox Name="textbox33">
+        <Top>0.3125in</Top>
+        <Width>0.9375in</Width>
+        <Style>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>1pt</PaddingRight>
+        </Style>
+        <ZIndex>10</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>7.5625in</Left>
+        <Height>0.17in</Height>
+        <Value>Phone:</Value>
+      </Textbox>
+      <Textbox Name="textbox28">
+        <Top>0.125in</Top>
+        <Width>0.9375in</Width>
+        <Style>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>1pt</PaddingRight>
+        </Style>
+        <ZIndex>9</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>7.5625in</Left>
+        <Height>0.17in</Height>
+        <Value>Contact:</Value>
+      </Textbox>
+      <Textbox Name="textbox160">
+        <Top>0.3125in</Top>
+        <Width>2.6875in</Width>
+        <Style>
+          <BackgroundColor>Yellow</BackgroundColor>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Bottom>None</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>8</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>3.3125in</Left>
+        <Height>0.17in</Height>
+        <Value>=Parameters!BuyerEmail.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox159">
+        <Top>0.3125in</Top>
+        <Width>0.5in</Width>
+        <Style>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingRight>1pt</PaddingRight>
+        </Style>
+        <ZIndex>7</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>2.75in</Left>
+        <Height>0.17in</Height>
+        <Value>Email:</Value>
+      </Textbox>
+      <Textbox Name="textbox158">
+        <Top>0.125in</Top>
+        <Width>2.6875in</Width>
+        <Style>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Bottom>None</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>6</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>3.3125in</Left>
+        <Height>0.17in</Height>
+        <Value>=Parameters!BuyerFax.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox157">
+        <Top>0.125in</Top>
+        <Width>0.5in</Width>
+        <Style>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingRight>1pt</PaddingRight>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>2.75in</Left>
+        <Height>0.17in</Height>
+        <Value>Fax:</Value>
+      </Textbox>
+      <Textbox Name="textbox43">
+        <Top>0.3125in</Top>
+        <Width>1.75in</Width>
+        <Style>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Bottom>None</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.75in</Left>
+        <Height>0.17in</Height>
+        <Value>=Parameters!BuyerPhoneNum.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox41">
+        <Top>0.125in</Top>
+        <Width>1.75in</Width>
+        <Style>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+            <Left>Solid</Left>
+            <Right>Solid</Right>
+            <Bottom>None</Bottom>
+          </BorderStyle>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.75in</Left>
+        <Height>0.17in</Height>
+        <Value>=Parameters!Buyer.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox42">
+        <Top>0.3125in</Top>
+        <Width>0.5625in</Width>
+        <Style>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.125in</Left>
+        <Height>0.17in</Height>
+        <Value>Phone:</Value>
+      </Textbox>
+      <Textbox Name="textbox39">
+        <Top>0.125in</Top>
+        <Width>0.5625in</Width>
+        <Style>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.125in</Left>
+        <Height>0.17in</Height>
+        <Value>Buyer:</Value>
+      </Textbox>
+      <Rectangle Name="rectangle1">
+        <ReportItems>
+          <Textbox Name="textbox45">
+            <Width>6.75in</Width>
+            <Style>
+              <FontFamily>Courier New</FontFamily>
+              <FontSize>8pt</FontSize>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Left>0.6875in</Left>
+            <Value>=Parameters!BuyerNotes.Value</Value>
+          </Textbox>
+        </ReportItems>
+        <Top>0.5in</Top>
+        <Width>7.5in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <Height>0.5in</Height>
+      </Rectangle>
+    </ReportItems>
+    <Height>1.4375in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <Style>
+      <BorderWidth>
+        <Top>1pt</Top>
+      </BorderWidth>
+    </Style>
+  </PageFooter>
+  <TopMargin>0.25in</TopMargin>
+  <PageHeight>8.5in</PageHeight>
+</Report>

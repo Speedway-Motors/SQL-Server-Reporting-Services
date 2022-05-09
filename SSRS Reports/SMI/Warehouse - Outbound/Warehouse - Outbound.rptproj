@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ToolsVersion="2.0">
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+  <DataSources>
+    <ProjectItem>
+      <Name>AFCO.rds</Name>
+      <FullPath>AFCO.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>AFCODW1.rds</Name>
+      <FullPath>AFCODW1.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>dw.speedway2.com.rds</Name>
+      <FullPath>dw.speedway2.com.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SMI.rds</Name>
+      <FullPath>SMI.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SMIDW.rds</Name>
+      <FullPath>SMIDW.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SMISQLLIVE.rds</Name>
+      <FullPath>SMISQLLIVE.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>TEST.rds</Name>
+      <FullPath>TEST.rds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSets />
+  <Reports>
+    <ProjectItem>
+      <Name>Borrowed Part Requests by Day.rdl</Name>
+      <FullPath>Borrowed Part Requests by Day.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Free Shipping Problem Orders.rdl</Name>
+      <FullPath>Free Shipping Problem Orders.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Freight Deviance.rdl</Name>
+      <FullPath>Freight Deviance.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>High Priority Order Fulfillment Status.rdl</Name>
+      <FullPath>High Priority Order Fulfillment Status.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Hourly Histogram of Orders.rdl</Name>
+      <FullPath>Hourly Histogram of Orders.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>JUNK TEST.rdl</Name>
+      <FullPath>JUNK TEST.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Mispull Detail - LNK.rdl</Name>
+      <FullPath>Mispull Detail - LNK.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Mispull Detail - TOL.rdl</Name>
+      <FullPath>Mispull Detail - TOL.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Mispull Detail - WV.rdl</Name>
+      <FullPath>Mispull Detail - WV.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>OPEN Orders - discrepancy TEST.rdl</Name>
+      <FullPath>OPEN Orders - discrepancy TEST.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Order Fulfillment Status.rdl</Name>
+      <FullPath>Order Fulfillment Status.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Orders and Packages Shipped by Date.rdl</Name>
+      <FullPath>Orders and Packages Shipped by Date.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Orders and Packages Shipped by Trailer.rdl</Name>
+      <FullPath>Orders and Packages Shipped by Trailer.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Orders by Ship Method and Date.rdl</Name>
+      <FullPath>Orders by Ship Method and Date.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Outbound Station IPs - TOL.rdl</Name>
+      <FullPath>Outbound Station IPs - TOL.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Package Scale Weight Overrides by Shipper.rdl</Name>
+      <FullPath>Package Scale Weight Overrides by Shipper.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Packages with Scale Weight Overrides.rdl</Name>
+      <FullPath>Packages with Scale Weight Overrides.rdl</FullPath>
+    </ProjectItem>
+    <ResourceProjectItem>
+      <Name>Rough Draft.jpg</Name>
+      <FullPath>Rough Draft.jpg</FullPath>
+      <MimeType>image/jpeg</MimeType>
+    </ResourceProjectItem>
+    <ProjectItem>
+      <Name>SKUs flagged SLAPR but not shipping as a Slapper.rdl</Name>
+      <FullPath>SKUs flagged SLAPR but not shipping as a Slapper.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Speedway Overages for SMI to AFCO.rdl</Name>
+      <FullPath>Speedway Overages for SMI to AFCO.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sub - AFCO Orders Shipped by Date from LNK.rdl</Name>
+      <FullPath>Sub - AFCO Orders Shipped by Date from LNK.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sub - Unverified Counter Orders.rdl</Name>
+      <FullPath>Sub - Unverified Counter Orders.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>TEST.rdl</Name>
+      <FullPath>TEST.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Unverified Counter Orders.rdl</Name>
+      <FullPath>Unverified Counter Orders.rdl</FullPath>
+    </ProjectItem>
+    <ResourceProjectItem>
+      <Name>UpgradeLog.XML</Name>
+      <FullPath>UpgradeLog.XML</FullPath>
+      <MimeType>text/plain</MimeType>
+    </ResourceProjectItem>
+    <ProjectItem>
+      <Name>Warehouse - Order Priority.rdl</Name>
+      <FullPath>Warehouse - Order Priority.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Warehouse - Cross-Department hours.rdl</Name>
+      <FullPath>Warehouse - Cross-Department hours.rdl</FullPath>
+    </ProjectItem>
+  </Reports>
+  <Configurations>
+    <Configuration>
+      <Name>Debug</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Debug</OutputPath>
+        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+        <TargetServerURL>http://lnk-sql-live-1/Reports/</TargetServerURL>
+        <TargetFolder>Speedway/Warehouse - Outbound</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>DebugLocal</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\DebugLocal</OutputPath>
+        <TargetServerVersion>SSRS2008</TargetServerVersion>
+        <TargetFolder>Warehouse - Outbound</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>Production</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Production</OutputPath>
+        <TargetServerVersion>SSRS2008</TargetServerVersion>
+        <TargetFolder>Warehouse - Outbound</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>

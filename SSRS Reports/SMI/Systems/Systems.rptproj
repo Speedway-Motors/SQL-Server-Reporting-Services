@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ToolsVersion="2.0">
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+  <DataSources>
+    <ProjectItem>
+      <Name>dw.speedway2.com.rds</Name>
+      <FullPath>dw.speedway2.com.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>ReportServer.rds</Name>
+      <FullPath>ReportServer.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SMI.rds</Name>
+      <FullPath>SMI.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SMIDW.rds</Name>
+      <FullPath>SMIDW.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SMISQLLIVE.rds</Name>
+      <FullPath>SMISQLLIVE.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Util.rds</Name>
+      <FullPath>Util.rds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSets />
+  <Reports>
+    <ProjectItem>
+      <Name>Active US Vendors.rdl</Name>
+      <FullPath>Active US Vendors.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>AWS Feed Latency.rdl</Name>
+      <FullPath>AWS Feed Latency.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Data Cache BUG testing.rdl</Name>
+      <FullPath>Data Cache BUG testing.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Data Freshness.rdl</Name>
+      <FullPath>Data Freshness.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DBchecks - DW1.rdl</Name>
+      <FullPath>DBchecks - DW1.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DBchecks - DWStaging.rdl</Name>
+      <FullPath>DBchecks - DWStaging.rdl</FullPath>
+    </ProjectItem>
+    <ResourceProjectItem>
+      <Name>DBcheckup.jpg</Name>
+      <FullPath>DBcheckup.jpg</FullPath>
+      <MimeType>image/jpeg</MimeType>
+    </ResourceProjectItem>
+    <ProjectItem>
+      <Name>Deleted SKUs with Sales.rdl</Name>
+      <FullPath>Deleted SKUs with Sales.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Error Log - LNK-WEB2.SPEEDWAY.rdl</Name>
+      <FullPath>Error Log - LNK-WEB2.SPEEDWAY.rdl</FullPath>
+    </ProjectItem>
+    <ResourceProjectItem>
+      <Name>ExpandAll.jpg</Name>
+      <FullPath>ExpandAll.jpg</FullPath>
+      <MimeType>image/jpeg</MimeType>
+    </ResourceProjectItem>
+    <ProjectItem>
+      <Name>Find a Shipping Rate.rdl</Name>
+      <FullPath>Find a Shipping Rate.rdl</FullPath>
+    </ProjectItem>
+    <ResourceProjectItem>
+      <Name>fresh.jpg</Name>
+      <FullPath>fresh.jpg</FullPath>
+      <MimeType>image/jpeg</MimeType>
+    </ResourceProjectItem>
+    <ProjectItem>
+      <Name>Inventory Forecasting.rdl</Name>
+      <FullPath>Inventory Forecasting.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>LNK-DW1 Status Checks.rdl</Name>
+      <FullPath>LNK-DW1 Status Checks.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Loyalty Builder Customer File Processed.rdl</Name>
+      <FullPath>Loyalty Builder Customer File Processed.rdl</FullPath>
+    </ProjectItem>
+    <ResourceProjectItem>
+      <Name>MinimizeAll.jpg</Name>
+      <FullPath>MinimizeAll.jpg</FullPath>
+      <MimeType>image/jpeg</MimeType>
+    </ResourceProjectItem>
+    <ProjectItem>
+      <Name>MostRecentSKUTransactions.rdl</Name>
+      <FullPath>MostRecentSKUTransactions.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Notification Error History.rdl</Name>
+      <FullPath>Notification Error History.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>ParameterGroupByTest.rdl</Name>
+      <FullPath>ParameterGroupByTest.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>PO Legal Fluff.rdl</Name>
+      <FullPath>PO Legal Fluff.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>ProcedureLog.rdl</Name>
+      <FullPath>ProcedureLog.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Purchase Order.rdl</Name>
+      <FullPath>Purchase Order.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Report Executions.rdl</Name>
+      <FullPath>Report Executions.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Report Subscription - Dashboard.rdl</Name>
+      <FullPath>Report Subscription - Dashboard.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Report Subscriptions - Count by Report.rdl</Name>
+      <FullPath>Report Subscriptions - count by report.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Report Subscriptions - Count by User.rdl</Name>
+      <FullPath>Report Subscriptions - Count by User.rdl</FullPath>
+    </ProjectItem>
+    <ResourceProjectItem>
+      <Name>RoboCoffee.jpg</Name>
+      <FullPath>RoboCoffee.jpg</FullPath>
+      <MimeType>image/jpeg</MimeType>
+    </ResourceProjectItem>
+    <ResourceProjectItem>
+      <Name>RoboCoffee-small.jpg</Name>
+      <FullPath>RoboCoffee-small.jpg</FullPath>
+      <MimeType>image/jpeg</MimeType>
+    </ResourceProjectItem>
+    <ResourceProjectItem>
+      <Name>robocorn.jpeg</Name>
+      <FullPath>robocorn.jpeg</FullPath>
+      <MimeType>image/jpeg</MimeType>
+    </ResourceProjectItem>
+    <ResourceProjectItem>
+      <Name>ruler2.png</Name>
+      <FullPath>ruler2.png</FullPath>
+      <MimeType>image/x-png</MimeType>
+    </ResourceProjectItem>
+    <ProjectItem>
+      <Name>Shipping Quote Data Summary.rdl</Name>
+      <FullPath>Shipping Quote Data Summary.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SKUS Retail and Cost for Primary Vendor.rdl</Name>
+      <FullPath>SKUS Retail and Cost for Primary Vendor.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Snapshot of Manual Tables.rdl</Name>
+      <FullPath>Snapshot of Manual Tables.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SOP Error Log.rdl</Name>
+      <FullPath>SOP Error Log.rdl</FullPath>
+    </ProjectItem>
+    <ResourceProjectItem>
+      <Name>Speedway-210x72.jpg</Name>
+      <FullPath>Speedway-210x72.jpg</FullPath>
+      <MimeType>image/jpeg</MimeType>
+    </ResourceProjectItem>
+    <ProjectItem>
+      <Name>SPID Test.rdl</Name>
+      <FullPath>SPID Test.rdl</FullPath>
+    </ProjectItem>
+    <ResourceProjectItem>
+      <Name>Stewie-small.png</Name>
+      <FullPath>Stewie-small.png</FullPath>
+      <MimeType>image/x-png</MimeType>
+    </ResourceProjectItem>
+    <ProjectItem>
+      <Name>Sub - LNK-DW1 Status Checks - Empty Tables.rdl</Name>
+      <FullPath>Sub - LNK-DW1 Status Checks - Empty Tables.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sub - LNK-DW1 Status Checks - Most Recent Orders.rdl</Name>
+      <FullPath>Sub - LNK-DW1 Status Checks - Most Recent Orders.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>TEMP - Scientific Notation Excel export test.rdl</Name>
+      <FullPath>TEMP - Scientific Notation Excel export test.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Universal Customer Detail.rdl</Name>
+      <FullPath>Universal Customer Detail.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Unshipped Orders that have not updated recently.rdl</Name>
+      <FullPath>Unshipped Orders that have not updated recently.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Vendor Purchase History - SKU Detail - Hidden Columns Left.rdl</Name>
+      <FullPath>Vendor Purchase History - SKU Detail - Hidden Columns Left.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Vendor Purchase History - SKU Detail - OLD.rdl</Name>
+      <FullPath>Vendor Purchase History - SKU Detail - OLD.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Vendor Purchase History - SKU Detail.rdl</Name>
+      <FullPath>Vendor Purchase History - SKU Detail.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>VPH - SKU Detail based on PGC and SKU descr.rdl</Name>
+      <FullPath>VPH - SKU Detail based on PGC and SKU descr.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Web Purge History.rdl</Name>
+      <FullPath>Web Purge History.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>WebShippingService VS SOP ShippingService.rdl</Name>
+      <FullPath>WebShippingService VS SOP ShippingService.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DMS Status.rdl</Name>
+      <FullPath>DMS Status.rdl</FullPath>
+    </ProjectItem>
+  </Reports>
+  <Configurations>
+    <Configuration>
+      <Name>Debug</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Debug</OutputPath>
+        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+        <TargetServerURL>http://lnk-sql-live-1/Reports/</TargetServerURL>
+        <TargetFolder>Speedway/Systems</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>DebugLocal</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\DebugLocal</OutputPath>
+        <TargetServerVersion>SSRS2008</TargetServerVersion>
+        <TargetFolder>Systems</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>Production</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Production</OutputPath>
+        <TargetServerVersion>SSRS2008</TargetServerVersion>
+        <TargetFolder>Systems</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>

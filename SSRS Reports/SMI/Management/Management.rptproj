@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ToolsVersion="2.0">
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+  <DataSources>
+    <ProjectItem>
+      <Name>SMI.rds</Name>
+      <FullPath>SMI.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SMIDW.rds</Name>
+      <FullPath>SMIDW.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SMISQLLIVE.rds</Name>
+      <FullPath>SMISQLLIVE.rds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSets />
+  <Reports>
+    <ProjectItem>
+      <Name>Daily Orders Taken by BU.rdl</Name>
+      <FullPath>Daily Orders Taken by BU.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Daily Orders Taken Flash Report sub0 Daily w SH.rdl</Name>
+      <FullPath>Daily Orders Taken Flash Report sub0 Daily w SH.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Daily Orders Taken Flash Report w SH.rdl</Name>
+      <FullPath>Daily Orders Taken Flash Report w SH.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Daily Orders Taken Flash Report.rdl</Name>
+      <FullPath>Daily Orders Taken Flash Report.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Daily Orders Taken sub1 Monthly w SH.rdl</Name>
+      <FullPath>Daily Orders Taken sub1 Monthly w SH.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Daily Orders Taken sub1 Monthly.rdl</Name>
+      <FullPath>Daily Orders Taken sub1 Monthly.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Daily Orders Taken sub2 YTD w SH.rdl</Name>
+      <FullPath>Daily Orders Taken sub2 YTD w SH.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Daily Orders Taken sub2 YTD.rdl</Name>
+      <FullPath>Daily Orders Taken sub2 YTD.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DOT - Online Only sub1 Monthly.rdl</Name>
+      <FullPath>DOT - Online Only sub1 Monthly.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DOT - Online Only sub2 YTD.rdl</Name>
+      <FullPath>DOT - Online Only sub2 YTD.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DOT - Online Only.rdl</Name>
+      <FullPath>DOT - Online Only.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DOT w BU ver 10.rdl</Name>
+      <FullPath>DOT w BU ver 10.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Fill Rates by Period by Year - NEW.rdl</Name>
+      <FullPath>Fill Rates by Period by Year - NEW.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Fill Rates by Period by Year.rdl</Name>
+      <FullPath>Fill Rates by period by year.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>GM by ISO Week.rdl</Name>
+      <FullPath>GM by ISO Week.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Gross Margin - Retail and Wholesale.rdl</Name>
+      <FullPath>Gross Margin - Retail and Wholesale.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Lost Sales by Period by Year.rdl</Name>
+      <FullPath>Lost Sales by Period by Year.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Order Summary by Ship Method - Sub1 packages.rdl</Name>
+      <FullPath>Order Summary by Ship Method - Sub1 packages.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Order Summary by Ship Method.rdl</Name>
+      <FullPath>Order Summary by Ship Method.rdl</FullPath>
+    </ProjectItem>
+    <ResourceProjectItem>
+      <Name>Rough Draft.jpg</Name>
+      <FullPath>Rough Draft.jpg</FullPath>
+      <MimeType>image/jpeg</MimeType>
+    </ResourceProjectItem>
+    <ProjectItem>
+      <Name>Sales by Catalog Given.rdl</Name>
+      <FullPath>Sales by Catalog Given.rdl</FullPath>
+    </ProjectItem>
+    <ResourceProjectItem>
+      <Name>Speedway - 2019 logo.jpg</Name>
+      <FullPath>Speedway - 2019 logo.jpg</FullPath>
+      <MimeType>image/jpeg</MimeType>
+    </ResourceProjectItem>
+    <ResourceProjectItem>
+      <Name>Speedway-210x72.jpg</Name>
+      <FullPath>Speedway-210x72.jpg</FullPath>
+      <MimeType>image/jpeg</MimeType>
+    </ResourceProjectItem>
+    <ProjectItem>
+      <Name>Sub - DOT by Business Unit - Period to Date.rdl</Name>
+      <FullPath>Sub - DOT by Business Unit - Period to Date.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sub - DOT by Business Unit - YTD.rdl</Name>
+      <FullPath>Sub - DOT by Business Unit - YTD.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sub - Dropship Daily Sales.rdl</Name>
+      <FullPath>Sub - Dropship Daily Sales.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sub - Dropship Monthly Sales.rdl</Name>
+      <FullPath>Sub - Dropship Monthly Sales.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sub - Dropship YTD Sales.rdl</Name>
+      <FullPath>Sub - Dropship YTD Sales.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sub - GS and Shock Daily Sales.rdl</Name>
+      <FullPath>Sub - GS and Shock Daily Sales.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sub - GS and Shock Monthly Sales.rdl</Name>
+      <FullPath>Sub - GS and Shock Monthly Sales.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sub - GS and Shock YTD Sales - HC.rdl</Name>
+      <FullPath>Sub - GS and Shock YTD Sales - HC.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sub - GS and Shock YTD Sales.rdl</Name>
+      <FullPath>Sub - GS and Shock YTD Sales.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Vendor Purchase History.rdl</Name>
+      <FullPath>Vendor Purchase History.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Fill Rates by period by year - with Vendor Type.rdl</Name>
+      <FullPath>Fill Rates by period by year - with Vendor Type.rdl</FullPath>
+    </ProjectItem>
+  </Reports>
+  <Configurations>
+    <Configuration>
+      <Name>Debug</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Debug</OutputPath>
+        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+        <TargetServerURL>http://lnk-sql-live-1/Reports/</TargetServerURL>
+        <TargetFolder>Speedway/Management</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>DebugLocal</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\DebugLocal</OutputPath>
+        <TargetServerVersion>SSRS2008</TargetServerVersion>
+        <TargetFolder>Management</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>Production</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Production</OutputPath>
+        <TargetServerVersion>SSRS2008</TargetServerVersion>
+        <TargetFolder>Management</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>

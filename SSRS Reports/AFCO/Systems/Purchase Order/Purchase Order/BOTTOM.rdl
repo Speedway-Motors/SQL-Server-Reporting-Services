@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="SMI">
+      <rd:DataSourceID>fe527e3f-b077-47f4-908a-908b02cb928b</rd:DataSourceID>
+      <DataSourceReference>SMI</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="POParent">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>POParent</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.0625in</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.25in</RightMargin>
+  <LeftMargin>0.25in</LeftMargin>
+  <BottomMargin>0.25in</BottomMargin>
+  <rd:ReportID>07b82ed1-207a-4bac-839f-7a9413716e21</rd:ReportID>
+  <PageWidth>11in</PageWidth>
+  <DataSets>
+    <DataSet Name="SMI">
+      <Fields>
+        <Field Name="PONum">
+          <DataField>PONum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Buyer">
+          <DataField>Buyer</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BuyerPhoneNum">
+          <DataField>BuyerPhoneNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Fax">
+          <DataField>Fax</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Email">
+          <DataField>Email</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Notes">
+          <DataField>Notes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>SMI</DataSourceName>
+        <CommandText>select
+	   POM.ixPO				PONum,
+	   POM.ixBuyer   		Buyer,
+	   dbo.DisplayPhone(EMP.sphone) BuyerPhoneNum, --EMP.phoneNum
+	   '888-888-8888'		Fax, --HARDCODE FOR NOW?
+	   POM.sEmailAddress	Email,
+	   POM.sMessage1+' '+POM.sMessage2+' '+POM.sMessage3+' '+POM.sMessage4+' '+POM.sMessage5 Notes
+
+from tblPOMaster POM
+	left join tblEmployee EMP on POM.ixBuyer = EMP.SFirstname+' '+EMP.SLastname
+where POM.ixPO = @POParent</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@POParent">
+            <Value>=Parameters!POParent.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>10.73818in</Width>
+  <Body>
+    <Height>1.1875in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <TopMargin>0.25in</TopMargin>
+  <PageHeight>8.5in</PageHeight>
+</Report>

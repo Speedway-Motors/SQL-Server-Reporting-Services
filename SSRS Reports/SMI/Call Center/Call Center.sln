@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Call Center", "Call Center.rptproj", "{200E7172-D2B9-4A86-BC1C-316457B5C7CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Production|Default = Production|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{200E7172-D2B9-4A86-BC1C-316457B5C7CA}.Debug|Default.ActiveCfg = Debug
+		{200E7172-D2B9-4A86-BC1C-316457B5C7CA}.Debug|Default.Build.0 = DebugLocal
+		{200E7172-D2B9-4A86-BC1C-316457B5C7CA}.Debug|Default.Deploy.0 = DebugLocal
+		{200E7172-D2B9-4A86-BC1C-316457B5C7CA}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{200E7172-D2B9-4A86-BC1C-316457B5C7CA}.DebugLocal|Default.Build.0 = DebugLocal
+		{200E7172-D2B9-4A86-BC1C-316457B5C7CA}.DebugLocal|Default.Deploy.0 = DebugLocal
+		{200E7172-D2B9-4A86-BC1C-316457B5C7CA}.Production|Default.ActiveCfg = Production
+		{200E7172-D2B9-4A86-BC1C-316457B5C7CA}.Production|Default.Build.0 = Production
+		{200E7172-D2B9-4A86-BC1C-316457B5C7CA}.Production|Default.Deploy.0 = Production
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

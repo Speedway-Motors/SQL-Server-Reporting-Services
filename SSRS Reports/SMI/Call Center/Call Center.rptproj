@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ToolsVersion="2.0">
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+  <DataSources>
+    <ProjectItem>
+      <Name>dw.speedway2.com.rds</Name>
+      <FullPath>dw.speedway2.com.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SMI 360.rds</Name>
+      <FullPath>SMI 360.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SMI.rds</Name>
+      <FullPath>SMI.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SMIDW.rds</Name>
+      <FullPath>SMIDW.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SMISQLLIVE.rds</Name>
+      <FullPath>SMISQLLIVE.rds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSets />
+  <Reports>
+    <ProjectItem>
+      <Name>360 Survey Feedback - OLD.rdl</Name>
+      <FullPath>360 Survey Feedback - OLD.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>360 Survey Feedback _ TEMP.rdl</Name>
+      <FullPath>360 Survey Feedback _ TEMP.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>360 Survey Perceptions.rdl</Name>
+      <FullPath>360 Survey Perceptions.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>All Backorders.rdl</Name>
+      <FullPath>All Backorders.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Backorders Ready to Release PROD 20200130.rdl</Name>
+      <FullPath>Backorders Ready to Release PROD 20200130.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Backorders Ready to Release.rdl</Name>
+      <FullPath>Backorders Ready to Release.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Backorders with Discontinued SKUs.rdl</Name>
+      <FullPath>Backorders with Discontinued SKUs.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Black Friday 2014 Promo Codes - TEMP.rdl</Name>
+      <FullPath>Black Friday 2014 Promo Codes - TEMP.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Borrowed Part Requests by Day - B Side.rdl</Name>
+      <FullPath>Borrowed Part Requests by Day - B Side.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Call Center Open Orders.rdl</Name>
+      <FullPath>Call Center Open Orders.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Canceled Counter Orders.rdl</Name>
+      <FullPath>Canceled Counter Orders.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Counter Order and Pick Ticket Fulfillment Times.rdl</Name>
+      <FullPath>Counter Order and Pick Ticket Fulfillment Times.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Counter Orders Ready for Customer Pick-up.rdl</Name>
+      <FullPath>Counter Orders Ready for Customer Pick-up.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Credit Memo Details per SKU.rdl</Name>
+      <FullPath>Credit Memo Details per SKU.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Credit Memo SKU Summary.rdl</Name>
+      <FullPath>Credit Memo SKU Summary.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Credit Memo Totals.rdl</Name>
+      <FullPath>Credit Memo Totals.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Customer Projects.rdl</Name>
+      <FullPath>Customer Projects.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Employee Entrance and Exit Door Swipes - Call Center.rdl</Name>
+      <FullPath>Employee Entrance and Exit Door Swipes - Call Center.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Marketplace Orders by Location.rdl</Name>
+      <FullPath>C:\Users\pjcrews\Desktop\Reporting\Reports\SMI\Marketplace Orders by Location.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Marketplace Orders via Boonville - SKU Detail - TEMP.rdl</Name>
+      <FullPath>Marketplace Orders via Boonville - SKU Detail - TEMP.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Open Counter Orders - Tolleson.rdl</Name>
+      <FullPath>Open Counter Orders - Tolleson.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Open Counter Orders ver 15-20-1 .rdl</Name>
+      <FullPath>Open Counter Orders ver 15-20-1 .rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Open Counter Orders.rdl</Name>
+      <FullPath>Open Counter Orders.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Open Web Orders.rdl</Name>
+      <FullPath>Open Web Orders.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Orders by Associate.rdl</Name>
+      <FullPath>Orders by Associate.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Orders by Source Code.rdl</Name>
+      <FullPath>Orders by Source Code.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Partial Backorders.rdl</Name>
+      <FullPath>Partial Backorders.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Phone Order Timing Analysis.rdl</Name>
+      <FullPath>Phone Order Timing Analysis.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Quote Conversion.rdl</Name>
+      <FullPath>Quote Conversion.rdl</FullPath>
+    </ProjectItem>
+    <ResourceProjectItem>
+      <Name>Rough Draft.jpg</Name>
+      <FullPath>Rough Draft.jpg</FullPath>
+      <MimeType>image/jpeg</MimeType>
+    </ResourceProjectItem>
+    <ProjectItem>
+      <Name>Sales Summary by Associate.rdl</Name>
+      <FullPath>Sales Summary by Associate.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sub - Counter Orders Completed.rdl</Name>
+      <FullPath>Sub - Counter Orders Completed.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sub - Counter Orders Not Completed.rdl</Name>
+      <FullPath>Sub - Counter Orders Not Completed.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sub - Open Counter Orders.rdl</Name>
+      <FullPath>Sub - Open Counter Orders.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sub - Orders Not Printed.rdl</Name>
+      <FullPath>Sub - Orders Not Printed.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sub - Pick Tickets Completed.rdl</Name>
+      <FullPath>Sub - Pick Tickets Completed.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sub - Pick Tickets Not Completed.rdl</Name>
+      <FullPath>Sub - Pick Tickets Not Completed.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sub - QAV excluding Location 47.rdl</Name>
+      <FullPath>Sub - QAV excluding Location 47.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Survey Customer Appreciation Gift Recipients.rdl</Name>
+      <FullPath>Survey Customer Appreciation Gift Recipients.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Survey Feedback Review.rdl</Name>
+      <FullPath>Survey Feedback Review.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>TEMP Sub - WEB Counter Orders Completed.rdl</Name>
+      <FullPath>TEMP Sub - WEB Counter Orders Completed.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Top Revenue Customers.rdl</Name>
+      <FullPath>Top Revenue Customers.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Unshipped Marketplace Orders via Boonville.rdl</Name>
+      <FullPath>Unshipped Marketplace Orders via Boonville.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Walk-in Counter Pick Ticket Fulfillment Times.rdl</Name>
+      <FullPath>Walk-in Counter Pick Ticket Fulfillment Times.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Wholesale Group Sales Breakdown.rdl</Name>
+      <FullPath>Wholesale Group Sales Breakdown.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Wholesale Orders by Associate.rdl</Name>
+      <FullPath>Wholesale Orders by Associate.rdl</FullPath>
+    </ProjectItem>
+  </Reports>
+  <Configurations>
+    <Configuration>
+      <Name>Debug</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Debug</OutputPath>
+        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+        <TargetServerURL>http://lnk-sql-live-1/Reports/</TargetServerURL>
+        <TargetFolder>Speedway/Call Center/Backorders</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>DebugLocal</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\DebugLocal</OutputPath>
+        <TargetServerVersion>SSRS2008</TargetServerVersion>
+        <TargetFolder>Call Center</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>Production</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Production</OutputPath>
+        <TargetServerVersion>SSRS2008</TargetServerVersion>
+        <TargetFolder>Call Center</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>

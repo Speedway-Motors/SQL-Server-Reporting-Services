@@ -1,0 +1,83 @@
+-- [SMI Reporting] DWSTAGING Dropped Indexes
+
+/***** **********************************************************
+    the CREATE SCRIPTS to rebuild any indexes that were dropped
+    grouped by date dropped, most recent first.
+******************************************************************/
+
+/****   Dropped 8-3-14   ****/
+    -- tblSnapAdjustedMonthlySKUSales
+    CREATE NONCLUSTERED INDEX [_dta_index_tblSnapAdjustedMonthlySKUSales_7_1012198656__K1_K2_3_4_5] ON [dbo].[tblSnapAdjustedMonthlySKUSales] 
+    ([iYearMonth] ASC,[ixSKU] ASC)
+    INCLUDE ( [AdjustedSales],[AdjustedQTYSold],[AdjustedGP]) WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+
+    CREATE NONCLUSTERED INDEX [_dta_index_tblSKU_7_85575343__K1] ON [dbo].[tblSKU] 
+    (	[ixSKU] ASC)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+
+    CREATE NONCLUSTERED INDEX [_dta_index_tblVendor_7_694293533__K1_2_18] ON [dbo].[tblVendor] 
+    (	[ixVendor] ASC) INCLUDE ( [sName],[ixBuyer]) WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+
+
+/****   Dropped 7-18-14   ****/
+    -- tblOrder
+    CREATE NONCLUSTERED INDEX [IX_tblOrder_ixOrderDate] ON [dbo].[tblOrder] 
+    (	[ixOrderDate] ASC)
+    INCLUDE ( [ixCustomer],[sOrderChannel],[sOrderStatus]) WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+
+    CREATE NONCLUSTERED INDEX [IX_tblOrder_sOrderChannel_sOrderStatus] ON [dbo].[tblOrder] 
+    (	[sOrderChannel] ASC,	[sOrderStatus] ASC)
+    INCLUDE ( [ixCustomer],
+    [ixOrderDate]) WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+
+    CREATE NONCLUSTERED INDEX [_dta_index_tblOrder_7_1989582126__K16_K24_K2_K17_K21_K1_23_28] ON [dbo].[tblOrder] 
+    ([sPromoApplied] ASC,	[dtOrderDate] ASC,	[ixCustomer] ASC,	[mMerchandise] ASC,	[sOrderStatus] ASC,	[ixOrder] ASC)
+    INCLUDE ( [mMerchandiseCost],
+    [mPromoDiscount]) WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+
+    CREATE NONCLUSTERED INDEX [_dta_index_tblOrder_7_1989582126__K2_K24_K21_K17] ON [dbo].[tblOrder] 
+    (	[ixCustomer] ASC,	[dtOrderDate] ASC,	[sOrderStatus] ASC,	[mMerchandise] ASC )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+
+    CREATE NONCLUSTERED INDEX [_dta_index_tblOrder_7_1989582126__K3_K21_K17_K1] ON [dbo].[tblOrder] 
+    (	[ixOrderDate] ASC,	[sOrderStatus] ASC,	[mMerchandise] ASC,	[ixOrder] ASC
+    )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+
+     CREATE NONCLUSTERED INDEX _dta_index_tblOrder_16_357576312__K3_K2_K8_K21_17_22 ON dbo.tblOrder (  ixOrderDate ASC  , ixCustomer ASC  , sOrderChannel ASC  , sOrderStatus ASC  )   INCLUDE ( mMerchandise , flgIsBackorder )  WITH (  PAD_INDEX = OFF ,FILLFACTOR = 100  ,SORT_IN_TEMPDB = OFF , IGNORE_DUP_KEY = OFF , STATISTICS_NORECOMPUTE = OFF , DROP_EXISTING = ON , ONLINE = OFF , ALLOW_ROW_LOCKS = ON , ALLOW_PAGE_LOCKS = ON  ) ON [PRIMARY ] 
+     CREATE NONCLUSTERED INDEX _dta_index_tblOrder_5_357576312__K1_K21_K7_K8_K3_22 ON dbo.tblOrder (  ixOrder ASC  , sOrderStatus ASC  , sOrderType ASC  , sOrderChannel ASC  , ixOrderDate ASC  )   INCLUDE ( flgIsBackorder )  WITH (  PAD_INDEX = OFF ,FILLFACTOR = 100  ,SORT_IN_TEMPDB = OFF , IGNORE_DUP_KEY = OFF , STATISTICS_NORECOMPUTE = OFF , DROP_EXISTING = ON , ONLINE = OFF , ALLOW_ROW_LOCKS = ON , ALLOW_PAGE_LOCKS = ON  ) ON [PRIMARY ] 
+     CREATE NONCLUSTERED INDEX _dta_index_tblOrder_7_1989582126__K2_K1_K17_K23_K25_K21_K8_K12_K7 ON dbo.tblOrder (  ixCustomer ASC  , ixOrder ASC  , mMerchandise ASC  , mMerchandiseCost ASC  , dtShippedDate ASC  , sOrderStatus ASC  , sOrderChannel ASC  , sSourceCodeGiven ASC  , sOrderType ASC  )   WITH (  PAD_INDEX = OFF ,FILLFACTOR = 100  ,SORT_IN_TEMPDB = OFF , IGNORE_DUP_KEY = OFF , STATISTICS_NORECOMPUTE = OFF , DROP_EXISTING = ON , ONLINE = OFF , ALLOW_ROW_LOCKS = ON , ALLOW_PAGE_LOCKS = ON  ) ON [PRIMARY ] 
+     CREATE NONCLUSTERED INDEX _dta_index_tblOrder_7_1989582126__K7_K21_K1 ON dbo.tblOrder (  sOrderType ASC  , sOrderStatus ASC  , ixOrder ASC  )   WITH (  PAD_INDEX = OFF ,FILLFACTOR = 100  ,SORT_IN_TEMPDB = OFF , IGNORE_DUP_KEY = OFF , STATISTICS_NORECOMPUTE = OFF , DROP_EXISTING = ON , ONLINE = OFF , ALLOW_ROW_LOCKS = ON , ALLOW_PAGE_LOCKS = ON  ) ON [PRIMARY ] 
+     CREATE NONCLUSTERED INDEX IX_tblOrder_sOptimalShipOrigination_dtShippedDate ON dbo.tblOrder (  sOptimalShipOrigination ASC  , dtShippedDate ASC  )   INCLUDE ( ixOrder , ixOrderDate , sShipToZip )  WITH (  PAD_INDEX = OFF ,FILLFACTOR = 100  ,SORT_IN_TEMPDB = OFF , IGNORE_DUP_KEY = OFF , STATISTICS_NORECOMPUTE = OFF , DROP_EXISTING = ON , ONLINE = OFF , ALLOW_ROW_LOCKS = ON , ALLOW_PAGE_LOCKS = ON  ) ON [PRIMARY ] 
+ 
+ 
+    --tblOrerLine
+    CREATE NONCLUSTERED INDEX [_dta_index_tblOrderLine_5_1138103095__K14_K1_K3_K9_8] ON [dbo].[tblOrderLine] 
+    (	[flgKitComponent] ASC,	[ixOrder] ASC,	[ixSKU] ASC,	[flgLineStatus] ASC)
+    INCLUDE ( [mExtendedPrice]) WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+
+    -- other tables
+     CREATE NONCLUSTERED INDEX IX_tblBOMTransferMaster_flgReverseBOM_dtCanceledDate ON dbo.tblBOMTransferMaster (  flgReverseBOM ASC  , dtCanceledDate ASC  )   WITH (  PAD_INDEX = OFF ,FILLFACTOR = 100  ,SORT_IN_TEMPDB = OFF , IGNORE_DUP_KEY = OFF , STATISTICS_NORECOMPUTE = OFF , DROP_EXISTING = ON , ONLINE = OFF , ALLOW_ROW_LOCKS = ON , ALLOW_PAGE_LOCKS = ON  ) ON [PRIMARY ] 
+     CREATE NONCLUSTERED INDEX IX_tblCatalogDetail_ixSKU ON dbo.tblCatalogDetail (  ixSKU ASC  )   WITH (  PAD_INDEX = OFF ,FILLFACTOR = 100  ,SORT_IN_TEMPDB = OFF , IGNORE_DUP_KEY = OFF , STATISTICS_NORECOMPUTE = OFF , DROP_EXISTING = ON , ONLINE = OFF , ALLOW_ROW_LOCKS = ON , ALLOW_PAGE_LOCKS = ON  ) ON [PRIMARY ] 
+     CREATE NONCLUSTERED INDEX _dta_index_tblCreditMemoMaster_7_117575457__K8_K10_K4_K1 ON dbo.tblCreditMemoMaster (  dtCreateDate ASC  , ixOrderTaker ASC  , ixCreateDate ASC  , ixCreditMemo ASC  )   WITH (  PAD_INDEX = OFF ,FILLFACTOR = 100  ,SORT_IN_TEMPDB = OFF , IGNORE_DUP_KEY = OFF , STATISTICS_NORECOMPUTE = OFF , DROP_EXISTING = ON , ONLINE = OFF , ALLOW_ROW_LOCKS = ON , ALLOW_PAGE_LOCKS = ON  ) ON [PRIMARY ] 
+     CREATE NONCLUSTERED INDEX IX_tblCreditMemoMaster_ixCreditMemo ON dbo.tblCreditMemoMaster (  ixCreditMemo ASC  )   WITH (  PAD_INDEX = OFF ,FILLFACTOR = 100  ,SORT_IN_TEMPDB = OFF , IGNORE_DUP_KEY = OFF , STATISTICS_NORECOMPUTE = OFF , DROP_EXISTING = ON , ONLINE = OFF , ALLOW_ROW_LOCKS = ON , ALLOW_PAGE_LOCKS = ON  ) ON [PRIMARY ] 
+     CREATE NONCLUSTERED INDEX IX_tblInventoryReceipt_ixInventoryReceipt ON dbo.tblInventoryReceipt (  ixInventoryReceipt ASC  )   WITH (  PAD_INDEX = OFF ,FILLFACTOR = 100  ,SORT_IN_TEMPDB = OFF , IGNORE_DUP_KEY = OFF , STATISTICS_NORECOMPUTE = OFF , DROP_EXISTING = ON , ONLINE = OFF , ALLOW_ROW_LOCKS = ON , ALLOW_PAGE_LOCKS = ON  ) ON [PRIMARY ] 
+     CREATE NONCLUSTERED INDEX IX_tblInventoryReceipt_ixSKU ON dbo.tblInventoryReceipt (  ixSKU ASC  )   INCLUDE ( ixReceiver , iQuantityReceived )  WITH (  PAD_INDEX = OFF ,FILLFACTOR = 100  ,SORT_IN_TEMPDB = OFF , IGNORE_DUP_KEY = OFF , STATISTICS_NORECOMPUTE = OFF , DROP_EXISTING = ON , ONLINE = OFF , ALLOW_ROW_LOCKS = ON , ALLOW_PAGE_LOCKS = ON  ) ON [PRIMARY ] 
+     CREATE NONCLUSTERED INDEX IX_tblReceivingWorksheet_ixReceivingWorksheet ON dbo.tblReceivingWorksheet (  ixReceivingWorksheet ASC  )   WITH (  PAD_INDEX = OFF ,FILLFACTOR = 100  ,SORT_IN_TEMPDB = OFF , IGNORE_DUP_KEY = OFF , STATISTICS_NORECOMPUTE = OFF , DROP_EXISTING = ON , ONLINE = OFF , ALLOW_ROW_LOCKS = ON , ALLOW_PAGE_LOCKS = ON  ) ON [PRIMARY ] 
+     CREATE NONCLUSTERED INDEX _dta_index_tblSnapAdjustedMonthlySKUSales_7_1012198656__K1_K2_3_4_5_6 ON dbo.tblSnapAdjustedMonthlySKUSales (  iYearMonth ASC  , ixSKU ASC  )   INCLUDE ( AdjustedSales , AdjustedQTYSold , AdjustedGP , AVGInvCost )  WITH (  PAD_INDEX = OFF ,FILLFACTOR = 100  ,SORT_IN_TEMPDB = OFF , IGNORE_DUP_KEY = OFF , STATISTICS_NORECOMPUTE = OFF , DROP_EXISTING = ON , ONLINE = OFF , ALLOW_ROW_LOCKS = ON , ALLOW_PAGE_LOCKS = ON  ) ON [PRIMARY ] 
+     CREATE NONCLUSTERED INDEX _dta_index_tblSnapAdjustedMonthlySKUSales_NEW ON dbo.tblSnapAdjustedMonthlySKUSales (  iYearMonth ASC  , ixSKU ASC  )   INCLUDE ( AdjustedSales , AdjustedQTYSold , AdjustedGP , AVGInvCost )  WITH (  PAD_INDEX = OFF ,FILLFACTOR = 100  ,SORT_IN_TEMPDB = OFF , IGNORE_DUP_KEY = OFF , STATISTICS_NORECOMPUTE = OFF , DROP_EXISTING = ON , ONLINE = OFF , ALLOW_ROW_LOCKS = ON , ALLOW_PAGE_LOCKS = ON  ) ON [PRIMARY ] 
+     CREATE NONCLUSTERED INDEX _dta_index_tblSnapAdjustedMonthlySKUSales_NEW2 ON dbo.tblSnapAdjustedMonthlySKUSales (  iYearMonth ASC  , ixSKU ASC  )   INCLUDE ( AdjustedSales , AdjustedQTYSold , AdjustedGP )  WITH (  PAD_INDEX = OFF ,FILLFACTOR = 100  ,SORT_IN_TEMPDB = OFF , IGNORE_DUP_KEY = OFF , STATISTICS_NORECOMPUTE = OFF , DROP_EXISTING = ON , ONLINE = OFF , ALLOW_ROW_LOCKS = ON , ALLOW_PAGE_LOCKS = ON  ) ON [PRIMARY ] 
+      
+ 
+
+/****   Dropped 7-17-14   ****/
+    CREATE NONCLUSTERED INDEX [_dta_index_tblSKU_7_85575343__K9_1] ON [dbo].[tblSKU] 
+    ([ixPGC] ASC)
+    INCLUDE ( [ixSKU]) WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+
+    CREATE NONCLUSTERED INDEX [_dta_index_tblSKU_7_1326627769__K1_K21] ON [dbo].[tblSKU] 
+    ([ixSKU] ASC,
+     [sBaseIndex] ASC)
+     WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+
+    CREATE NONCLUSTERED INDEX [_dta_index_tblCustomer_7_213575799__K1] ON [dbo].[tblCustomer] 
+    ( [ixCustomer] ASC
+    )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+

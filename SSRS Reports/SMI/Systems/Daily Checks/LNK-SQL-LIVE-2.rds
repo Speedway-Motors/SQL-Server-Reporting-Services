@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="LNK-SQL-LIVE-2">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source="LNK-SQL-LIVE-2";Initial Catalog="SMI Reporting"</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>2ce2f2f7-f948-4018-af4a-adc1dba421c9</DataSourceID>
+</RptDataSource>

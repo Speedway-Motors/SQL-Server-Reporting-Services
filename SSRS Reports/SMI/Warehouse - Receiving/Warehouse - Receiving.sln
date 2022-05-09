@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Warehouse - Receiving", "Warehouse - Receiving.rptproj", "{44817B32-3941-4CAC-ACEF-F948D8F38C27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Production|Default = Production|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44817B32-3941-4CAC-ACEF-F948D8F38C27}.Debug|Default.ActiveCfg = Debug
+		{44817B32-3941-4CAC-ACEF-F948D8F38C27}.Debug|Default.Build.0 = DebugLocal
+		{44817B32-3941-4CAC-ACEF-F948D8F38C27}.Debug|Default.Deploy.0 = DebugLocal
+		{44817B32-3941-4CAC-ACEF-F948D8F38C27}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{44817B32-3941-4CAC-ACEF-F948D8F38C27}.DebugLocal|Default.Build.0 = DebugLocal
+		{44817B32-3941-4CAC-ACEF-F948D8F38C27}.Production|Default.ActiveCfg = Production
+		{44817B32-3941-4CAC-ACEF-F948D8F38C27}.Production|Default.Build.0 = Production
+		{44817B32-3941-4CAC-ACEF-F948D8F38C27}.Production|Default.Deploy.0 = Production
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

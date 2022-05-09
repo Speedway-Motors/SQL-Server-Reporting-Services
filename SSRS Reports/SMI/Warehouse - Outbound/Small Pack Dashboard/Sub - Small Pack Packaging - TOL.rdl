@@ -1,0 +1,1422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="table1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1.34375in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.5625in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.6875in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.6875in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.85416in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.69792in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.70833in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.70833in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.69792in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox11">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Small Pack Packaging (43-3)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox11</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>RoyalBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>9</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.43in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Name</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>RoyalBlue</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Hours</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>RoyalBlue</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox4">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Total</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Pieces*</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <ToolTip>*Total SKUs * Qty Sold</ToolTip>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>RoyalBlue</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox5">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Pieces/</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Hour</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox5</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>RoyalBlue</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox6">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Weight</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>RoyalBlue</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox7">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Weight/</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Hour</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox7</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>RoyalBlue</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox8">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Packages</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox8</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>RoyalBlue</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox9">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Pkgs/</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Hour</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox9</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>RoyalBlue</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox10">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>% of</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>BM</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox10</rd:DefaultName>
+                      <ToolTip>Benchmark % = (Packages/Hour) / 38</ToolTip>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>RoyalBlue</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.21in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Name">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Name.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Name</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Hours">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Hours.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <Format>#,0.00;(#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Hours</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="LineItems">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!LineItems.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <Format>#,0;(#,0)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>LineItems</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="ItemsPerHour">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!ItemsPerHour.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <Format>#,0.00;(#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>ItemsPerHour</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Weight">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Weight.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <Format>#,0.00;(#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Weight</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="WeightPerHour">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!WeightPerHour.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <Format>#,0.00;(#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>WeightPerHour</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Cartons">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Cartons.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <Format>#,0;(#,0)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Cartons</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="CartonsPerHour">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!CartonsPerHour.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <Format>#,0.00;(#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>CartonsPerHour</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="BenchmarkPcnt">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!BenchmarkPcnt.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <Format>0.00%</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>BenchmarkPcnt</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox20">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Totals:</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox20</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox21">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Hours.Value)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>#,0.00;(#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox21</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox22">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!LineItems.Value)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>#,0;(#,0)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox22</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox23">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!LineItems.Value, "DataSet1")/Sum(Fields!Hours.Value, "DataSet1")</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>#,0.00;(#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox23</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox24">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Weight.Value)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>#,0.00;(#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox24</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox25">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Weight.Value, "DataSet1")/Sum(Fields!Hours.Value, "DataSet1")</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>#,0.00;(#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox25</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox26">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Cartons.Value)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>#,0;(#,0)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox26</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox27">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Cartons.Value, "DataSet1")/Sum(Fields!Hours.Value, "DataSet1")</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>#,0.00;(#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox27</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox28">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=(Sum(Fields!Cartons.Value, "DataSet1")/Sum(Fields!Hours.Value, "DataSet1"))/38</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>0.00%</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox28</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
+            </TablixMember>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="table1_Details_Group">
+                <DataElementName>Detail</DataElementName>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!CartonsPerHour.Value</Value>
+                  <Direction>Descending</Direction>
+                </SortExpression>
+              </SortExpressions>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+              <DataElementName>Detail_Collection</DataElementName>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+            <TablixMember>
+              <KeepWithGroup>Before</KeepWithGroup>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSet1</DataSetName>
+        <Height>1.14in</Height>
+        <Width>6.94791in</Width>
+        <Style />
+      </Tablix>
+      <Image Name="Image1">
+        <Source>Embedded</Source>
+        <Value>RoughDraft</Value>
+        <Sizing>Fit</Sizing>
+        <Top>0.48833in</Top>
+        <Left>7.10292in</Left>
+        <Height>0.5in</Height>
+        <Width>1.17708in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+    </ReportItems>
+    <Height>1.14in</Height>
+    <Style />
+  </Body>
+  <Width>8.28in</Width>
+  <Page>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="SMISQLLIVE">
+      <DataSourceReference>SMISQLLIVE</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>0d88363f-b40f-4b17-ba85-87d41ff570ea</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>SMISQLLIVE</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Employee">
+            <Value>=Parameters!Employee.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>/*
+DECLARE @StartDate datetime,    @EndDate datetime,      @Employee varchar(15)
+
+SELECT @StartDate = '06/03/20', @EndDate = '06/03/20',  @Employee = 'BMN'  
+*/
+-- Small Pack Packing "43-3" for TOL
+SELECT E.sFirstname + ' ' + E.sLastname AS Name
+     , DTJT.ixEmployee
+     , SUM(ISNULL((DTJT.iTotDailyJobTime/3600.00),0)) AS Hours
+     , ISNULL(Orders.LineItems,0) AS LineItems
+     , ISNULL(Orders.LineItems,0)/(SUM(ISNULL((DTJT.iTotDailyJobTime/3600.00),0))) AS ItemsPerHour
+     , ISNULL(Orders.Weight,0) AS Weight
+     , ISNULL(Orders.Weight,0)/(SUM(ISNULL((DTJT.iTotDailyJobTime/3600.00),0)))  AS WeightPerHour
+     , ISNULL(Orders.Cartons,0) AS Cartons
+     , ISNULL(Orders.Cartons,0)/(SUM(ISNULL((DTJT.iTotDailyJobTime/3600.00),0))) AS CartonsPerHour     
+     , (ISNULL(Orders.Cartons,0)/(SUM(ISNULL((DTJT.iTotDailyJobTime/3600.00),0))))/38 AS BenchmarkPcnt
+FROM vwDailyTotJobTime DTJT
+LEFT JOIN tblEmployee E ON E.ixEmployee = DTJT.ixEmployee
+LEFT JOIN (SELECT SUM(ISNULL(Package.Weight,0)) AS Weight
+				, ixPacker
+				, SUM(ISNULL(Lines.LineItems,0)) AS LineItems
+				, SUM(ISNULL(Package.PkgCnt,0)) AS Cartons 
+		   FROM (SELECT P.ixPacker
+		              , P.ixOrder  
+		              , COUNT(DISTINCT P.sTrackingNumber) AS PkgCnt
+		              , SUM(P.dActualWeight) AS Weight 
+		         FROM tblPackage P 
+		         LEFT JOIN tblIPAddress IP ON IP.ixIP = P.ixShippingIP
+		         LEFT JOIN tblDate D ON D.ixDate = P.ixVerificationDate
+		         WHERE D.dtDate BETWEEN @StartDate AND @EndDate --'10/11/13' AND '10/11/13' 
+		           AND IP.sGroup = 'Small Pack' 
+                   AND IP.ixLocation = 85
+		           AND (P.flgReplaced is NULL or P.flgReplaced = 0)		           
+		           --AND ixVerifier = 'AMP'
+		         GROUP BY P.ixPacker 
+		                , P.ixOrder  
+		         ) Package 
+		   LEFT JOIN (SELECT ixOrder 
+						   , SUM(OL.iQuantity) AS LineItems 
+					  FROM tblOrderLine OL 
+					  LEFT JOIN tblSKU S ON S.ixSKU = OL.ixSKU 
+					  WHERE S.flgIntangible = 0 
+				                       AND OL.flgLineStatus IN ('Shipped','Dropshipped')
+					       --AND dtOrderDate BETWEEN @StartDate AND @EndDate -- '07/08/13' AND '07/08/13'
+					  GROUP BY ixOrder
+					 ) Lines ON Lines.ixOrder = Package.ixOrder    
+		   GROUP BY ixPacker
+         ) Orders ON Orders.ixPacker = DTJT.ixEmployee      
+WHERE DTJT.sJob = '43-3' -- Small Pack Packing
+  AND DTJT.dtDate BETWEEN @StartDate AND @EndDate -- '07/08/13' AND '07/08/13'  
+  AND DTJT.ixEmployee IN (@Employee) -- = 'TCD'
+GROUP BY E.sFirstname + ' ' + E.sLastname 
+       , DTJT.ixEmployee
+       , ISNULL(Orders.LineItems,0) 
+       , ISNULL(Orders.Weight,0) 
+       , ISNULL(Orders.Cartons,0) </CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ixEmployee">
+          <DataField>ixEmployee</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Hours">
+          <DataField>Hours</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="LineItems">
+          <DataField>LineItems</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ItemsPerHour">
+          <DataField>ItemsPerHour</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Weight">
+          <DataField>Weight</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="WeightPerHour">
+          <DataField>WeightPerHour</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Cartons">
+          <DataField>Cartons</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CartonsPerHour">
+          <DataField>CartonsPerHour</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="BenchmarkPcnt">
+          <DataField>BenchmarkPcnt</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="StartDate">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>2/1/2021 12:00:00 AM</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Start Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EndDate">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>3/10/2021 12:00:00 AM</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>End Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Employee">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>GAF</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Employee</Prompt>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="RoughDraft">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>9a3913e7-e392-4697-bc28-f4faeecdbc78</rd:ReportID>
+</Report>

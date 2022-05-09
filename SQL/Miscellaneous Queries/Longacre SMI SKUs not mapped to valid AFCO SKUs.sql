@@ -1,0 +1,30 @@
+-- Longacre SMI SKUs not mapped to valid AFCO SKUs
+
+select * from tblVendorSKU
+where ixSKU = '47572593'
+
+select * from tblVendor where ixVendor = '0475'
+
+select S.ixSKU, VS.ixVendor--, dtCreateDate, dtDiscontinuedDate 
+, VS.sVendorSKU 'BAD_VendorSKU'
+from tblSKU S
+left join tblVendorSKU VS on S.ixSKU = VS.ixSKU
+where S.ixSKU in (  select ixSKU    --, ixVendor, sVendorSKU, dtDateLastSOPUpdate
+                    from tblVendorSKU
+                    where ixVendor = '0475'
+                    and sVendorSKU not in (SELECT ixSKU COLLATE SQL_Latin1_General_CP1_CI_AS 
+                                            from [AFCOReporting].dbo.tblSKU 
+                                            where flgDeletedFromSOP = 0)
+                    -- order by dtDateLastSOPUpdate
+                    )
+and VS.ixVendor = '0475'
+
+
+SELECT VS.ixSKU, sVendorSKU 'BAD_VendorSKU', VS.ixVendor,  max(dtShippedDate) 'LastShipped'
+from tblOrderLine OL 
+    left join tblVendorSKU VS on OL.ixSKU = VS.ixSKU and VS.ixVendor = '0475'
+where OL.ixSKU in 
+('3008000','45744467','45815-BLU','47522572','4752335','47523757','47542300','47544126','47544128','47544138','47544362','47544364','47544366','47544368','47544382','47544385','47544387','47544412','47544414','47544416','47544418','47544452','47544462','47544472','47544480','47544487','47544493','47544512','47544516','47544518','47544590','47544611','47544621','47544623','47544831','47544881','47544891','47544893','47544897','47546405','47546410','47546415','47546420','47546505','47546510','47546515','47546520','47546541','47546546','47550880','47550882','47568504','47572593','47572594-1','47572594GS','47572595-1','47572601-1','47572607','47572608','47572609-1','47572632','47572652','47572663','47572663.1','47572663.2','47572663.3','47572700-1','47572701-1','47572715.1','47572831','47572831.1','47572831.2','47572844','47572844.1','47572844.2','47572860','47572865','47572905','47572905.1','47572905.2','47573501','47573501.1','47573501.2','47578324','47578423','4757960','475904749','475904751','475M72601','475M72609','475M72652','60409015-BLK','60409015-BLU','60409015-PRP','60409015-RED','60411501','60411600','60411625','60450-AMB','60450-BLU','60450-RED','60450-WHT','60450600-3/4','60450604-3/4','60450606-3/4','60450608-3/4','60450610-3/4','60451-20#','60451-230','60452-AMB','60452-BLU','60452-WHT','91064501','91072411-BLK','91081501','910820-1','91086075','91086100','91086112','91086125','91086150','91086175','91086625','91086875','9109516-PLN','91364381','913650-L-2','913650-L-3OT','913650-L-4')
+GROUP BY VS.ixSKU, sVendorSKU, VS.ixVendor
+order by max(dtShippedDate) desc
+

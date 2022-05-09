@@ -1,0 +1,306 @@
+select *
+from tblKit
+order by newid()
+
+select top 10 *
+from tblSKU
+where flgIsKit = 1
+order by newid()
+
+/* some SKU's that are kits
+ixSKU	mPriceLevel1	mPriceLevel2	mPriceLevel3	mPriceLevel4	mPriceLevel5	mLatestCost	mAverageCost	ixPGC	sDescription	flgUnitOfMeasure	flgTaxable	iQAV	iQOS	ixCreateDate	dtCreateDate	ixRoyaltyVendor	ixDiscontinuedDate	dtDiscontinuedDate	flgActive	sBaseIndex	dWeight	sOriginalSource	flgAdditionalHandling	ixBrand	ixOriginalPart	ixHarmonizedTariffCode	flgIsKit	iLength	iWidth	iHeight	iMaxQOS	iRestockPoint	iCartonQuantity	flgShipAloneStatus
+7153250	299.99	299.99	299.98	299.98	299.98	0.00	0.00	2D	9" FORD E-BRAKE KIT	KT	1	0	0	15338	2009-12-28 00:00:00.000	NULL	18990	2019-12-28 00:00:00.000	1	7153250	0.011	NULL	0	10013	NULL	NULL	1	0	0	0	1	1	1	0
+91894031-DRV	56.99	56.99	56.98	56.97	56.67	0.00	0.00	PW	TOT ROD W/CAP, REAR KIT-DRV	KT	1	0	0	11778	2000-03-30 00:00:00.000	NULL	22646	2029-12-31 00:00:00.000	1	91894031	0.001	NULL	0	10013	NULL	9501005000	1	NULL	NULL	NULL	0	0	1	0
+95031038	1399.99	1399.99	1256.98	1256.97	0.00	300.00	300.00	MD	MIDGET INBRD TI .250 SCAL. KIT	KT	1	0	0	13518	2005-01-03 00:00:00.000	NULL	17170	2015-01-03 00:00:00.000	1	95031038	0.001	NULL	0	10146	NULL	8708990050	1	0	0	0	NULL	NULL	NULL	0
+2553243E	369.99	369.99	369.98	369.98	369.98	0.00	0.00	SS	COIL-OVER SHOCK KIT	KT	1	0	0	NULL	NULL	NULL	22646	2029-12-31 00:00:00.000	1	2553243E	0.001	NULL	0	10049	NULL	7320201000	1	0	0	0	0	0	1	0
+91054610-BLU	229.99	229.99	219.98	219.97	219.97	170.00	0.00	RB	DOMINATOR NOSE & FLARES	EA	1	0	0	15229	2009-09-10 00:00:00.000	NULL	18881	2019-09-10 00:00:00.000	1	91054610	0.011	NULL	0	10013	NULL	NULL	1	0	0	0	1	1	1	0
+51586530	209.99	209.99	209.98	209.97	209.97	0.00	0.00	RT	BELLHOUSING W/FREE DOWELS	KT	1	0	0	15013	2009-02-06 00:00:00.000	NULL	15040	2009-03-05 00:00:00.000	0	51586530	0.001	NULL	0	10013	NULL	NULL	1	0	0	0	1	1	1	0
+91801023	81.99	81.99	81.98	81.97	0.00	0.00	0.00	PW	REAR AXLE ASSY W/SADDLE	KT	1	0	0	12094	2001-02-09 00:00:00.000	NULL	22646	2029-12-31 00:00:00.000	1	91801023	0.001	NULL	0	10013	NULL	9501005000	1	NULL	NULL	NULL	15	4	1	0
+2553243C	369.99	369.99	369.98	369.98	369.98	0.00	0.00	SS	COIL-OVER SHOCK KIT	KT	1	0	0	NULL	NULL	NULL	22646	2029-12-31 00:00:00.000	1	2553243C	0.011	NULL	0	10049	NULL	7320201000	1	1	1	1	0	0	1	0
+91894043	52.99	52.99	52.98	52.97	52.67	0.00	0.00	PW	LATE HOT ROD COMBO KIT	KT	1	0	0	11778	2000-03-30 00:00:00.000	NULL	22646	2029-12-31 00:00:00.000	1	91894043	0.001	NULL	0	10013	NULL	9501005000	1	NULL	NULL	NULL	0	0	1	0
+91054708-CBLU	129.99	129.99	124.98	124.97	124.97	79.00	61.00	RB	MAX.DOWNFORCE NOSE ONLY	EA	1	0	0	13899	2006-01-19 00:00:00.000	NULL	17551	2016-01-19 00:00:00.000	1	91054708	0.001	NULL	0	10013	NULL	3920100000	1	0	0	0	10	0	10	0
+*/
+
+select * from tblKit 
+where ixKitSKU = '2553243C'
+
+
+
+SELECT 
+    SKU.ixSKU,
+    SKU.sDescription,
+    min(KIT.KitBuildQTY) KitBuildQTY        -- 2421 rows
+FROM tblSKU SKU
+    join (select 
+             K.ixKitSKU, 
+             (isnull(SKU.iQAV,0)/K.iQtyRequired) KitBuildQTY
+          from tblSKU SKU
+            join tblKit K on SKU.ixSKU = K.ixSKU
+         ) KIT on KIT.ixKitSKU = SKU.ixSKU
+WHERE flgIsKit = 1
+GROUP BY SKU.ixSKU,
+         SKU.sDescription
+ORDER BY KitBuildQTY  
+
+/********** with fn ************/       -- 2460 rows
+SELECT distinct
+    ixSKU,
+    sDescription,
+    dbo.GetMinKitBuildQty(ixSKU) KitBuildQTY
+FROM tblSKU 
+WHERE flgIsKit = 1
+ORDER BY  cast (dbo.GetMinKitBuildQty(ixSKU) as int) -- SKU.ixSKU
+
+
+
+
+select distinct ixSKU from tblSKU WHERE flgIsKit = 1  -- 2451
+
+
+select * from tblSKU where ixSKU = '2553243'
+
+select count(distinct ixKitSKU) QTY from tblKit -- 2460 
+select count(distinct ixSKU) QTY from tblSKU where flgIsKit = 1 -- 2451
+
+select ixSKU 
+from tblSKU
+where flgIsKit = 1
+and ixSKU not in (select ixKitSKU from tblKit)
+
+
+-- SKU in tblKit but tblSKU.flgIsKit <> 1
+select distinct ixKitSKU
+from tblKit
+where ixKitSKU not in (select ixSKU from tblSKU where flgIsKit =1 )
+/*
+91657075-SS
+91645150-SS
+91657075-PLN
+91645155
+91628901
+91639036-46
+91028907
+91645150-PLN
+91062154-BLU
+*/
+
+-- SKU in tblKit but tblSKU.flgIsKit <> 1
+select distinct ixSKU
+from tblKit
+where ixSKU not in (select ixSKU from tblSKU)
+
+select
+
+update tblSKU
+set flgIsKit = 1
+where ixSKU in ('91657075-SS','91645150-SS','91657075-PLN','91645155','91628901','91639036-46','91028907','91645150-PLN','91062154-BLU')
+
+
+
+
+
+/********** with fn ************/       -- 2460 rows
+SELECT distinct
+    ixSKU,
+    sDescription,
+    cast (dbo.GetMinKitBuildQty(ixSKU) as int) KitBuildQTY
+FROM tblSKU 
+WHERE flgIsKit = 1
+    and ixSKU in (
+                        /********** without fn ************/       -- 2460 rows
+                        SELECT 
+                            SKU.ixSKU
+                        FROM tblSKU SKU
+                            join (select 
+                                     K.ixKitSKU, 
+                                     (isnull(SKU.iQAV,0)/K.iQtyRequired) KitBuildQTY
+                                  from tblSKU SKU
+                                    join tblKit K on SKU.ixSKU COLLATE SQL_Latin1_General_CP1_CS_AS = K.ixSKU COLLATE SQL_Latin1_General_CP1_CS_AS
+                                 ) KIT on KIT.ixKitSKU COLLATE SQL_Latin1_General_CP1_CS_AS = SKU.ixSKU COLLATE SQL_Latin1_General_CP1_CS_AS
+                        WHERE flgIsKit = 1
+
+--                        ORDER BY KitBuildQTY  
+                      )
+ORDER BY  cast (dbo.GetMinKitBuildQty(ixSKU) as int) -- SKU.ixSKU
+/*
+ixSKU	sDescription	KitBuildQTY
+2104320	HI-TOP SHOES W/FREE GLOVES	NULL
+2113631	BELL ENDURANCE 2 PIECE SUIT	NULL
+2785000	COOL MAN WHEEL KIT	NULL
+4701900	TIE DOWN KIT 10,000 LB	NULL
+63029058	HARNESS SET,CLIP-IN,PULL DN	NULL
+63029059	HARNESS SET,WRAP,PULL DOWN	NULL
+63029065	HARNESS SET,WRAP,PULL UP	NULL
+63029067	HARNESS SET,WRAP,PULL DN	NULL
+63029068	HARNESS SET,CLIP-IN,PULL UP	NULL
+63029069	HARNESS SET,WRAP,PULL UP	NULL
+63029102	HARNESS SET,CLIP-IN,PULL UP	NULL
+63029106	HARNESS SET,WRAP,PULL UP	NULL
+63029108	HARNESS SET,CLIP-IN,PULL DN	NULL
+63029110	HARNESS SET,BOLT-IN,PULL DN	NULL
+63029112	HARNESS SET,WRAP,PULL DN	NULL
+63029117	HARNESS SET,BOLT-IN,PULL DN	NULL
+63029118	HARNESS SET,WRAP,PULL DN	NULL
+63029119	HARNESS SET,BOLT-IN,PULL UP	NULL
+63029120	HARNESS SET,WRAP,PULL UP	NULL
+63029200	BELT KIT-PULL-UP S/STERNUM	NULL
+63029210	BELT KIT-PULL-UP W/STERNUM	NULL
+63029220	BELT KIT-PULL-UP W/STERNUM	NULL
+63029250	BELT KIT-PULL DOWN W/STERNUM	NULL
+63029260	BELT KIT-PULL DOWN W/STERNUM	NULL
+63029270	BELT KIT- PULL DOWN W/STERNUM	NULL
+91004900	25' PLASTIC & RIVITS	NULL
+91054110	IMCA BODY KIT	NULL
+91054125	NARROW ALUM MOD HOOD W/SCOP	NULL
+910700	RIBBON WINDOW NET W/FREE GLOVE	NULL
+91070150	FULL CONTAINMENT CUSTOM SEAT	NULL
+9107121	FREE GLOVES W/$75.00 ORDER	NULL
+9107198	1 PC.PROBAN SUIT W/FREE GLOVES	NULL
+9107199	SAFETY RACING 1pc COMBO	NULL
+9107202	SAFETY RACING 2pc COMBO	NULL
+9107235	PRS !! FREE NECK BRACE DEAL	NULL
+9107250	2 LAYER GLOVES W/FREE GLOVES	NULL
+91894001	MUSTANG WHEEL KIT	NULL
+91894025	MURRAY BOAT WHEEL COMBO KIT	NULL
+91894029	ATOMIC MISL REAR WHEEL KIT	NULL
+*/
+
+select * 
+from tblKit K
+ --join tblSKU S on S.ixSKU = K.ixSKU
+where ixKitSKU in ('2104320',
+'2113631',
+'2785000',
+'4701900',
+'63029058',
+'63029059',
+'63029065',
+'63029067',
+'63029068',
+'63029069',
+'63029102',
+'63029106',
+'63029108',
+'63029110',
+'63029112',
+'63029117',
+'63029118',
+'63029119',
+'63029120',
+'63029200',
+'63029210',
+'63029220',
+'63029250',
+'63029260',
+'63029270',
+'91004900',
+'91054110',
+'91054125',
+'910700',
+'91070150',
+'9107121',
+'9107198',
+'9107199',
+'9107202',
+'9107235',
+'9107250',
+'91894001',
+'91894025',
+'91894029')
+order by ixKitSKU
+
+select * from tblSKU where ixSKU in ('63034012',
+'63032024',
+'63033000',
+'63034012',
+'63032022',
+'63033000',
+'63034012',
+'63032004',
+'63033000',
+'63034012',
+'63032002',
+'63033000',
+'63034012',
+'63029000',
+'63031012',
+'63030004WS',
+'63029004',
+'63031012',
+'63030004WS',
+'63029002',
+'63031012',
+'63030004WS',
+'63029020',
+'63031012',
+'63030004WS',
+'63029024',
+'63031012',
+'63030004WS',
+'63029022',
+'63031012',
+'63030004WS',
+'910042',
+'91004',
+'91054105',
+'91054112',
+'91054121',
+'91054124',
+'91054115',
+'91054116',
+'91054117',
+'91054118',
+'91054119',
+'91054120',
+'91054120',
+'91054121',
+'91070',
+'91071207',
+'91070146',
+'91070147',
+'91070148',
+'91071207',
+'910719',
+'91071207',
+'210432',
+'910712',
+'910719',
+'91072355',
+'210432',
+'910712',
+'91072355')
+
+
+
+/********** with fn ************/       -- 2460 rows
+SELECT distinct ixSKU, sDescription, dbo.GetMinKitBuildQty(ixSKU) KitBuildQTY
+FROM tblSKU 
+WHERE flgIsKit = 1 
+and ixSKU COLLATE SQL_Latin1_General_CP1_CS_AS not in 
+            (select ixKitSKU
+             from tblKit K
+              join tblSKUIndex ISKU on K.ixSKU COLLATE SQL_Latin1_General_CP1_CS_AS = ISKU.ixSKU COLLATE SQL_Latin1_General_CP1_CS_AS)
+ORDER BY  cast (dbo.GetMinKitBuildQty(ixSKU) as int) -- SKU.ixSKU
+
+
+
+/********** with fn ************/       -- 2460 rows
+SELECT distinct
+    ixSKU,
+    sDescription,
+    dbo.GetMinKitBuildQty(ixSKU) KitBuildQTY
+FROM tblSKU 
+WHERE flgIsKit = 1
+    and ixSKU COLLATE SQL_Latin1_General_CP1_CS_AS not in (select distinct K.ixKitSKU
+                                                          from tblKit K
+                                                             join tblSKUIndex SKUI on SKUI.ixBaseSKU = K.ixSKU)
+ORDER BY dbo.GetMinKitBuildQty(ixSKU)
+
+
+
+
+
+select distinct K.ixKitSKU
+from tblKit K
+    join tblSKUIndex SKUI on SKUI.ixBaseSKU = K.ixSKU
+

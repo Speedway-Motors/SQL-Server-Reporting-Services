@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Catalog Analysis", "Catalog Analysis.rptproj", "{B8ECCE57-D7B4-4DE6-9353-141FFB385D25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Production|Default = Production|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8ECCE57-D7B4-4DE6-9353-141FFB385D25}.Debug|Default.ActiveCfg = Debug
+		{B8ECCE57-D7B4-4DE6-9353-141FFB385D25}.Debug|Default.Build.0 = DebugLocal
+		{B8ECCE57-D7B4-4DE6-9353-141FFB385D25}.Debug|Default.Deploy.0 = DebugLocal
+		{B8ECCE57-D7B4-4DE6-9353-141FFB385D25}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{B8ECCE57-D7B4-4DE6-9353-141FFB385D25}.DebugLocal|Default.Build.0 = DebugLocal
+		{B8ECCE57-D7B4-4DE6-9353-141FFB385D25}.DebugLocal|Default.Deploy.0 = DebugLocal
+		{B8ECCE57-D7B4-4DE6-9353-141FFB385D25}.Production|Default.ActiveCfg = Production
+		{B8ECCE57-D7B4-4DE6-9353-141FFB385D25}.Production|Default.Build.0 = Production
+		{B8ECCE57-D7B4-4DE6-9353-141FFB385D25}.Production|Default.Deploy.0 = Production
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ToolsVersion="2.0">
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+  <DataSources>
+    <ProjectItem>
+      <Name>AFCO.rds</Name>
+      <FullPath>AFCO.rds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSets />
+  <Reports>
+    <ResourceProjectItem>
+      <Name>AFCO-230x70.jpg</Name>
+      <FullPath>AFCO-230x70.jpg</FullPath>
+      <MimeType>image/jpeg</MimeType>
+    </ResourceProjectItem>
+    <ProjectItem>
+      <Name>Customer PGC Graph Comparison.rdl</Name>
+      <FullPath>Customer PGC Graph Comparison.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Daily Sales Summary.rdl</Name>
+      <FullPath>Daily Sales Summary.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Items by Catalog.rdl</Name>
+      <FullPath>Items by Catalog.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Major Product Code Sales by Market.rdl</Name>
+      <FullPath>Major Product Code Sales by Market.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Major Sales Code Performance.rdl</Name>
+      <FullPath>Major Sales Code Performance.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales and Margin by Market Code.rdl</Name>
+      <FullPath>Sales and Margin by Market Code.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales by Market Code.rdl</Name>
+      <FullPath>Sales by Market Code.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales by State by Market.rdl</Name>
+      <FullPath>Sales by State by Market.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Top 20 Customer Comparison.rdl</Name>
+      <FullPath>Top 20 Customer Comparison.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>MPGC Sales by Market - TEMP.rdl</Name>
+      <FullPath>MPGC Sales by Market - TEMP.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Report1.rdl</Name>
+      <FullPath>Report1.rdl</FullPath>
+    </ProjectItem>
+  </Reports>
+  <Configurations>
+    <Configuration>
+      <Name>Debug</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Debug</OutputPath>
+        <TargetServerVersion>SSRS2008</TargetServerVersion>
+        <TargetServerURL>http://lnk-dw1/ReportServer</TargetServerURL>
+        <TargetFolder>AFCO/Marketing</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>DebugLocal</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\DebugLocal</OutputPath>
+        <TargetServerVersion>SSRS2008</TargetServerVersion>
+        <TargetFolder>Marketing</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>Production</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Production</OutputPath>
+        <TargetServerVersion>SSRS2008</TargetServerVersion>
+        <TargetFolder>Marketing</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>

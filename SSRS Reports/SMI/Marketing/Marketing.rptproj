@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ToolsVersion="2.0">
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+  <DataSources>
+    <ProjectItem>
+      <Name>dw.speedway2.com.rds</Name>
+      <FullPath>dw.speedway2.com.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SMI.rds</Name>
+      <FullPath>SMI.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SMIDW.rds</Name>
+      <FullPath>SMIDW.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SMISQLLIVE.rds</Name>
+      <FullPath>SMISQLLIVE.rds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSets />
+  <Reports>
+    <ProjectItem>
+      <Name>12 Month Sales by Vendor's State.rdl</Name>
+      <FullPath>12 Month Sales by Vendor's State.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Abandoned Cart by Package Type.rdl</Name>
+      <FullPath>Abandoned Cart by Package Type.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Catalog Performance Summary - SCGiven (temp).rdl</Name>
+      <FullPath>Catalog Performance Summary - SCGiven (temp).rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Catalog Performance Summary.rdl</Name>
+      <FullPath>Catalog Performance Summary.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Catalog Requests by Market and Month.rdl</Name>
+      <FullPath>Catalog Requests by Market and Month.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Catalog Requests by Market and Week.rdl</Name>
+      <FullPath>Catalog Requests by Market and Week.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Crate Engine SKUs.rdl</Name>
+      <FullPath>Crate Engine SKUs.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Daily Catalog Requests by Market.rdl</Name>
+      <FullPath>Daily Catalog Requests by Market.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Deceased Exempt (Always Mail).rdl</Name>
+      <FullPath>Deceased Exempt (Always Mail).rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Edelbrock and Russell Performance SKUs.rdl</Name>
+      <FullPath>Edelbrock and Russell Performance SKUs.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Garage Sale SKUs that have Qty.rdl</Name>
+      <FullPath>Garage Sale SKUs that have Qty.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Gift Card Customers.rdl</Name>
+      <FullPath>Gift Card Customers.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Guaranteed Delivery Success Rate.rdl</Name>
+      <FullPath>Guaranteed Delivery Success Rate.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Items by Catalog.rdl</Name>
+      <FullPath>Items by Catalog.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Orders that did not meet Guaranteed Delivery Date.rdl</Name>
+      <FullPath>Orders that did not meet Guaranteed Delivery Date.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>PGC Sales.rdl</Name>
+      <FullPath>PGC Sales.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Promo Sales.rdl</Name>
+      <FullPath>Promo Sales.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Purchase Specific Email Test List.rdl</Name>
+      <FullPath>Purchase Specific Email Test List.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Retargeting Customer Groups.rdl</Name>
+      <FullPath>Retargeting Customer Groups.rdl</FullPath>
+    </ProjectItem>
+    <ResourceProjectItem>
+      <Name>Rough Draft.jpg</Name>
+      <FullPath>Rough Draft.jpg</FullPath>
+      <MimeType>image/jpeg</MimeType>
+    </ResourceProjectItem>
+    <ProjectItem>
+      <Name>Sales by State by Market.rdl</Name>
+      <FullPath>Sales by State by Market.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SKU Sales Summary.rdl</Name>
+      <FullPath>SKU Sales Summary.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Source Code Customer Offer Counts by Catalog.rdl</Name>
+      <FullPath>Source Code Customer Offer Counts by Catalog.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Source Code Sales.rdl</Name>
+      <FullPath>Source Code Sales.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Speedway Inventory of Active APG SKUs by Location.rdl</Name>
+      <FullPath>Speedway Inventory of Active APG SKUs by Location.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Speedway Sales of AFCO SKUs.rdl</Name>
+      <FullPath>Speedway Sales of AFCO SKUs.rdl</FullPath>
+    </ProjectItem>
+    <ResourceProjectItem>
+      <Name>Speedway-210x72.jpg</Name>
+      <FullPath>Speedway-210x72.jpg</FullPath>
+      <MimeType>image/jpeg</MimeType>
+    </ResourceProjectItem>
+    <ProjectItem>
+      <Name>TSS Order Detail.rdl</Name>
+      <FullPath>TSS Order Detail.rdl</FullPath>
+    </ProjectItem>
+  </Reports>
+  <Configurations>
+    <Configuration>
+      <Name>Debug</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Debug</OutputPath>
+        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+        <TargetServerURL>http://lnk-sql-live-1/Reports/</TargetServerURL>
+        <TargetFolder>Speedway/Marketing</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+        <StartItem>Copy of Sales Summary - sub1 Daily.rdl</StartItem>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>DebugLocal</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\DebugLocal</OutputPath>
+        <TargetServerVersion>SSRS2008</TargetServerVersion>
+        <TargetFolder>Marketing</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>Production</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Production</OutputPath>
+        <TargetServerVersion>SSRS2008</TargetServerVersion>
+        <TargetFolder>Marketing</TargetFolder>
+        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>

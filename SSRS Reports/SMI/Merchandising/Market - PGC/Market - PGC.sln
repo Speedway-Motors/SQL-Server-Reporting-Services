@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Market - PGC", "Market - PGC.rptproj", "{F4B944A3-06D9-4228-BDE3-A786DF0CAC9E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Production|Default = Production|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4B944A3-06D9-4228-BDE3-A786DF0CAC9E}.Debug|Default.ActiveCfg = Debug
+		{F4B944A3-06D9-4228-BDE3-A786DF0CAC9E}.Debug|Default.Build.0 = DebugLocal
+		{F4B944A3-06D9-4228-BDE3-A786DF0CAC9E}.Debug|Default.Deploy.0 = DebugLocal
+		{F4B944A3-06D9-4228-BDE3-A786DF0CAC9E}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{F4B944A3-06D9-4228-BDE3-A786DF0CAC9E}.DebugLocal|Default.Build.0 = DebugLocal
+		{F4B944A3-06D9-4228-BDE3-A786DF0CAC9E}.Production|Default.ActiveCfg = Production
+		{F4B944A3-06D9-4228-BDE3-A786DF0CAC9E}.Production|Default.Build.0 = Production
+		{F4B944A3-06D9-4228-BDE3-A786DF0CAC9E}.Production|Default.Deploy.0 = Production
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

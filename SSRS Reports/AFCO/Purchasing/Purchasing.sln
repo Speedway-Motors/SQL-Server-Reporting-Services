@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Purchasing", "Purchasing.rptproj", "{0492830F-1DFD-46FC-8F9C-683D85A147CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Production|Default = Production|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0492830F-1DFD-46FC-8F9C-683D85A147CD}.Debug|Default.ActiveCfg = Debug
+		{0492830F-1DFD-46FC-8F9C-683D85A147CD}.Debug|Default.Build.0 = Debug
+		{0492830F-1DFD-46FC-8F9C-683D85A147CD}.Debug|Default.Deploy.0 = Debug
+		{0492830F-1DFD-46FC-8F9C-683D85A147CD}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{0492830F-1DFD-46FC-8F9C-683D85A147CD}.DebugLocal|Default.Build.0 = DebugLocal
+		{0492830F-1DFD-46FC-8F9C-683D85A147CD}.DebugLocal|Default.Deploy.0 = DebugLocal
+		{0492830F-1DFD-46FC-8F9C-683D85A147CD}.Production|Default.ActiveCfg = Production
+		{0492830F-1DFD-46FC-8F9C-683D85A147CD}.Production|Default.Build.0 = Production
+		{0492830F-1DFD-46FC-8F9C-683D85A147CD}.Production|Default.Deploy.0 = Production
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {845F79EC-BA47-4C1A-8194-BA2B5CADF081}
+	EndGlobalSection
+EndGlobal

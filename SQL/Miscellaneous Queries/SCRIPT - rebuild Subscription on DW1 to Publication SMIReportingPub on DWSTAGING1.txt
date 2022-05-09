@@ -1,0 +1,102 @@
+-- Adding the transactional pull subscription
+
+/****** Begin: Script to be run at Subscriber ******/
+use [SMI Reporting]
+exec sp_addpullsubscription @publisher = N'LNK-DWSTAGING1', @publication = N'SMIReportingPub', @publisher_db = N'SMI Reporting', @independent_agent = N'True', @subscription_type = N'pull', @description = N'', @update_mode = N'read only', @immediate_sync = 0
+
+GO
+
+------ Script Date: LNK-DWSTAGING1-SMI Reporting-SMIReportingPub-LNK-DW1-SMI Reporting-9A4DAF0F-8D49-45B4-B5F5-E70662DEFA23 ------
+begin transaction 
+  DECLARE @JobID BINARY(16)
+  DECLARE @ReturnCode INT
+  SELECT @ReturnCode = 0
+if (select count(*) from msdb.dbo.syscategories where name = N'REPL-Distribution') < 1 
+  execute msdb.dbo.sp_add_category N'REPL-Distribution'
+
+select @JobID = job_id from msdb.dbo.sysjobs where (name = N'LNK-DWSTAGING1-SMI Reporting-SMIReportingPub-LNK-DW1-SMI Reporting-9A4DAF0F-8D49-45B4-B5F5-E70662DEFA23')
+if (@JobID is NULL)
+BEGIN
+  execute @ReturnCode = msdb.dbo.sp_add_job @job_id = @JobID OUTPUT, @job_name = N'LNK-DWSTAGING1-SMI Reporting-SMIReportingPub-LNK-DW1-SMI Reporting-9A4DAF0F-8D49-45B4-B5F5-E70662DEFA23', @enabled = 1, @description = N'No description available.', @start_step_id = 1, @category_name = N'REPL-Distribution', @owner_login_name = N'SPEEDWAYMOTORS\mssqldw', @notify_level_eventlog = 2, @notify_level_email = 0, @notify_level_netsend = 0, @notify_level_page = 0, @delete_level = 0
+  if (@@ERROR <> 0 OR @ReturnCode <> 0) goto QuitWithRollback
+
+  execute @ReturnCode = msdb.dbo.sp_add_jobstep @job_id = @JobID, @step_id = 1, @step_name = N'Run agent.', @subsystem = N'Distribution', @command = N'-Publisher LNK-DWSTAGING1 -PublisherDB [SMI Reporting] -Publication [SMIReportingPub] -Distributor [LNK-DWSTAGING1] -SubscriptionType 1 -Subscriber [LNK-DW1] -SubscriberSecurityMode 1 -SubscriberDB [SMI Reporting]   ', @cmdexec_success_code = 0, @on_success_action = 1, @on_success_step_id = 0, @on_fail_action = 2, @on_fail_step_id = 0, @server = N'LNK-DW1', @database_name = N'SMI Reporting', @retry_attempts = 10, @retry_interval = 1, @os_run_priority = 0, @flags = 0
+  if (@@ERROR <> 0 OR @ReturnCode <> 0) goto QuitWithRollback
+
+  execute @ReturnCode = msdb.dbo.sp_update_job @job_id = @JobID, @start_step_id = 1
+  if (@@ERROR <> 0 OR @ReturnCode <> 0) goto QuitWithRollback
+
+  execute @ReturnCode = msdb.dbo.sp_add_jobschedule @job_id = @JobID, @name = N'Replication agent schedule.', @enabled = 1, @freq_type = 4, @freq_interval = 1, @freq_subday_type = 8, @freq_subday_interval = 1, @freq_relative_interval = 1, @freq_recurrence_factor = 0, @active_start_date = 20140823, @active_end_date = 99991231, @active_start_time = 70500, @active_end_time = 210500
+  if (@@ERROR <> 0 OR @ReturnCode <> 0) goto QuitWithRollback
+
+  execute @ReturnCode = msdb.dbo.sp_add_jobserver @job_id = @JobID, @server_name = N'LNK-DW1'
+  if (@@ERROR <> 0 OR @ReturnCode <> 0) goto QuitWithRollback
+
+END
+
+commit transaction 
+goto EndSave 
+QuitWithRollback: 
+  if (@@TRANCOUNT > 0) rollback transaction 
+EndSave:
+GO
+
+
+exec sp_addpullsubscription_agent @publisher = N'LNK-DWSTAGING1', @publisher_db = N'SMI Reporting', @publication = N'SMIReportingPub', @distributor = N'LNK-DWSTAGING1', @distributor_security_mode = 1, @distributor_login = N'', @distributor_password = N'', @enabled_for_syncmgr = N'False', @alt_snapshot_folder = N'', @working_directory = N'', @use_ftp = N'False', @job_login = N'speedwaymotors\mssqldw', @job_password = null, @publication_type = 0, @job_name = N'LNK-DWSTAGING1-SMI Reporting-SMIReportingPub-LNK-DW1-SMI Reporting-9A4DAF0F-8D49-45B4-B5F5-E70662DEFA23'
+GO
+/****** End: Script to be run at Subscriber ******/
+
+/****** Begin: Script to be run at Publisher ******/
+/*use [SMI Reporting]
+-- Parameter @sync_type is scripted as 'automatic', please adjust when appropriate.
+exec sp_addsubscription @publication = N'SMIReportingPub', @subscriber = N'LNK-DW1', @destination_db = N'SMI Reporting', @sync_type = N'Automatic', @subscription_type = N'pull', @update_mode = N'read only'
+*/
+/****** End: Script to be run at Publisher ******/
+
+
+
+
+
+
+
+
+
+
+
+-- Dropping the transactional pull subscription
+
+/****** Begin: Script to be run at Subscriber ******/
+use [SMI Reporting]
+exec sp_droppullsubscription @publisher = N'LNK-DWSTAGING1', @publisher_db = N'SMI Reporting', @publication = N'SMIReportingPub'
+GO
+
+/****** End: Script to be run at Subscriber ******/
+
+/****** Begin: Script to be run at Publisher ******/
+/*use [SMI Reporting]
+exec sp_dropsubscription @publication =N'SMIReportingPub', @subscriber = N'LNK-DW1', @article = N'all', @destination_db = N'SMI Reporting'
+*/
+/****** End: Script to be run at Publisher ******/
+
+
+
+
+
+
+-- Adding the transactional pull subscription
+
+/****** Begin: Script to be run at Subscriber ******/
+use [SMI Reporting]
+exec sp_addpullsubscription @publisher = N'LNK-DWSTAGING1', @publication = N'SMIReportingPub', @publisher_db = N'SMI Reporting', @independent_agent = N'True', @subscription_type = N'pull', @description = N'', @update_mode = N'read only', @immediate_sync = 0
+
+exec sp_addpullsubscription_agent @publisher = N'LNK-DWSTAGING1', @publisher_db = N'SMI Reporting', @publication = N'SMIReportingPub', @distributor = N'LNK-DWSTAGING1', @distributor_security_mode = 1, @distributor_login = N'', @distributor_password = N'', @enabled_for_syncmgr = N'False', @frequency_type = 4, @frequency_interval = 1, @frequency_relative_interval = 1, @frequency_recurrence_factor = 0, @frequency_subday = 8, @frequency_subday_interval = 1, @active_start_time_of_day = 70500, @active_end_time_of_day = 210500, @active_start_date = 0, @active_end_date = 0, @alt_snapshot_folder = N'', @working_directory = N'', @use_ftp = N'False', @job_login = N'speedwaymotors\mssqldw', @job_password = null, @publication_type = 0
+GO
+/****** End: Script to be run at Subscriber ******/
+
+/****** Begin: Script to be run at Publisher ******/
+/*use [SMI Reporting]
+-- Parameter @sync_type is scripted as 'automatic', please adjust when appropriate.
+exec sp_addsubscription @publication = N'SMIReportingPub', @subscriber = N'LNK-DW1', @destination_db = N'SMI Reporting', @sync_type = N'Automatic', @subscription_type = N'pull', @update_mode = N'read only'
+*/
+/****** End: Script to be run at Publisher ******/
+
