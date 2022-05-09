@@ -1,6 +1,6 @@
 -- CURRENT SQL CONNECTIONS
 
-SELECT @@SPID as 'Current SPID' -- 125 
+SELECT @@SPID as 'Current SPID' -- 132 
 
 -- SPIDS with OPEN TRANSACTIONS  
 SELECT * FROM sys.sysprocesses  WHERE open_tran = 1 and program_name <> 'Replication Distribution Agent' and program_name NOT LIKE 'Repl-LogReader%' 
