@@ -47,8 +47,6 @@
   </PropertyGroup>
   <ItemGroup>
     <DataSource Include="dw.speedway2.com.rds" />
-    <DataSource Include="SMI.rds" />
-    <DataSource Include="SMIDW.rds" />
     <DataSource Include="SMISQLLIVE.rds" />
   </ItemGroup>
   <ItemGroup>

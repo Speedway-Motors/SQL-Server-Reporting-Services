@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Accounting", "Accounting.rptproj", "{7205F5BC-65ED-4F6C-A36A-4F750E9FB685}"
 EndProject
 Global
@@ -11,8 +13,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{7205F5BC-65ED-4F6C-A36A-4F750E9FB685}.Debug|Default.ActiveCfg = Debug
-		{7205F5BC-65ED-4F6C-A36A-4F750E9FB685}.Debug|Default.Build.0 = DebugLocal
-		{7205F5BC-65ED-4F6C-A36A-4F750E9FB685}.Debug|Default.Deploy.0 = DebugLocal
+		{7205F5BC-65ED-4F6C-A36A-4F750E9FB685}.Debug|Default.Build.0 = Debug
+		{7205F5BC-65ED-4F6C-A36A-4F750E9FB685}.Debug|Default.Deploy.0 = Debug
 		{7205F5BC-65ED-4F6C-A36A-4F750E9FB685}.DebugLocal|Default.ActiveCfg = DebugLocal
 		{7205F5BC-65ED-4F6C-A36A-4F750E9FB685}.DebugLocal|Default.Build.0 = DebugLocal
 		{7205F5BC-65ED-4F6C-A36A-4F750E9FB685}.Production|Default.ActiveCfg = Production
@@ -21,5 +23,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {68E92EC3-8450-4A95-9129-23B871667DF2}
 	EndGlobalSection
 EndGlobal
