@@ -17,7 +17,7 @@
         left join tblSKU SKU on SKU.ixSKU = ST.ixSKU COLLATE SQL_Latin1_General_CP1_CI_AS
         left join tblTime T on T.ixTime = ST.ixTime
     WHERE ST.ixDate >=19840 --	04/26/2022 all DELETED SKUs have been checked prior to this date
-    -- ST.ixSKU in ('91088024-99','67404604')
+    -- ST.ixSKU in ('676015750')
         and ST.sTransactionType = 'DELETE'
         and ST.sLocation = 99
         and SKU.flgDeletedFromSOP = 0
@@ -88,7 +88,7 @@ ORDER BY  S.dtDateLastSOPUpdate
 
 /******** USING hard-coded list of SKUs ***********/
         -- GLOBALLY REPLACE manual list below for SKUs to check/update
-        ('91088024-99','67404604')
+        ('676015750')
 		
 
         -- LATEST updates and current status
@@ -100,7 +100,7 @@ ORDER BY  S.dtDateLastSOPUpdate
         FROM tblSnapshotSKU SS         
             left join tblDate D on SS.ixDate = D.ixDate
             left join tblSKU S on SS.ixSKU = S.ixSKU
-        WHERE SS.ixSKU in   ('91088024-99','67404604')
+        WHERE SS.ixSKU in   ('676015750')
         GROUP BY SS.ixSKU, S.dtCreateDate, S.flgDeletedFromSOP, S.flgActive, S.ixCreator,  S.dtDateLastSOPUpdate, S.ixTimeLastSOPUpdate 
         ORDER BY MAX(D.dtDate) 
 
@@ -109,7 +109,7 @@ ORDER BY  S.dtDateLastSOPUpdate
         SELECT OL.* FROM tblOrderLine OL 
         WHERE   ixOrder NOT LIKE 'PC%' 
             and ixOrder NOT LIKE 'Q%'
-            and ixSKU IN ('91088024-99','67404604')
+            and ixSKU IN ('676015750')
         Order by dtOrderDate desc
         
          -- SKU DELETED BY
@@ -121,7 +121,7 @@ ORDER BY  S.dtDateLastSOPUpdate
             left join tblSKU SKU on SKU.ixSKU = ST.ixSKU-- COLLATE SQL_Latin1_General_CP1_CI_AS
             left join tblTime T on T.ixTime = ST.ixTime
         WHERE --ST.ixDate >= 19822--	04/8/2022
-			ST.ixSKU in ('91088024-99','67404604')
+			ST.ixSKU in ('676015750')
            and ST.sTransactionType = 'DELETE'
            and ST.sLocation = 99
 		   and SKU.flgDeletedFromSOP = 0
@@ -137,13 +137,13 @@ ORDER BY  S.dtDateLastSOPUpdate
                     set flgDeletedFromSOP = 1, 
                         flgActive = 0 
                     WHERE ixSKU IN 
-                     ('91088024-99','67404604')
+                     ('676015750')
             ROLLBACK TRAN
     
             -- verify status updated
             SELECT ixSKU, flgDeletedFromSOP
             from tblSKU
-            where ixSKU in ('91088024-99','67404604')
+            where ixSKU in ('676015750')
             order by ixSKU
    
 
