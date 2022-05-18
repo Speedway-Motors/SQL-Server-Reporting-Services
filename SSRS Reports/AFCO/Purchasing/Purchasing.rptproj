@@ -57,16 +57,16 @@
     <Report Include="Rough Draft.jpg">
       <MimeType>image/jpeg</MimeType>
     </Report>
-    <Report Include="Shock Pick Bin Inventory.rdl" />
+    <Report Include="Shock Pick Bin Inventory - RETIRED - 5-16-2022.rdl" />
     <Report Include="SKU Detail by Vendor.rdl" />
     <Report Include="sub - Open BOM Transfers.rdl" />
     <Report Include="Vendor Purchase History.rdl" />
     <Report Include="Vendor Purchase Summary by First Received Date.rdl" />
-    <Report Include="Weekly Fill Rates Analysis.rdl" />
-    <Report Include="WFRA sub-report1 - Last Weeks Newly Out of Stock.rdl" />
-    <Report Include="WFRA sub-report2 - Top 10 BO by Qty.rdl" />
-    <Report Include="WFRA sub-report3 - Top 10 BO by ExtendedValue.rdl" />
-    <Report Include="Yesterday's Out of Stock SKUs.rdl" />
+    <Report Include="Weekly Fill Rates Analysis - RETIRED - 5-16-2022.rdl" />
+    <Report Include="WFRA sub-report1 - Last Weeks Newly Out of Stock - RETIRED - 5-16-2022.rdl" />
+    <Report Include="WFRA sub-report2 - Top 10 BO by Qty - RETIRED - 5-16-2022.rdl" />
+    <Report Include="WFRA sub-report3 - Top 10 BO by ExtendedValue - RETIRED - 5-16-2022.rdl" />
+    <Report Include="Yesterday's Out of Stock SKUs - RETIRED - 5-16-2022.rdl" />
     <Report Include="YOSS PO sub-report.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />

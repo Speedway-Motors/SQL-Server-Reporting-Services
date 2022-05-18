@@ -48,9 +48,9 @@
       <MimeType>image/jpeg</MimeType>
     </Report>
     <Report Include="Discontinued SKUs with Quantity on Hand.rdl" />
-    <Report Include="Market - PGC.rdl" />
+    <Report Include="Market - PGC - RETIRED - 5-16-2022.rdl" />
     <Report Include="SKU Discontinued Dates.rdl" />
-    <Report Include="SKUs Created by Date.rdl" />
+    <Report Include="SKUs Created by Date - RETIRED - 5-16-2022.rdl" />
     <Report Include="SKUs with No Sales History.rdl" />
     <Report Include="Vendor Contact Information.rdl" />
   </ItemGroup>

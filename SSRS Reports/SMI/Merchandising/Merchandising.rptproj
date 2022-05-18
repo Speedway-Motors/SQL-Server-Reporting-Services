@@ -1,307 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ToolsVersion="2.0">
-  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
-  <DataSources>
-    <ProjectItem>
-      <Name>dw.speedway2.com.rds</Name>
-      <FullPath>dw.speedway2.com.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SMI.rds</Name>
-      <FullPath>SMI.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SMIDW.rds</Name>
-      <FullPath>SMIDW.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SMISQLLIVE.rds</Name>
-      <FullPath>SMISQLLIVE.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>tngLive.rds</Name>
-      <FullPath>tngLive.rds</FullPath>
-    </ProjectItem>
-  </DataSources>
-  <DataSets />
-  <Reports>
-    <ProjectItem>
-      <Name>12 Month Sales by SEMA Categorization.rdl</Name>
-      <FullPath>12 Month Sales by SEMA Categorization.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Active BOMs with Discontinued SKU Components.rdl</Name>
-      <FullPath>Active BOMs with Discontinued SKU Components.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Apparel and Gift Sales.rdl</Name>
-      <FullPath>Apparel and Gift Sales.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Average Kit Cost.rdl</Name>
-      <FullPath>Average Kit Cost.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Camaros and Classics SKU Performance.rdl</Name>
-      <FullPath>Camaros and Classics SKU Performance.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>CARB Flag SKU Count.rdl</Name>
-      <FullPath>CARB Flag SKU Count.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Catalog Pricing.rdl</Name>
-      <FullPath>Catalog Pricing.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Clearance SKUs.rdl</Name>
-      <FullPath>Clearance SKUs.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dealer Usage by Customer Number.rdl</Name>
-      <FullPath>Dealer Usage by Customer Number.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dealer Usage.rdl</Name>
-      <FullPath>Dealer Usage.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dropship Delivery Data.rdl</Name>
-      <FullPath>Dropship Delivery Data.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dropship Order Lines.rdl</Name>
-      <FullPath>Dropship Order Lines.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dropship SKU Add-on Sales.rdl</Name>
-      <FullPath>Dropship SKU Add-on Sales.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dropship SKU Lead Time by Vendor.rdl</Name>
-      <FullPath>Dropship SKU Lead Time by Vendor.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Employee Pricing Worksheet.rdl</Name>
-      <FullPath>Employee Pricing Worksheet.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Employee Purchase Detail.rdl</Name>
-      <FullPath>Employee Purchase Detail.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Employee Usage.rdl</Name>
-      <FullPath>Employee Usage.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>HTC and SEMA Categorization SKU Count Summary.rdl</Name>
-      <FullPath>HTC and SEMA Categorization SKU Count Summary.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Inventory by Vendor.rdl</Name>
-      <FullPath>Inventory by Vendor.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Kit Retail and Cost Summary.rdl</Name>
-      <FullPath>Kit Retail and Cost Summary.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Market - PGC.rdl</Name>
-      <FullPath>Market - PGC.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>New SKU Performance by Department.rdl</Name>
-      <FullPath>New SKU Performance by Department.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Open Dropship Orders.rdl</Name>
-      <FullPath>Open Dropship Orders.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Orphaned BOM Components.rdl</Name>
-      <FullPath>Orphaned BOM Components.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Promo Sales - NEW -  TEMP FROM PRODUCTION 11-28-18.rdl</Name>
-      <FullPath>Promo Sales - NEW -  TEMP FROM PRODUCTION 11-28-18.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Promo Sales.rdl</Name>
-      <FullPath>Promo Sales.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Prop 65 E SKUs with Inventory.rdl</Name>
-      <FullPath>Prop 65 E SKUs with Inventory.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Prop 65 Flag SKU Count.rdl</Name>
-      <FullPath>Prop 65 Flag SKU Count.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>RealTime Dropship Activity.rdl</Name>
-      <FullPath>RealTime Dropship Activity.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Rolling 24 Month Wholesale SKU Sales.rdl</Name>
-      <FullPath>Rolling 24 Month Wholesale SKU Sales.rdl</FullPath>
-    </ProjectItem>
-    <ResourceProjectItem>
-      <Name>Rough Draft.jpg</Name>
-      <FullPath>Rough Draft.jpg</FullPath>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <FullPath>Debug</FullPath>
+    <OutputPath>bin\Debug</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2016</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>Speedway/Merchandising</TargetReportFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+    <TargetServerURL>http://lnk-sql-live-1/Reports/</TargetServerURL>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'DebugLocal' ">
+    <FullPath>DebugLocal</FullPath>
+    <OutputPath>bin\DebugLocal</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2008</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>Merchandising</TargetReportFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Production' ">
+    <FullPath>Production</FullPath>
+    <OutputPath>bin\Production</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2008</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>Merchandising</TargetReportFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+  </PropertyGroup>
+  <PropertyGroup>
+    <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkZGw1MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAiIHhtbG5zOmRkbDUwMF81MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAvNTAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+    <DataSources>@(DataSource)</DataSources>
+    <DataSets>@(DataSet)</DataSets>
+    <Reports>@(Report)</Reports>
+  </PropertyGroup>
+  <ItemGroup>
+    <DataSource Include="dw.speedway2.com.rds" />
+    <DataSource Include="SMI.rds" />
+    <DataSource Include="SMIDW.rds" />
+    <DataSource Include="SMISQLLIVE.rds" />
+    <DataSource Include="tngLive.rds" />
+  </ItemGroup>
+  <ItemGroup>
+    <Report Include="12 Month Sales by SEMA Categorization.rdl" />
+    <Report Include="Active BOMs with Discontinued SKU Components.rdl" />
+    <Report Include="Apparel and Gift Sales.rdl" />
+    <Report Include="Average Kit Cost.rdl" />
+    <Report Include="Camaros and Classics SKU Performance.rdl" />
+    <Report Include="CARB Flag SKU Count.rdl" />
+    <Report Include="Catalog Pricing.rdl" />
+    <Report Include="Clearance SKUs.rdl" />
+    <Report Include="Dealer Usage by Customer Number.rdl" />
+    <Report Include="Dealer Usage.rdl" />
+    <Report Include="Dropship Delivery Data.rdl" />
+    <Report Include="Dropship Order Lines.rdl" />
+    <Report Include="Dropship SKU Add-on Sales.rdl" />
+    <Report Include="Dropship SKU Lead Time by Vendor.rdl" />
+    <Report Include="Employee Pricing Worksheet.rdl" />
+    <Report Include="Employee Purchase Detail.rdl" />
+    <Report Include="Employee Usage.rdl" />
+    <Report Include="HTC and SEMA Categorization SKU Count Summary.rdl" />
+    <Report Include="Inventory by Vendor.rdl" />
+    <Report Include="Kit Retail and Cost Summary.rdl" />
+    <Report Include="Market - PGC.rdl" />
+    <Report Include="New SKU Performance by Department.rdl" />
+    <Report Include="Open Dropship Orders.rdl" />
+    <Report Include="Orphaned BOM Components.rdl" />
+    <Report Include="Promo Sales - NEW -  TEMP FROM PRODUCTION 11-28-18.rdl" />
+    <Report Include="Promo Sales.rdl" />
+    <Report Include="Prop 65 E SKUs with Inventory.rdl" />
+    <Report Include="Prop 65 Flag SKU Count.rdl" />
+    <Report Include="RealTime Dropship Activity.rdl" />
+    <Report Include="Rolling 24 Month Wholesale SKU Sales.rdl" />
+    <Report Include="Rough Draft.jpg">
       <MimeType>image/jpeg</MimeType>
-    </ResourceProjectItem>
-    <ProjectItem>
-      <Name>Sales by Brand for Specified Date Ranges.rdl</Name>
-      <FullPath>Sales by Brand for Specified Date Ranges.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Sales for SKU.rdl</Name>
-      <FullPath>Sales for SKU.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKU FIFO Cost.rdl</Name>
-      <FullPath>SKU FIFO Cost.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs About to be Discontinued.rdl</Name>
-      <FullPath>SKUs About to be Discontinued.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs Below Cost.rdl</Name>
-      <FullPath>SKUs Below Cost.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs Created by Date.rdl</Name>
-      <FullPath>SKUs Created by Date.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs First Made Web Active.rdl</Name>
-      <FullPath>SKUs First Made Web Active.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs loaded per Catalog.rdl</Name>
-      <FullPath>SKUs loaded per Catalog.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs New to Catalog.rdl</Name>
-      <FullPath>SKUs New to Catalog.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUS Retail and Cost for Primary Vendor - 12 Month Rolling.rdl</Name>
-      <FullPath>SKUS Retail and Cost for Primary Vendor - 12 Month Rolling.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs Retail and Cost for Primary Vendor - 24 Month.rdl</Name>
-      <FullPath>SKUs Retail and Cost for Primary Vendor - 24 Month.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs that need Prop65 flags.rdl</Name>
-      <FullPath>SKUs that need Prop65 flags.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs With No End User SKU Flag Assigned.rdl</Name>
-      <FullPath>SKUs With No End User SKU Flag assigned.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs with No Sales History.rdl</Name>
-      <FullPath>SKUs with No Sales History.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs with Price Level Discrepancies.rdl</Name>
-      <FullPath>SKUs with Price Level Discrepancies.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs with Product Pages.rdl</Name>
-      <FullPath>SKUs with Product Pages.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs with Retail below MAP.rdl</Name>
-      <FullPath>SKUs with Retail below MAP.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs with SEMA Categorization.rdl</Name>
-      <FullPath>SKUs with SEMA Categorization.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs with Wrong Initial Weight.rdl</Name>
-      <FullPath>SKUs With Wrong Initial Weight.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs without Merchant Assignment.rdl</Name>
-      <FullPath>SKUs without Merchant Assignment.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs without SEMA Categorization.rdl</Name>
-      <FullPath>SKUs without SEMA Categorization.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Slow Moving Inventory.rdl</Name>
-      <FullPath>Slow Moving Inventory.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Sub - Kits and SKU Components.rdl</Name>
-      <FullPath>Sub - Kits and SKU Components.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>sub Dropship Percentage.rdl</Name>
-      <FullPath>sub Dropship Percentage.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>sub Dropship Sales by Channel.rdl</Name>
-      <FullPath>sub Dropship Sales by Channel.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>TEMP Year Make Model Information.rdl</Name>
-      <FullPath>TEMP Year Make Model Information.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Vendor Contact Information.rdl</Name>
-      <FullPath>Vendor Contact Information.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Weight and Dimension Deltas - AFCO SKUs at SMI.rdl</Name>
-      <FullPath>Weight and Dimension Deltas - AFCO SKUs at SMI.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Weight and Dimension Deltas - SMI SKUs at AFCO.rdl</Name>
-      <FullPath>Weight and Dimension Deltas - SMI SKUs at AFCO.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Year Make Model Information.rdl</Name>
-      <FullPath>Year Make Model Information.rdl</FullPath>
-    </ProjectItem>
-  </Reports>
-  <Configurations>
-    <Configuration>
-      <Name>Debug</Name>
-      <Platform>Win32</Platform>
-      <Options>
-        <OutputPath>bin\Debug</OutputPath>
-        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetServerURL>http://lnk-sql-live-1/Reports/</TargetServerURL>
-        <TargetFolder>Speedway/Merchandising</TargetFolder>
-        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
-      </Options>
-    </Configuration>
-    <Configuration>
-      <Name>DebugLocal</Name>
-      <Platform>Win32</Platform>
-      <Options>
-        <OutputPath>bin\DebugLocal</OutputPath>
-        <TargetServerVersion>SSRS2008</TargetServerVersion>
-        <TargetFolder>Merchandising</TargetFolder>
-        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
-      </Options>
-    </Configuration>
-    <Configuration>
-      <Name>Production</Name>
-      <Platform>Win32</Platform>
-      <Options>
-        <OutputPath>bin\Production</OutputPath>
-        <TargetServerVersion>SSRS2008</TargetServerVersion>
-        <TargetFolder>Merchandising</TargetFolder>
-        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
-      </Options>
-    </Configuration>
-  </Configurations>
+    </Report>
+    <Report Include="Sales by Brand for Specified Date Ranges.rdl" />
+    <Report Include="Sales for SKU.rdl" />
+    <Report Include="SKU FIFO Cost.rdl" />
+    <Report Include="SKU Price Changes by Merchant.rdl" />
+    <Report Include="SKUs About to be Discontinued.rdl" />
+    <Report Include="SKUs Below Cost.rdl" />
+    <Report Include="SKUs Created by Date.rdl" />
+    <Report Include="SKUs First Made Web Active.rdl" />
+    <Report Include="SKUs loaded per Catalog.rdl" />
+    <Report Include="SKUs New to Catalog.rdl" />
+    <Report Include="SKUS Retail and Cost for Primary Vendor - 12 Month Rolling.rdl" />
+    <Report Include="SKUs Retail and Cost for Primary Vendor - 24 Month.rdl" />
+    <Report Include="SKUs that need Prop65 flags.rdl" />
+    <Report Include="SKUs With No End User SKU Flag Assigned.rdl" />
+    <Report Include="SKUs with No Sales History.rdl" />
+    <Report Include="SKUs with Price Level Discrepancies.rdl" />
+    <Report Include="SKUs with Product Pages.rdl" />
+    <Report Include="SKUs with Retail below MAP.rdl" />
+    <Report Include="SKUs with SEMA Categorization.rdl" />
+    <Report Include="SKUs with Wrong Initial Weight.rdl" />
+    <Report Include="SKUs without Merchant Assignment.rdl" />
+    <Report Include="SKUs without SEMA Categorization.rdl" />
+    <Report Include="Slow Moving Inventory.rdl" />
+    <Report Include="Sub - Kits and SKU Components.rdl" />
+    <Report Include="sub Dropship Percentage.rdl" />
+    <Report Include="sub Dropship Sales by Channel.rdl" />
+    <Report Include="TEMP Year Make Model Information.rdl" />
+    <Report Include="Temp.rdl" />
+    <Report Include="Vendor Contact Information.rdl" />
+    <Report Include="Weight and Dimension Deltas - AFCO SKUs at SMI.rdl" />
+    <Report Include="Weight and Dimension Deltas - SMI SKUs at AFCO.rdl" />
+    <Report Include="Year Make Model Information.rdl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

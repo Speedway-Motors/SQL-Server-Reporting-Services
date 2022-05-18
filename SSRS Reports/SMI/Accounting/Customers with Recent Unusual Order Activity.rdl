@@ -1350,8 +1350,8 @@ IIf(System.DateTime.Now.Subtract(Globals!ExecutionTime).Seconds &gt; 0, System.D
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="SMIDW">
-      <DataSourceReference>SMIDW</DataSourceReference>
+    <DataSource Name="SMISQLLIVE">
+      <DataSourceReference>SMISQLLIVE</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>19ec68f8-d969-48fa-bde1-6aa80cc97d23</rd:DataSourceID>
     </DataSource>
@@ -1359,7 +1359,7 @@ IIf(System.DateTime.Now.Subtract(Globals!ExecutionTime).Seconds &gt; 0, System.D
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>SMIDW</DataSourceName>
+        <DataSourceName>SMISQLLIVE</DataSourceName>
         <CommandText>SELECT O.ixCustomer, O.ixCustomerType, O.ixOrder, -- 4,931 ROWS
     O.dtOrderDate, O.mMerchandise, O.sMethodOfPayment, O.sOrderChannel,
     O.sShipToCity, O.sShipToState

@@ -10,18 +10,17 @@ ixCatalog = LA2022
 select ixSKU, count(POD.ixSKU)
 from tblPOMaster POM
 	left join tblPODetail POD on POM.ixPO = POD.ixPO
-where POM.ixIssueDate >= 19816
+where POM.ixIssueDate >= 19830
 and POM.flgIssued = 1
 and POM.flgOpen = 1
 group by ixSKU
 order by count(POD.ixSKU) desc
 */
 ixSKU
-32-869
-32-869A
-28325-1CR
-TASB640
-TASB653
+324122448
+324122454
+324122485
+324122492
 
 select ixPO
 from tblPOMaster POM
@@ -45,8 +44,7 @@ group by ixFinishedSKU
 order by count(ixTransferNumber) desc
 */
 ixFinishedSKU
-0000817.01B
-0000817.24B
-1000152
-1001153.10
-1001153.16
+91002107
+9002520
+3001000.2
+1061000319

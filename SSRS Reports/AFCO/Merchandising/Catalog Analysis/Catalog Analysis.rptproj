@@ -47,8 +47,8 @@
     <Report Include="AFCO-230x70.jpg">
       <MimeType>image/jpeg</MimeType>
     </Report>
-    <Report Include="Discontinued SKUs in Catalog.rdl" />
-    <Report Include="Top Sellers Not in Catalog.rdl" />
+    <Report Include="Discontinued SKUs in Catalog - RETIRED - 5-16-2022.rdl" />
+    <Report Include="Top Sellers Not in Catalog - RETIRED - 5-16-2022.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

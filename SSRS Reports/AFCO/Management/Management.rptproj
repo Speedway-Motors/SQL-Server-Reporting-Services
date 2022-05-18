@@ -51,34 +51,34 @@
     <Report Include="Backorders by Brand.rdl" />
     <Report Include="Backorders by Buyer - TEMP.rdl" />
     <Report Include="Backorders by Major Source Code.rdl" />
-    <Report Include="BOM Labor - Historical vs Standard.rdl" />
-    <Report Include="BOM Man-hour Projections.rdl" />
+    <Report Include="BOM Labor - Historical vs Standard - RETIRED - 5-16-2022.rdl" />
+    <Report Include="BOM Man-hour Projections - RETIRED - 5-16-2022.rdl" />
     <Report Include="Customer Detail.rdl" />
     <Report Include="Daily Production Tickets.rdl" />
-    <Report Include="Dated Order PGC Detail.rdl" />
+    <Report Include="Dated Order PGC Detail - RETIRED - 5-16-2022.rdl" />
     <Report Include="Dewitts Backorders by Account Manager.rdl" />
     <Report Include="DeWitts Backorders.rdl" />
     <Report Include="DeWitts Order Fulfillment.rdl" />
     <Report Include="Fill Rates by period by year.rdl" />
-    <Report Include="Indexed SKU Sales.rdl" />
-    <Report Include="Lost Sales by Period by Year.rdl" />
+    <Report Include="Indexed SKU Sales - RETIRED - 5-16-2022.rdl" />
+    <Report Include="Lost Sales by Period by Year - RETIRED - 5-16-2022.rdl" />
     <Report Include="MRP.rdl" />
     <Report Include="Order Fulfillment Status.rdl" />
     <Report Include="Orders and Packages Shipped by Date.rdl" />
     <Report Include="Orders Not Shipped - SKU Detail.rdl" />
     <Report Include="Orders Not Shipped.rdl" />
-    <Report Include="PRO Inventory Data.rdl" />
-    <Report Include="Production Loading.rdl" />
+    <Report Include="PRO Inventory Data - RETIRED - 5-16-2022.rdl" />
+    <Report Include="Production Loading - RETIRED - 5-16-2022.rdl" />
     <Report Include="Rough Draft.jpg">
       <MimeType>image/jpeg</MimeType>
     </Report>
-    <Report Include="Shipped HALFFRT orders.rdl" />
-    <Report Include="SHOCK Inventory Data.rdl" />
+    <Report Include="Shipped HALFFRT orders - RETIRED - 5-16-2022.rdl" />
+    <Report Include="SHOCK Inventory Data - RETIRED - 5-16-2022.rdl" />
     <Report Include="sub - DeWitts Open BOM Transfers.rdl" />
     <Report Include="sub - Open BOM Transfers.rdl" />
     <Report Include="sub - Open POs.rdl" />
     <Report Include="sub - SMI Orders Shipped from BVL.rdl" />
-    <Report Include="User Transactions.rdl" />
+    <Report Include="User Transactions - RETIRED - 5-16-2022.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

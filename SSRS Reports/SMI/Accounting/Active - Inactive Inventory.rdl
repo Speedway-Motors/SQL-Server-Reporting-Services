@@ -1,12 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="SMIDW">
-      <DataSourceReference>SMIDW</DataSourceReference>
-      <rd:SecurityType>None</rd:SecurityType>
-      <rd:DataSourceID>fafe6e49-2276-4803-b13c-4f43d5c3f577</rd:DataSourceID>
-    </DataSource>
     <DataSource Name="SMISQLLIVE">
       <DataSourceReference>SMISQLLIVE</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
@@ -25,9 +20,12 @@
             <Value>=Parameters!parmActivitySince.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>
+        <CommandText>/*
+DECLARE @parmFIFODate DATETIME = '5/15/2022',
+		@parmActivitySince DATETIME = '5/16/2022'
+*/
   select sum(FD.iFIFOQuantity) AS 'Piece Count',
-		sum(FD.mFIFOCost*iFIFOQuantity) 'FIFO Cost'
+		sum(CAST(FD.mFIFOCost AS Money) *iFIFOQuantity) 'FIFO Cost'
 
 from  tblFIFODetail FD
   left join tblDate D on FD.ixDate = D.ixDate
@@ -59,9 +57,12 @@ from  tblFIFODetail FD
             <Value>=Parameters!parmActivitySince.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>
+        <CommandText>/*
+DECLARE @parmFIFODate DATETIME = '5/15/2022',
+		@parmActivitySince DATETIME = '5/16/2022'
+*/	
   select sum(FD.iFIFOQuantity) AS 'InactivePieceCount',
-		sum(FD.mFIFOCost*iFIFOQuantity) as 'InactiveFIFOCost'
+		sum(CAST(FD.mFIFOCost AS Money) *iFIFOQuantity) as 'InactiveFIFOCost'
 
 from tblFIFODetail FD
   left join tblDate D on FD.ixDate = D.ixDate
@@ -724,6 +725,24 @@ IIf(System.DateTime.Now.Subtract(Globals!ExecutionTime).Seconds &gt; 0, System.D
       <Prompt>Activity Since</Prompt>
     </ReportParameter>
   </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>2</NumberOfColumns>
+      <NumberOfRows>1</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>parmFIFODate</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>parmActivitySince</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportServerUrl>http://reports.speedwaymotors.com/ReportServer</rd:ReportServerUrl>
   <rd:ReportID>18f2a83e-858d-4e74-969e-e6c683fdd2d1</rd:ReportID>

@@ -1,271 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ToolsVersion="2.0">
-  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
-  <DataSources>
-    <ProjectItem>
-      <Name>AFCO.rds</Name>
-      <FullPath>AFCO.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>dw.speedway2.com.rds</Name>
-      <FullPath>dw.speedway2.com.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SMI.rds</Name>
-      <FullPath>SMI.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SMIDW.rds</Name>
-      <FullPath>SMIDW.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SMISQLLIVE.rds</Name>
-      <FullPath>SMISQLLIVE.rds</FullPath>
-    </ProjectItem>
-  </DataSources>
-  <DataSets />
-  <Reports>
-    <ProjectItem>
-      <Name>Active - Inactive Inventory.rdl</Name>
-      <FullPath>Active - Inactive Inventory.rdl</FullPath>
-    </ProjectItem>
-    <ResourceProjectItem>
-      <Name>AFCO-230x70.jpg</Name>
-      <FullPath>AFCO-230x70.jpg</FullPath>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <FullPath>Debug</FullPath>
+    <OutputPath>bin\Debug</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2008</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>Speedway/Accounting</TargetReportFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+    <TargetServerURL>http://lnk-dw1/ReportServer</TargetServerURL>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'DebugLocal' ">
+    <FullPath>DebugLocal</FullPath>
+    <OutputPath>bin\DebugLocal</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2016</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>Speedway/Accounting</TargetReportFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+    <TargetServerURL>http://lnk-sql-live-1/Reports/</TargetServerURL>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Production' ">
+    <FullPath>Production</FullPath>
+    <OutputPath>bin\Production</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2008</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>Accounting</TargetReportFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+  </PropertyGroup>
+  <PropertyGroup>
+    <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkZGw1MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAiIHhtbG5zOmRkbDUwMF81MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAvNTAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+    <DataSources>@(DataSource)</DataSources>
+    <DataSets>@(DataSet)</DataSets>
+    <Reports>@(Report)</Reports>
+  </PropertyGroup>
+  <ItemGroup>
+    <DataSource Include="AFCO.rds" />
+    <DataSource Include="dw.speedway2.com.rds" />
+    <DataSource Include="SMI.rds" />
+    <DataSource Include="SMIDW.rds" />
+    <DataSource Include="SMISQLLIVE.rds" />
+  </ItemGroup>
+  <ItemGroup>
+    <Report Include="Active - Inactive Inventory.rdl" />
+    <Report Include="AFCO-230x70.jpg">
       <MimeType>image/jpeg</MimeType>
-    </ResourceProjectItem>
-    <ProjectItem>
-      <Name>Canceled Counter Sales.rdl</Name>
-      <FullPath>Canceled Counter Sales.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Catalog Specifications.rdl</Name>
-      <FullPath>Catalog Specifications.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Copy of Detailed Revenue by State.rdl</Name>
-      <FullPath>Copy of Detailed Revenue by State.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Credit Memo Analysis by SKU.rdl</Name>
-      <FullPath>Credit Memo Analysis by SKU.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Credit Memo Returns and Adjustments.rdl</Name>
-      <FullPath>Credit Memo Returns and Adjustments.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Customers with Recent Unusual Order Activity - TEMP COD.rdl</Name>
-      <FullPath>Customers with Recent Unusual Order Activity - TEMP COD.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Customers with Recent Unusual Order Activity.rdl</Name>
-      <FullPath>Customers with Recent Unusual Order Activity.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Detailed Revenue by Country.rdl</Name>
-      <FullPath>Detailed Revenue by Country.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Detailed Revenue by Customer.rdl</Name>
-      <FullPath>Detailed Revenue by Customer.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Detailed Revenue by State - Afco.rdl</Name>
-      <FullPath>Detailed Revenue by State - Afco.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Detailed Revenue by State.rdl</Name>
-      <FullPath>Detailed Revenue by State.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dropship Revenue.rdl</Name>
-      <FullPath>Dropship Revenue.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DT - Credit Memo Detail.rdl</Name>
-      <FullPath>DT - Credit Memo Detail.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DT - Credit Original Order Detail.rdl</Name>
-      <FullPath>DT - Credit Original Order Detail.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Eagle Gross Revenue and Order Count by Channel.rdl</Name>
-      <FullPath>Eagle Gross Revenue and Order Count by Channel.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Eagle Motorsports BOM Sales.rdl</Name>
-      <FullPath>Eagle Motorsports BOM Sales.rdl</FullPath>
-    </ProjectItem>
-    <ResourceProjectItem>
-      <Name>ExpandAll.jpg</Name>
-      <FullPath>ExpandAll.jpg</FullPath>
+    </Report>
+    <Report Include="Canceled Counter Sales.rdl" />
+    <Report Include="Catalog Specifications - RETIRED - 5-16-2022.rdl" />
+    <Report Include="Credit Memo Analysis by SKU.rdl" />
+    <Report Include="Credit Memo Returns and Adjustments.rdl" />
+    <Report Include="Customers with Recent Unusual Order Activity.rdl" />
+    <Report Include="Detailed Revenue by Country.rdl" />
+    <Report Include="Detailed Revenue by Customer.rdl" />
+    <Report Include="Detailed Revenue by State - Afco.rdl" />
+    <Report Include="Detailed Revenue by State.rdl" />
+    <Report Include="Dropship Revenue.rdl" />
+    <Report Include="DT - Credit Memo Detail.rdl" />
+    <Report Include="DT - Credit Original Order Detail.rdl" />
+    <Report Include="Eagle Gross Revenue and Order Count by Channel.rdl" />
+    <Report Include="Eagle Motorsports BOM Sales.rdl" />
+    <Report Include="ExpandAll.jpg">
       <MimeType>image/jpeg</MimeType>
-    </ResourceProjectItem>
-    <ProjectItem>
-      <Name>FIFO Layer Costs (flat).rdl</Name>
-      <FullPath>FIFO Layer Costs (flat).rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>FIFO Layer Costs.rdl</Name>
-      <FullPath>FIFO Layer Costs.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Gift Card Revenue by State.rdl</Name>
-      <FullPath>Gift Card Revenue by State.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Gross Revenue and Order Count by Channel - NEW.rdl</Name>
-      <FullPath>Gross Revenue and Order Count by Channel - NEW.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Gross Revenue and Order Count by Channel.rdl</Name>
-      <FullPath>Gross Revenue and Order Count by Channel.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Gross Revenue Order and Package Count by Channel.rdl</Name>
-      <FullPath>Gross Revenue Order and Package Count by Channel.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Internal Channel Orders.rdl</Name>
-      <FullPath>Internal Channel Orders.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>MDC Dropship Invoices.rdl</Name>
-      <FullPath>MDC Dropship Invoices.rdl</FullPath>
-    </ProjectItem>
-    <ResourceProjectItem>
-      <Name>MinimizeAll.jpg</Name>
-      <FullPath>MinimizeAll.jpg</FullPath>
+    </Report>
+    <Report Include="FIFO Layer Costs (flat) - RETIRED - 5-16-2022.rdl" />
+    <Report Include="FIFO Layer Costs - RETIRED - 5-16-2022.rdl" />
+    <Report Include="Gift Card Revenue by State.rdl" />
+    <Report Include="Gross Revenue and Order Count by Channel.rdl" />
+    <Report Include="Gross Revenue Order and Package Count by Channel.rdl" />
+    <Report Include="Internal Channel Orders.rdl" />
+    <Report Include="MDC Dropship Invoices.rdl" />
+    <Report Include="MinimizeAll.jpg">
       <MimeType>image/jpeg</MimeType>
-    </ResourceProjectItem>
-    <ProjectItem>
-      <Name>Net Sales by Customer.rdl</Name>
-      <FullPath>Net Sales by Customer.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Net Sales by Method of Payment.rdl</Name>
-      <FullPath>Net Sales by Method of Payment.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Order and Credit Memo Histroy by Method of Payment.rdl</Name>
-      <FullPath>Order and Credit Memo Histroy by Method of Payment.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Orders by State.rdl</Name>
-      <FullPath>Orders by State.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Price Deviance.rdl</Name>
-      <FullPath>Price Deviance.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Promotional Discounts.rdl</Name>
-      <FullPath>Promotional Discounts.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Resale Valuation.rdl</Name>
-      <FullPath>Resale Valuation.rdl</FullPath>
-    </ProjectItem>
-    <ResourceProjectItem>
-      <Name>Rough Draft.jpg</Name>
-      <FullPath>Rough Draft.jpg</FullPath>
+    </Report>
+    <Report Include="Net Sales by Customer.rdl" />
+    <Report Include="Net Sales by Method of Payment.rdl" />
+    <Report Include="Order and Credit Memo Histroy by Method of Payment.rdl" />
+    <Report Include="Orders by State.rdl" />
+    <Report Include="Price Deviance - RETIRED - 5-16-2022.rdl" />
+    <Report Include="Promotional Discounts.rdl" />
+    <Report Include="Resale Valuation - RETIRED - 5-16-2022.rdl" />
+    <Report Include="Rough Draft.jpg">
       <MimeType>image/jpeg</MimeType>
-    </ResourceProjectItem>
-    <ProjectItem>
-      <Name>Shock Sales Detail.rdl</Name>
-      <FullPath>Shock Sales Detail.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SMI Manufactured and SMI Sourced Sales - LIMITED OUTPUT.rdl</Name>
-      <FullPath>SMI Manufactured and SMI Sourced Sales - LIMITED OUTPUT.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SMI Manufactured and SMI Sourced Sales.rdl</Name>
-      <FullPath>SMI Manufactured and SMI Sourced Sales.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SMI Orders Shipped from BVL via Truck.rdl</Name>
-      <FullPath>SMI Orders Shipped from BVL via Truck.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Sub - CM Detail Reason Codes.rdl</Name>
-      <FullPath>Sub - CM Detail Reason Codes.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Sub - Dropship Revenue Summary.rdl</Name>
-      <FullPath>Sub - Dropship Revenue Summary.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>sub - Eagle Garage Sale Sales by Channel.rdl</Name>
-      <FullPath>sub - Eagle Garage Sale Sales by Channel.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>sub Garage Sale Sales by Channel.rdl</Name>
-      <FullPath>sub Garage Sale Sales by Channel.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Tax Exempt Customers by State.rdl</Name>
-      <FullPath>Tax Exempt Customers by State.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Tax Exempt Customers.rdl</Name>
-      <FullPath>Tax Exempt Customers.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>TEMP Fifo Layer Info NEW.rdl</Name>
-      <FullPath>TEMP Fifo Layer Info NEW.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>TEMP Fifo Layer NEW2.rdl</Name>
-      <FullPath>TEMP Fifo Layer NEW2.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Tire Sales by State.rdl</Name>
-      <FullPath>Tire Sales by State.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Vendor Royalty.rdl</Name>
-      <FullPath>Vendor Royalty.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Vendors Currently Flagged as Overseas.rdl</Name>
-      <FullPath>Vendors Currently Flagged as Overseas.rdl</FullPath>
-    </ProjectItem>
-  </Reports>
-  <Configurations>
-    <Configuration>
-      <Name>Debug</Name>
-      <Platform>Win32</Platform>
-      <Options>
-        <OutputPath>bin\Debug</OutputPath>
-        <TargetServerVersion>SSRS2008</TargetServerVersion>
-        <TargetServerURL>http://lnk-dw1/ReportServer</TargetServerURL>
-        <TargetFolder>Speedway/Accounting</TargetFolder>
-        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
-      </Options>
-    </Configuration>
-    <Configuration>
-      <Name>DebugLocal</Name>
-      <Platform>Win32</Platform>
-      <Options>
-        <OutputPath>bin\DebugLocal</OutputPath>
-        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetServerURL>http://lnk-sql-live-1/Reports/</TargetServerURL>
-        <TargetFolder>Speedway/Accounting</TargetFolder>
-        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
-      </Options>
-    </Configuration>
-    <Configuration>
-      <Name>Production</Name>
-      <Platform>Win32</Platform>
-      <Options>
-        <OutputPath>bin\Production</OutputPath>
-        <TargetServerVersion>SSRS2008</TargetServerVersion>
-        <TargetFolder>Accounting</TargetFolder>
-        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
-      </Options>
-    </Configuration>
-  </Configurations>
+    </Report>
+    <Report Include="Shock Sales Detail - RETIRED - 5-16-2022.rdl" />
+    <Report Include="SMI Manufactured and SMI Sourced Sales - LIMITED OUTPUT.rdl" />
+    <Report Include="SMI Manufactured and SMI Sourced Sales.rdl" />
+    <Report Include="SMI Orders Shipped from BVL via Truck - RETIRED - 5-16-2022.rdl" />
+    <Report Include="Sub - CM Detail Reason Codes.rdl" />
+    <Report Include="Sub - Dropship Revenue Summary.rdl" />
+    <Report Include="sub - Eagle Garage Sale Sales by Channel.rdl" />
+    <Report Include="sub Garage Sale Sales by Channel.rdl" />
+    <Report Include="Tax Exempt Customers - RETIRED - 5-16-2022.rdl" />
+    <Report Include="Tax Exempt Customers by State - RETIRED - 5-16-2022.rdl" />
+    <Report Include="Tire Sales by State.rdl" />
+    <Report Include="Vendor Royalty.rdl" />
+    <Report Include="Vendors Currently Flagged as Overseas.rdl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

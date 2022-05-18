@@ -47,7 +47,7 @@
     <Report Include="AFCO-230x70.jpg">
       <MimeType>image/jpeg</MimeType>
     </Report>
-    <Report Include="AFCO-Dynatech Catalog Requests.rdl" />
+    <Report Include="AFCO-Dynatech Catalog Requests - RETIRED - 5-16-2022.rdl" />
     <Report Include="Brand Descriptions.rdl" />
     <Report Include="Customer PGC Graph Comparison.rdl" />
     <Report Include="Cycle Code Definition.rdl" />
@@ -56,8 +56,8 @@
     <Report Include="Major PGC Descriptions.rdl" />
     <Report Include="Major Product Code Sales by Market.rdl" />
     <Report Include="Major Sales Code Performance.rdl" />
-    <Report Include="Order Follow-Up for New Wholesale Customers.rdl" />
-    <Report Include="Order Follow-Up for Retail Customers.rdl" />
+    <Report Include="Order Follow-Up for New Wholesale Customers - RETIRED - 5-16-2022.rdl" />
+    <Report Include="Order Follow-Up for Retail Customers - RETIRED - 5-16-2022.rdl" />
     <Report Include="PGC Definitions.rdl" />
     <Report Include="PGC Sales by Customer for Acct Mgrs.rdl" />
     <Report Include="Sales and Margin by Market Code.rdl" />

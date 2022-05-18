@@ -1,6 +1,6 @@
 -- CURRENT SQL CONNECTIONS
 
-SELECT @@SPID as 'Current SPID' -- 132 
+SELECT @@SPID as 'Current SPID' -- 127 
 
 -- SPIDS with OPEN TRANSACTIONS  
 SELECT * FROM sys.sysprocesses  WHERE open_tran = 1 and program_name <> 'Replication Distribution Agent' and program_name NOT LIKE 'Repl-LogReader%' 
@@ -16,9 +16,9 @@ SELECT * FROM sys.sysprocesses  WHERE open_tran = 1 and program_name <> 'Replica
 
 EXEC [Util].dbo.usp_who5 X,NULL,NULL,NULL,NULL  
 /*  
-    KILL 115
-    KILL 139
-	KILL 143
+    KILL 66
+    KILL 136
+	KILL 144
     KILL 117
 */   
  -- # of user connections

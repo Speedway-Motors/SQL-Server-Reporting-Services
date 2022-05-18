@@ -52,19 +52,19 @@
     <Report Include="AFCO-230x70.jpg">
       <MimeType>image/jpeg</MimeType>
     </Report>
-    <Report Include="Atech Quantity Available.rdl" />
+    <Report Include="Atech Quantity Available - RETIRED - 5-16-2022.rdl" />
     <Report Include="BOM Template Detail.rdl" />
-    <Report Include="Intangible SKUs.rdl" />
+    <Report Include="Intangible SKUs - RETIRED - 5-16-2022.rdl" />
     <Report Include="Inventory Assigned to QA Bins.rdl" />
-    <Report Include="Jegs - AFCO Quantity Available.rdl" />
-    <Report Include="Jegs - Dynatech Inventory Quantity Available.rdl" />
-    <Report Include="Jegs - General Inventory Quantity Available.rdl" />
-    <Report Include="Longacre - Inventory Quantity Available.rdl" />
+    <Report Include="Jegs - AFCO Quantity Available - RETIRED - 5-16-2022.rdl" />
+    <Report Include="Jegs - Dynatech Inventory Quantity Available - RETIRED - 5-16-2022.rdl" />
+    <Report Include="Jegs - General Inventory Quantity Available - RETIRED - 5-16-2022.rdl" />
+    <Report Include="Longacre - Inventory Quantity Available - RETIRED - 5-16-2022.rdl" />
     <Report Include="Lost Sales Report.rdl" />
     <Report Include="Lost Sales sub-report.rdl" />
     <Report Include="Material Planning Requirements w Longacre Historical.rdl" />
     <Report Include="Material Planning Requirements.rdl" />
-    <Report Include="Motorstate Quantity Available.rdl" />
+    <Report Include="Motorstate Quantity Available - RETIRED - 5-16-2022.rdl" />
     <Report Include="Orderline Detail.rdl" />
     <Report Include="PO sub-report.rdl" />
     <Report Include="SKU Detail.rdl" />
