@@ -16,9 +16,9 @@ SELECT * FROM sys.sysprocesses  WHERE open_tran = 1 and program_name <> 'Replica
 
 EXEC [Util].dbo.usp_who5 X,NULL,NULL,NULL,NULL  
 /*  
-    KILL 66
-    KILL 136
-	KILL 144
+    KILL 95
+    KILL 97
+	KILL 113
     KILL 117
 */   
  -- # of user connections
@@ -28,7 +28,7 @@ EXEC [Util].dbo.usp_who5 X,NULL,NULL,NULL,NULL
  /*                     User
     As Of             	Connctns	Range 51-117 (typically 60-85)
     ==================  ========	================================				
-    MON 05/09/22 11:47	101
+    FRI 05/20/22 09:14	72
 
     WED 06/23/21 09:08	83
     MON 05/24/21 09:03	91

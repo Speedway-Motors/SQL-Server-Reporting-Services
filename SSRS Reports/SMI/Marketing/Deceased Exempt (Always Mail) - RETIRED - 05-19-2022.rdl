@@ -333,8 +333,8 @@ IIf(System.DateTime.Now.Subtract(Globals!ExecutionTime).Seconds &gt; 0, System.D
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="SMIDW">
-      <DataSourceReference>SMIDW</DataSourceReference>
+    <DataSource Name="SMISQLLIVE">
+      <DataSourceReference>SMISQLLIVE</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>83964af8-a351-42c4-9f36-3a902739b5fe</rd:DataSourceID>
     </DataSource>
@@ -342,7 +342,7 @@ IIf(System.DateTime.Now.Subtract(Globals!ExecutionTime).Seconds &gt; 0, System.D
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>SMIDW</DataSourceName>
+        <DataSourceName>SMISQLLIVE</DataSourceName>
         <CommandText>select ixCustomer 
 from tblCustomer 
 where flgDeceasedMailingStatusExempt = 1

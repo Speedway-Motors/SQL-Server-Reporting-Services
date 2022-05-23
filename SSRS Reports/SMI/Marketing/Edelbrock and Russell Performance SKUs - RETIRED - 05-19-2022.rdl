@@ -449,8 +449,8 @@ IIf(System.DateTime.Now.Subtract(Globals!ExecutionTime).Seconds &gt; 0, System.D
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="SMIDW">
-      <DataSourceReference>SMIDW</DataSourceReference>
+    <DataSource Name="SMISQLLIVE">
+      <DataSourceReference>SMISQLLIVE</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>df3a2ed0-b654-42a4-941a-353f395f15a7</rd:DataSourceID>
     </DataSource>
@@ -458,7 +458,7 @@ IIf(System.DateTime.Now.Subtract(Globals!ExecutionTime).Seconds &gt; 0, System.D
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>SMIDW</DataSourceName>
+        <DataSourceName>SMISQLLIVE</DataSourceName>
         <CommandText>SELECT S.ixBrand, S.ixSKU, S.sDescription--, S.dtLastTNGUpdate
 FROM tblSKU S
 WHERE ixBrand in (10018,10832)
