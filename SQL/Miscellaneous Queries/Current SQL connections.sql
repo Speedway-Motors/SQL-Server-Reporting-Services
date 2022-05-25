@@ -28,7 +28,7 @@ EXEC [Util].dbo.usp_who5 X,NULL,NULL,NULL,NULL
  /*                     User
     As Of             	Connctns	Range 51-117 (typically 60-85)
     ==================  ========	================================				
-    FRI 05/20/22 09:14	72
+	MON 05/23/22 11:17	85
 
     WED 06/23/21 09:08	83
     MON 05/24/21 09:03	91

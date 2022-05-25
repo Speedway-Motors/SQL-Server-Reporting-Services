@@ -66,7 +66,7 @@
     <Report Include="WFRA sub-report1 - Last Weeks Newly Out of Stock - RETIRED - 5-16-2022.rdl" />
     <Report Include="WFRA sub-report2 - Top 10 BO by Qty - RETIRED - 5-16-2022.rdl" />
     <Report Include="WFRA sub-report3 - Top 10 BO by ExtendedValue - RETIRED - 5-16-2022.rdl" />
-    <Report Include="Yesterday's Out of Stock SKUs - RETIRED - 5-16-2022.rdl" />
+    <Report Include="Yesterday's Out of Stock SKUs.rdl" />
     <Report Include="YOSS PO sub-report.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
