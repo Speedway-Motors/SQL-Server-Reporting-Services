@@ -1559,8 +1559,8 @@ IIf(System.DateTime.Now.Subtract(Globals!ExecutionTime).Seconds &gt; 0, System.D
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="SMIDW">
-      <DataSourceReference>SMIDW</DataSourceReference>
+    <DataSource Name="SMISQLLIVE">
+      <DataSourceReference>SMISQLLIVE</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>fa79acf8-a678-4534-b972-6aafb4074d0b</rd:DataSourceID>
     </DataSource>
@@ -1568,7 +1568,7 @@ IIf(System.DateTime.Now.Subtract(Globals!ExecutionTime).Seconds &gt; 0, System.D
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>SMIDW</DataSourceName>
+        <DataSourceName>SMISQLLIVE</DataSourceName>
         <CommandText>SELECT S.dtDiscontinuedDate
      , S.ixSKU
      , S.sDescription

@@ -6,15 +6,28 @@
 select * from tblDepartment
 where sDescription like '%WV%'
 	or sDescription like '%West%'
-	or ixDepartment = 58
+	or ixDepartment in  (33,34,35,36,58)
 /*
 ix
 Dept	sDescription
+33		UNKNOWN		-- NEED TO UPDATE!
 34		WV - Picking
 35		WV - Small Pack
 36		WV - Big Pack
 58		West Virginia
 */
+
+-- Full List of WV Job Clock Activities
+SELECT ixDepartment 'Dept',
+	ixJob 'Job ',
+	sDescription 'Job Description',
+	sJobSort
+FROM tblJob
+WHERE ixDepartment in (33,34,35,36,58)
+	and sDescription <> 'Unknown'
+ORDER BY ixDepartment, sJobSort
+
+
 
 SELECT distinct sJob, count(*) RecCnt -- ixEmployee
 FROM tblJobClock

@@ -11,15 +11,14 @@ SELECT * FROM sys.sysprocesses  WHERE open_tran = 1 and program_name <> 'Replica
     /* when spid ### is blocked by spid ###
         dbcc inputbuffer(121) -- 
         dbcc inputbuffer(124) -- 
-        dbcc inputbuffer(117) -- 
      */
 
-EXEC [Util].dbo.usp_who5 X,NULL,NULL,NULL,NULL  
+	EXEC [Util].dbo.usp_who5 X,NULL,NULL,NULL,NULL  
 /*  
-    KILL 95
-    KILL 97
-	KILL 113
-    KILL 117
+    KILL 116
+    KILL 78
+	KILL 124
+	KILL 108
 */   
  -- # of user connections
      SELECT (D.sDayOfWeek3Char + ' ' +FORMAT(getdate(),'MM/dd/yy HH:mm')) 'As Of             ', PC.cntr_value 'UserConnections'
