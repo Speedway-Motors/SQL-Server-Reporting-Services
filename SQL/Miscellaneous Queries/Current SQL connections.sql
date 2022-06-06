@@ -15,8 +15,8 @@ SELECT * FROM sys.sysprocesses  WHERE open_tran = 1 and program_name <> 'Replica
 
 	EXEC [Util].dbo.usp_who5 X,NULL,NULL,NULL,NULL  
 /*  
-    KILL 116
-    KILL 78
+    KILL 54
+    KILL 107
 	KILL 124
 	KILL 108
 */   

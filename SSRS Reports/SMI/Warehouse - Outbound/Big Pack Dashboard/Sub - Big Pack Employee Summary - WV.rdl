@@ -27,27 +27,30 @@ Version Ticket		by	Change
 =======	=========== ===	=================================================
 22.22.1 SMIHD-25061 PJC Create JOB CLOCK SUMMARY BY EMPLOYEE sub-report for WV
 
-
-DECLARE @StartDate datetime = '05/01/2022',		@EndDate datetime = '06/10/2022'
+DECLARE @StartDate datetime = '06/02/2022',		@EndDate datetime = '06/02/2022'
 */
 SELECT DTJT.ixEmployee
      , E.sFirstname + ' ' + E.sLastname AS Name
      , DTJT.ixDepartment 
      , DTJT.sJob 
+	 , DTJT.JobDepartment
      , DTJT.JobDescription
+	 , DTJT.sJobSort
      , SUM(ISNULL((DTJT.iTotDailyJobTime/3600.00),0)) AS Hours 
 FROM vwDailyTotJobTime DTJT
 LEFT JOIN tblEmployee E ON E.ixEmployee = DTJT.ixEmployee 
 WHERE dtDate BETWEEN @StartDate AND @EndDate 
   --AND DTJT.ixEmployee IN (@Employee)
 	AND E.ixDepartment in (33,34,35,36,58)-- use this for testing, then comment out and use above line.
+  --AND DTJT.ixEmployee = 'SBF' --TESTING ONLY
 GROUP BY DTJT.ixEmployee
        , E.sFirstname + ' ' + E.sLastname 
        , DTJT.ixDepartment 
        , DTJT.sJob 
-       , DTJT.JobDescription 
-ORDER BY DTJT.ixEmployee
-
+	   , DTJT.JobDepartment
+       , DTJT.JobDescription
+	   , DTJT.sJobSort
+ORDER BY DTJT.ixEmployee, DTJT.JobDepartment, DTJT.sJobSort
 </CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
@@ -68,6 +71,10 @@ ORDER BY DTJT.ixEmployee
           <DataField>sJob</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="JobDepartment">
+          <DataField>JobDepartment</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
         <Field Name="JobDescription">
           <DataField>JobDescription</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -75,6 +82,10 @@ ORDER BY DTJT.ixEmployee
         <Field Name="Hours">
           <DataField>Hours</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="sJobSort">
+          <DataField>sJobSort</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -1332,7 +1343,7 @@ ORDER BY DTJT.ixEmployee
       <Width>4.73542in</Width>
       <Page>
         <PageFooter>
-          <Height>0.34375in</Height>
+          <Height>0.79458in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1343,7 +1354,7 @@ ORDER BY DTJT.ixEmployee
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>ver 22.22.2</Value>
+                      <Value>ver 22.22.3</Value>
                       <Style>
                         <FontSize>8pt</FontSize>
                         <Color>DimGray</Color>
@@ -1356,10 +1367,43 @@ ORDER BY DTJT.ixEmployee
                 </Paragraph>
               </Paragraphs>
               <Top>0.125in</Top>
-              <Left>1.86771in</Left>
+              <Left>1.36771in</Left>
               <Height>0.1875in</Height>
               <Width>1in</Width>
               <Style>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox27">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Default date ranges will be reset after testing is complete. I will default to the previous 7 days unless the WH managers have a different preference.</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox27</rd:DefaultName>
+              <Top>0.125in</Top>
+              <Left>2.475in</Left>
+              <Height>0.65625in</Height>
+              <Width>2.22917in</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <BackgroundColor>Cornsilk</BackgroundColor>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -1386,7 +1430,7 @@ ORDER BY DTJT.ixEmployee
       <DataType>DateTime</DataType>
       <DefaultValue>
         <Values>
-          <Value>=Today.AddDays(-7)</Value>
+          <Value>6/2/2022 12:00:00 AM</Value>
         </Values>
       </DefaultValue>
       <Prompt>Start Date</Prompt>
@@ -1395,7 +1439,8 @@ ORDER BY DTJT.ixEmployee
       <DataType>DateTime</DataType>
       <DefaultValue>
         <Values>
-          <Value>=Today.AddDays(-1)</Value>
+          <Value>=Today
+'=Today.AddDays(-1)</Value>
         </Values>
       </DefaultValue>
       <Prompt>End Date</Prompt>
