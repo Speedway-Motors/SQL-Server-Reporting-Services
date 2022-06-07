@@ -26,7 +26,8 @@ SELECT * FROM sys.sysprocesses  WHERE open_tran = 1 and program_name <> 'Replica
      WHERE counter_name = 'User Connections'
  /*                     User
     As Of             	Connctns	Range 51-117 (typically 60-85)
-    ==================  ========	================================				
+    ==================  ========	================================	
+	TUE 06/07/22 10:29	95
 	MON 05/23/22 11:17	85
 
     WED 06/23/21 09:08	83
@@ -47,7 +48,7 @@ EXEC sp_connections
 
     SPEEDWAYMOTORS\pjcrews			LNK-IS-07B    		 14
     SPEEDWAYMOTORS\rmdesimone		LNK-SQL-LIVE-1       3
-	SPEEDWAYMOTORS\jtbergmann		LNK-SQL-LIVE-1       3                                                                                                           	3
+	SPEEDWAYMOTORS\jtbergmann		LNK-SQL-LIVE-1       3                                                                
     SPEEDWAYMOTORS\ascrook			LNK-IS-04B			 0
     
     SPEEDWAYMOTORS\ccchance	        LNK-MRKT-CCC         1
