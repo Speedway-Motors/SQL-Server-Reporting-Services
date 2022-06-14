@@ -26,16 +26,16 @@
             <Value>=Parameters!MaxQty.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>-- select top 5 * from tng.tblskubase
+        <CommandText>/* 12 Month Sales by Bin.rdl
 
--- 12 Month Sales by Bin
---   run on dw.speedway2.com
-/* 12 Month Sales by Bin.rdl
-    ver 21.30.1
+CHANGE LOG
+Version Ticket		by	Change
+=======	=========== ===	=================================================
+22.24.1 SMIHD-25231 PJC Added locations 25 &amp; 47
 
-DECLARE @Location VARCHAR(10),  @BinLocation VARCHAR(10),   @MinQty int     ,@MaxQty int
-SELECT  @Location = '99' , @BinLocation = 'AL08',     @MinQty = 50     ,@MaxQty = 100    -- bin X01AA2            13,160
-*/	
+DECLARE @Location VARCHAR(10) = 25,  @BinLocation VARCHAR(10) = 'MP',   @MinQty int = 0    ,@MaxQty int = 100
+-- @Location = '99' , @BinLocation = 'AL08',     @MinQty = 50     ,@MaxQty = 100  
+*/
 -- SKUs will not show on the report if they have a NEGATIVE 12 month sales value 
 --    (more where returned than sold) unless @MinQty is set below 0
 SELECT DISTINCT BS.ixLocation,
@@ -77,7 +77,7 @@ SELECT DISTINCT BS.ixLocation,
 FROM tblBinSku BS --14,614 rows
     LEFT JOIN tblSKU S ON S.ixSKU = BS.ixSKU
     LEFT JOIN tblSKULocation SL ON SL.ixSKU = BS.ixSKU 
-       AND SL.ixLocation = @Location
+								AND SL.ixLocation = @Location
     LEFT JOIN tblBin B ON B.ixBin = BS.ixBin
     LEFT JOIN tblVendorSKU VS on S.ixSKU = VS.ixSKU and VS.iOrdinality = 1
     -- 12 Month Sales (with Returns backed out) 
@@ -91,37 +91,27 @@ FROM tblBinSku BS --14,614 rows
     LEFT JOIN (SELECT ST.ixSKU AS SKU
                     , ISNULL(SUM(ST.iQty),0) * -1 AS YTDBOMQty 
 		       FROM tblSKUTransaction ST 
-		       LEFT JOIN tblDate D ON D.ixDate = ST.ixDate 
+				LEFT JOIN tblDate D ON D.ixDate = ST.ixDate 
 		       WHERE D.dtDate BETWEEN DATEADD(yy, -1, GETDATE()) AND GETDATE()
 		         and ST.sTransactionType = 'BOM' 
 			     and ST.iQty &lt; 0
 		       GROUP BY ST.ixSKU
 		      ) BOM ON BOM.SKU = BS.ixSKU   
     LEFT JOIN (-- available on the Web
-                SELECT TNG.ixSOPSKU
-                FROM (  select s.ixSOPSKU 
-                        from  tng.tblskubase AS b
-                            inner JOIN  tng.tblskuvariant s ON b.ixSKUBase = s.ixSKUBase
-                            inner JOIN  tng.tblproductpageskubase ppsb ON b.ixSKUBase = ppsb.ixSKUBase
-                            inner JOIN  tng.tblproductpage AS pp ON ppsb.ixProductPage = pp.ixProductPage
-                        WHERE b.flgWebPublish = 1
-                            AND s.flgPublish = 1
-                            AND pp.flgActive = 1
-                            AND dbo.fn_isProductSaleable(s.flgFactoryShip, s.flgDiscontinued, s.flgBackorderable, s.iTotalQAV, s.flgMTO) = 1
-                    ) TNG  -- 63 seconds 171,260
-               ) AOW on AOW.ixSOPSKU COLLATE SQL_Latin1_General_CP1_CI_AS = BS.ixSKU COLLATE SQL_Latin1_General_CP1_CI_AS 		  
+                SELECT ixSKU 'ixSOPSKU'
+				FROM tblskuavailability 
+				WHERE dtisProductVisibleSaleableUtc is not null
+               ) AOW on AOW.ixSOPSKU COLLATE SQL_Latin1_General_CP1_CI_AS = BS.ixSKU-- COLLATE SQL_Latin1_General_CP1_CI_AS 		  
 WHERE BS.ixLocation = @Location
 -- and S.ixSKU in ('2763714102','72515111') FOR TESTING/TROUBLESHOOTING ONLY
   and BS.sPickingBin LIKE '%' + @BinLocation + '%'
-  --where sku like '%' + @Sku + '%'    
   and ISNULL(YTD.YTDQtySold,0) BETWEEN @MinQty AND @MaxQty
   and S.flgIntangible = 0
-  and S.flgDeletedFromSOP = '0'		
+  and S.flgDeletedFromSOP = 0		
   and SUBSTRING(BS.sPickingBin, 1, 1) NOT IN ('!', '~') -- to exclude more essentially "non-tangible" SKUs 
-  and B.flgDeletedFromSOP = '0' 
-  and B.flgAvailablePicking = '1'
-ORDER BY --(ISNULL(SL.iQOS,0.0)*12 / (ISNULL(YTD.YTDQtySold,0.0)+ISNULL(BOM.YTDBOMQty,0.0))) DESC     , 
-        PickBinNumber
+  and B.flgDeletedFromSOP = 0 
+  and B.flgAvailablePicking = 1
+ORDER BY PickBinNumber
        , TwelveMonthSales DESC
        </CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
@@ -234,7 +224,7 @@ ORDER BY --(ISNULL(SL.iQOS,0.0)*12 / (ISNULL(YTD.YTDQtySold,0.0)+ISNULL(BOM.YTDB
         <DataSourceName>dw_speedway2_com</DataSourceName>
         <CommandText>select ixLocation
 from tblLocation
-where ixLocation in (85,99)
+where ixLocation in (25,47,85,99)
 order by ixLocation</CommandText>
       </Query>
       <Fields>
@@ -5706,7 +5696,7 @@ order by ixLocation</CommandText>
         <Height>1.48542in</Height>
         <Style />
       </Body>
-      <Width>18.34584in</Width>
+      <Width>16.94584in</Width>
       <Page>
         <PageFooter>
           <Height>0.50555in</Height>
@@ -5813,7 +5803,7 @@ IIf(System.DateTime.Now.Subtract(Globals!ExecutionTime).Seconds &gt; 0, System.D
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>ver 22.21.1</Value>
+                      <Value>ver 22.24.1</Value>
                       <Style>
                         <FontFamily>Tahoma</FontFamily>
                         <FontSize>8pt</FontSize>
