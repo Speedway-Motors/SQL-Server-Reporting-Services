@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="dw.speedway2.com">
+  <ConnectionProperties>
+    <Extension>OLEDB-MD</Extension>
+    <ConnectString>Data Source = "dw.speedway2.com"; Initial Catalog="DW"</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>7beb98c9-971c-4215-9d33-8e5f3e25b43e</DataSourceID>
+</RptDataSource>
