@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Systems", "Systems.rptproj", "{1756B6D9-B4FA-4232-9A96-32F48DF1ABE1}"
 EndProject
 Global
@@ -11,8 +13,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{1756B6D9-B4FA-4232-9A96-32F48DF1ABE1}.Debug|Default.ActiveCfg = Debug
-		{1756B6D9-B4FA-4232-9A96-32F48DF1ABE1}.Debug|Default.Build.0 = DebugLocal
-		{1756B6D9-B4FA-4232-9A96-32F48DF1ABE1}.Debug|Default.Deploy.0 = DebugLocal
+		{1756B6D9-B4FA-4232-9A96-32F48DF1ABE1}.Debug|Default.Build.0 = Debug
+		{1756B6D9-B4FA-4232-9A96-32F48DF1ABE1}.Debug|Default.Deploy.0 = Debug
 		{1756B6D9-B4FA-4232-9A96-32F48DF1ABE1}.DebugLocal|Default.ActiveCfg = DebugLocal
 		{1756B6D9-B4FA-4232-9A96-32F48DF1ABE1}.DebugLocal|Default.Build.0 = DebugLocal
 		{1756B6D9-B4FA-4232-9A96-32F48DF1ABE1}.DebugLocal|Default.Deploy.0 = DebugLocal
@@ -22,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B8F2314D-C67B-4387-ABD8-A18D1E3C2EC1}
 	EndGlobalSection
 EndGlobal

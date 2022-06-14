@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Inventory Analysis", "Inventory Analysis.rptproj", "{BD465049-C47A-4CE3-8B9A-F39EF080AFCF}"
 EndProject
 Global
@@ -11,8 +13,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BD465049-C47A-4CE3-8B9A-F39EF080AFCF}.Debug|Default.ActiveCfg = Debug
-		{BD465049-C47A-4CE3-8B9A-F39EF080AFCF}.Debug|Default.Build.0 = DebugLocal
-		{BD465049-C47A-4CE3-8B9A-F39EF080AFCF}.Debug|Default.Deploy.0 = DebugLocal
+		{BD465049-C47A-4CE3-8B9A-F39EF080AFCF}.Debug|Default.Build.0 = Debug
+		{BD465049-C47A-4CE3-8B9A-F39EF080AFCF}.Debug|Default.Deploy.0 = Debug
 		{BD465049-C47A-4CE3-8B9A-F39EF080AFCF}.DebugLocal|Default.ActiveCfg = DebugLocal
 		{BD465049-C47A-4CE3-8B9A-F39EF080AFCF}.DebugLocal|Default.Build.0 = DebugLocal
 		{BD465049-C47A-4CE3-8B9A-F39EF080AFCF}.Release|Default.ActiveCfg = Release
@@ -21,5 +23,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BDF2A89D-08D9-4784-8FC6-FE61668266C6}
 	EndGlobalSection
 EndGlobal

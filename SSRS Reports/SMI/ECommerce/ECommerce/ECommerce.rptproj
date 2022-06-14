@@ -1,219 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ToolsVersion="2.0">
-  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
-  <DataSources>
-    <ProjectItem>
-      <Name>dw.speedway2.com.rds</Name>
-      <FullPath>dw.speedway2.com.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SMI.rds</Name>
-      <FullPath>SMI.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SMI_ODS.rds</Name>
-      <FullPath>SMI_ODS.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SMIDW.rds</Name>
-      <FullPath>SMIDW.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SMISQLLIVE.rds</Name>
-      <FullPath>SMISQLLIVE.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>tngLive.rds</Name>
-      <FullPath>tngLive.rds</FullPath>
-    </ProjectItem>
-  </DataSources>
-  <DataSets />
-  <Reports>
-    <ProjectItem>
-      <Name>360 Survey Feedback.rdl</Name>
-      <FullPath>360 Survey Feedback.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Abandoned Cart by Package Type.rdl</Name>
-      <FullPath>Abandoned Cart by Package Type.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Active Salable SKUs.rdl</Name>
-      <FullPath>Active Salable SKUs.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Active SKU Detail.rdl</Name>
-      <FullPath>Active SKU Detail.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>AFCO SKU Cost.rdl</Name>
-      <FullPath>AFCO SKU Cost.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Available Kit Quantity.rdl</Name>
-      <FullPath>Available Kit Quantity.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Brands and Product Lines.rdl</Name>
-      <FullPath>Brands and Product Lines.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Buyer History by SKU.rdl</Name>
-      <FullPath>Buyer History by SKU.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Discontinued SKU Stock Out.rdl</Name>
-      <FullPath>Discontinued SKU Stock Out.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>eBay Order Detail.rdl</Name>
-      <FullPath>eBay Order Detail.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Ebay Sales.rdl</Name>
-      <FullPath>Ebay Sales.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>FBA Inventory.rdl</Name>
-      <FullPath>FBA Inventory.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Fitment Coverage.rdl</Name>
-      <FullPath>Fitment Coverage.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>GTINs assigned to multiple SKUs.rdl</Name>
-      <FullPath>GTINs assigned to multiple SKUs.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>GTINs with Non-numeric Values.rdl</Name>
-      <FullPath>GTINs with Non-numeric Values.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Kits with CARB Components.rdl</Name>
-      <FullPath>Kits with CARB Components.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Marketing Email Unsubscribes.rdl</Name>
-      <FullPath>Marketing Email Unsubscribes.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Recently Created Brands.rdl</Name>
-      <FullPath>Recently Created Brands.rdl</FullPath>
-    </ProjectItem>
-    <ResourceProjectItem>
-      <Name>Rough Draft.jpg</Name>
-      <FullPath>Rough Draft.jpg</FullPath>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <FullPath>Debug</FullPath>
+    <OutputPath>bin\Debug</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>Speedway/ECommerce</TargetReportFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+    <TargetServerURL>http://lnk-sql-live-1/Reports/</TargetServerURL>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'DebugLocal' ">
+    <FullPath>DebugLocal</FullPath>
+    <OutputPath>bin\DebugLocal</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2008</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>ECommerce</TargetReportFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Production' ">
+    <FullPath>Production</FullPath>
+    <OutputPath>bin\Production</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2008</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>ECommerce</TargetReportFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+  </PropertyGroup>
+  <PropertyGroup>
+    <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkZGw1MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAiIHhtbG5zOmRkbDUwMF81MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAvNTAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+    <DataSources>@(DataSource)</DataSources>
+    <DataSets>@(DataSet)</DataSets>
+    <Reports>@(Report)</Reports>
+  </PropertyGroup>
+  <ItemGroup>
+    <DataSource Include="dw.speedway2.com.rds" />
+    <DataSource Include="SMI.rds" />
+    <DataSource Include="SMIDW.rds" />
+    <DataSource Include="SMISQLLIVE.rds" />
+    <DataSource Include="SMI_ODS.rds" />
+    <DataSource Include="tngLive.rds" />
+  </ItemGroup>
+  <ItemGroup>
+    <Report Include="360 Survey Feedback.rdl" />
+    <Report Include="Abandoned Cart by Package Type.rdl" />
+    <Report Include="Active Salable SKUs.rdl" />
+    <Report Include="Active SKU Detail.rdl" />
+    <Report Include="AFCO SKU Cost.rdl" />
+    <Report Include="Available Kit Quantity.rdl" />
+    <Report Include="Brands and Product Lines.rdl" />
+    <Report Include="Buyer History by SKU.rdl" />
+    <Report Include="Discontinued SKU Stock Out.rdl" />
+    <Report Include="eBay Order Detail.rdl" />
+    <Report Include="Ebay Sales.rdl" />
+    <Report Include="FBA Inventory.rdl" />
+    <Report Include="Fitment Coverage.rdl" />
+    <Report Include="GTINs assigned to multiple SKUs.rdl" />
+    <Report Include="GTINs with Non-numeric Values.rdl" />
+    <Report Include="Kit Incentive Payout.rdl" />
+    <Report Include="Kits with CARB Components.rdl" />
+    <Report Include="Marketing Email Unsubscribes.rdl" />
+    <Report Include="Recently Created Brands.rdl" />
+    <Report Include="Rough Draft.jpg">
       <MimeType>image/jpeg</MimeType>
-    </ResourceProjectItem>
-    <ProjectItem>
-      <Name>SEMA-to-Merchant Categorization Mapping.rdl</Name>
-      <FullPath>SEMA-to-Merchant Categorization Mapping.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKU Brand Assignment Changes.rdl</Name>
-      <FullPath>SKU Brand Assignment Changes.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKU by Vendor and Brand.rdl</Name>
-      <FullPath>SKU by Vendor and Brand.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKU by Vendor determined by Brand(s).rdl</Name>
-      <FullPath>SKU by Vendor determined by Brand(s).rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKU Categorization Load Sheet REBUILD.rdl</Name>
-      <FullPath>SKU Categorization Load Sheet REBUILD.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKU Categorization Load Sheet.rdl</Name>
-      <FullPath>SKU Categorization Load Sheet.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKU Physical Weight vs Dim Weight.rdl</Name>
-      <FullPath>SKU Physical Weight vs Dim Weight.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKU Vendors.rdl</Name>
-      <FullPath>SKU Vendors.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKU Web Price Changes.rdl</Name>
-      <FullPath>SKU Web Price Changes.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs by Brand and SEMA.rdl</Name>
-      <FullPath>SKUs by Brand and SEMA.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs for 360 Photo Process.rdl</Name>
-      <FullPath>SKUs for 360 Photo Process.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs with Modified Attributes-RETIRED 20160623.rdl</Name>
-      <FullPath>SKUs with Modified Attributes-RETIRED 20160623.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SKUs Without Chasis Fitment.rdl</Name>
-      <FullPath>SKUs Without Chasis Fitment.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Slow Moving Garage Sale SKUs.rdl</Name>
-      <FullPath>Slow Moving Garage Sale SKUs.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SMIHD 10700 Search Query Chain.rdl</Name>
-      <FullPath>SMIHD 10700 Search Query Chain.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>TEMP - Testing Date param.rdl</Name>
-      <FullPath>TEMP - Testing Date param.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Web Phone Ebay SKU Ratios.rdl</Name>
-      <FullPath>Web Phone Ebay SKU Ratios.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Yesterday's Out of Stock SKUs Not Available for Backorder.rdl</Name>
-      <FullPath>Yesterday's Out of Stock SKUs Not Available for Backorder.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Kit Incentive Payout.rdl</Name>
-      <FullPath>Kit Incentive Payout.rdl</FullPath>
-    </ProjectItem>
-  </Reports>
-  <Configurations>
-    <Configuration>
-      <Name>Debug</Name>
-      <Platform>Win32</Platform>
-      <Options>
-        <OutputPath>bin\Debug</OutputPath>
-        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetServerURL>http://lnk-sql-live-1/Reports/</TargetServerURL>
-        <TargetFolder>Speedway/ECommerce</TargetFolder>
-        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
-      </Options>
-    </Configuration>
-    <Configuration>
-      <Name>DebugLocal</Name>
-      <Platform>Win32</Platform>
-      <Options>
-        <OutputPath>bin\DebugLocal</OutputPath>
-        <TargetServerVersion>SSRS2008</TargetServerVersion>
-        <TargetFolder>ECommerce</TargetFolder>
-        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
-      </Options>
-    </Configuration>
-    <Configuration>
-      <Name>Production</Name>
-      <Platform>Win32</Platform>
-      <Options>
-        <OutputPath>bin\Production</OutputPath>
-        <TargetServerVersion>SSRS2008</TargetServerVersion>
-        <TargetFolder>ECommerce</TargetFolder>
-        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
-      </Options>
-    </Configuration>
-  </Configurations>
+    </Report>
+    <Report Include="SEMA-to-Merchant Categorization Mapping.rdl" />
+    <Report Include="SKU Brand Assignment Changes.rdl" />
+    <Report Include="SKU by Vendor and Brand.rdl" />
+    <Report Include="SKU by Vendor determined by Brand(s).rdl" />
+    <Report Include="SKU Categorization Load Sheet REBUILD.rdl" />
+    <Report Include="SKU Categorization Load Sheet.rdl" />
+    <Report Include="SKU Physical Weight vs Dim Weight.rdl" />
+    <Report Include="SKU Vendors.rdl" />
+    <Report Include="SKU Web Price Changes.rdl" />
+    <Report Include="SKUs by Brand and SEMA.rdl" />
+    <Report Include="SKUs for 360 Photo Process.rdl" />
+    <Report Include="SKUs with Modified Attributes-RETIRED 20160623.rdl" />
+    <Report Include="SKUs Without Chasis Fitment.rdl" />
+    <Report Include="Slow Moving Garage Sale SKUs.rdl" />
+    <Report Include="SMIHD 10700 Search Query Chain.rdl" />
+    <Report Include="TEMP - Testing Date param.rdl" />
+    <Report Include="Web Phone Ebay SKU Ratios.rdl" />
+    <Report Include="Yesterday's Out of Stock SKUs Not Available for Backorder.rdl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Call Center", "Call Center.rptproj", "{200E7172-D2B9-4A86-BC1C-316457B5C7CA}"
 EndProject
 Global
@@ -11,8 +13,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{200E7172-D2B9-4A86-BC1C-316457B5C7CA}.Debug|Default.ActiveCfg = Debug
-		{200E7172-D2B9-4A86-BC1C-316457B5C7CA}.Debug|Default.Build.0 = DebugLocal
-		{200E7172-D2B9-4A86-BC1C-316457B5C7CA}.Debug|Default.Deploy.0 = DebugLocal
+		{200E7172-D2B9-4A86-BC1C-316457B5C7CA}.Debug|Default.Build.0 = Debug
+		{200E7172-D2B9-4A86-BC1C-316457B5C7CA}.Debug|Default.Deploy.0 = Debug
 		{200E7172-D2B9-4A86-BC1C-316457B5C7CA}.DebugLocal|Default.ActiveCfg = DebugLocal
 		{200E7172-D2B9-4A86-BC1C-316457B5C7CA}.DebugLocal|Default.Build.0 = DebugLocal
 		{200E7172-D2B9-4A86-BC1C-316457B5C7CA}.DebugLocal|Default.Deploy.0 = DebugLocal
@@ -22,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA09E45C-187C-4CFD-A3C0-EE3D0BE13D91}
 	EndGlobalSection
 EndGlobal

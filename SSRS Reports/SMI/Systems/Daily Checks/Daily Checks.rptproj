@@ -1,256 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ToolsVersion="2.0">
-  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
-  <DataSources>
-    <ProjectItem>
-      <Name>LNK-SQL-LIVE.rds</Name>
-      <FullPath>LNK-SQL-LIVE.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>LNK-SQL-LIVE-2.rds</Name>
-      <FullPath>LNK-SQL-LIVE-2.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>ReportServer.rds</Name>
-      <FullPath>ReportServer.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SMI.rds</Name>
-      <FullPath>SMI.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SMIDW.rds</Name>
-      <FullPath>SMIDW.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SMISQLLIVE.rds</Name>
-      <FullPath>SMISQLLIVE.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Util-DWstaging.rds</Name>
-      <FullPath>Util-DWstaging.rds</FullPath>
-    </ProjectItem>
-  </DataSources>
-  <DataSets />
-  <Reports>
-    <ProjectItem>
-      <Name>BB - sub01 SQL Services Reboots.rdl</Name>
-      <FullPath>BB - sub01 SQL Services Reboots.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>BB - sub02 Log File Size.rdl</Name>
-      <FullPath>BB - sub02 Log File Size.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>BB - sub03 Drive Space Free by Server.rdl</Name>
-      <FullPath>BB - sub03 Drive Space Free by Server.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>BB - sub04 DB Backup Monitoring - ALL.rdl</Name>
-      <FullPath>BB - sub04 DB Backup Monitoring - ALL.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>BB - sub04 DB Backup Monitoring.rdl</Name>
-      <FullPath>BB - sub04 DB Backup Monitoring.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>BB - sub05 Failed SSA Jobs.rdl</Name>
-      <FullPath>BB - sub05 Failed SSA Jobs.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>BB - sub06 Error Summary - LIVE .rdl</Name>
-      <FullPath>BB - sub06 Error Summary - LIVE .rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>BB - sub06 Error Summary.rdl</Name>
-      <FullPath>BB - sub06 Error Summary.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>BB - sub07 Report Subscriptions Errors.rdl</Name>
-      <FullPath>BB - sub07 Report Subscriptions Errors.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>BB - sub08 Expiring Certificates.rdl</Name>
-      <FullPath>BB - sub08 Expiring Certificates.rdl</FullPath>
-    </ProjectItem>
-    <ResourceProjectItem>
-      <Name>Breaking (is) Bad.jpg</Name>
-      <FullPath>Breaking (is) Bad.jpg</FullPath>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <FullPath>Debug</FullPath>
+    <OutputPath>bin\Debug</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>Speedway/Systems/Daily Checks</TargetReportFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+    <TargetServerURL>http://lnk-sql-live-1/Reports/</TargetServerURL>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'DebugLocal' ">
+    <FullPath>DebugLocal</FullPath>
+    <OutputPath>bin\DebugLocal</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>Daily Checks</TargetReportFolder>
+    <TargetDatasetFolder>Datasets</TargetDatasetFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+    <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <FullPath>Release</FullPath>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>Daily Checks</TargetReportFolder>
+    <TargetDatasetFolder>Datasets</TargetDatasetFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+    <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
+  </PropertyGroup>
+  <PropertyGroup>
+    <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkZGw1MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAiIHhtbG5zOmRkbDUwMF81MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAvNTAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+    <DataSources>@(DataSource)</DataSources>
+    <DataSets>@(DataSet)</DataSets>
+    <Reports>@(Report)</Reports>
+  </PropertyGroup>
+  <ItemGroup>
+    <DataSource Include="LNK-SQL-LIVE-2.rds" />
+    <DataSource Include="LNK-SQL-LIVE.rds" />
+    <DataSource Include="ReportServer.rds" />
+    <DataSource Include="SMI.rds" />
+    <DataSource Include="SMIDW.rds" />
+    <DataSource Include="SMISQLLIVE.rds" />
+    <DataSource Include="Util-DWstaging.rds" />
+  </ItemGroup>
+  <ItemGroup>
+    <Report Include="BB - sub01 SQL Services Reboots.rdl" />
+    <Report Include="BB - sub02 Log File Size.rdl" />
+    <Report Include="BB - sub03 Drive Space Free by Server.rdl" />
+    <Report Include="BB - sub04 DB Backup Monitoring - ALL.rdl" />
+    <Report Include="BB - sub04 DB Backup Monitoring.rdl" />
+    <Report Include="BB - sub05 Failed SSA Jobs.rdl" />
+    <Report Include="BB - sub06 Error Summary - LIVE .rdl" />
+    <Report Include="BB - sub06 Error Summary.rdl" />
+    <Report Include="BB - sub07 Report Subscriptions Errors.rdl" />
+    <Report Include="BB - sub08 Expiring Certificates.rdl" />
+    <Report Include="Breaking (is) Bad.jpg">
       <MimeType>image/jpeg</MimeType>
-    </ResourceProjectItem>
-    <ProjectItem>
-      <Name>Breaking (is) Bad.rdl</Name>
-      <FullPath>Breaking (is) Bad.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Daily Checks.rdl</Name>
-      <FullPath>Daily Checks.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub01 SKUSnapshot.rdl</Name>
-      <FullPath>DC - sub01 SKUSnapshot.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub02 Data Sources.rdl</Name>
-      <FullPath>DC - sub02 Data Sources.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub03 SKU Transaction.rdl</Name>
-      <FullPath>DC - sub03 SKU Transaction.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub04 ErrorLog.rdl</Name>
-      <FullPath>DC - sub04 ErrorLog.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub05 Table Size Check.rdl</Name>
-      <FullPath>DC - sub05 Table Size Check.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub06 NullFlags.rdl</Name>
-      <FullPath>DC - sub06 NullFlags.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub07 OrphanedSKUs.rdl</Name>
-      <FullPath>DC - sub07 OrphanedSKUs.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub08 AWS Staging Record Count.rdl</Name>
-      <FullPath>DC - sub08 AWS Staging Record Count.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub09 O and OL merch costs not same.rdl</Name>
-      <FullPath>DC - sub09 O and OL merch costs not same.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub10 SKU Snapshot Rowcount.rdl</Name>
-      <FullPath>DC - sub10 SKU Snapshot Rowcount.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub11 PODetail.rdl</Name>
-      <FullPath>DC - sub11 PODetail.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub13 ScansWithUnmappedIP.rdl</Name>
-      <FullPath>DC - sub13 ScansWithUnmappedIP.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub16 SKU Trans Count by Day.rdl</Name>
-      <FullPath>DC - sub16 SKU Trans Count by Day.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub17 Missing SKU Transactions.rdl</Name>
-      <FullPath>DC - sub17 Missing SKU Transactions.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub18 SOP Feed Log.rdl</Name>
-      <FullPath>DC - sub18 SOP Feed Log.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub19 Proc Log Errors.rdl</Name>
-      <FullPath>DC - sub19 Proc Log Errors.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub21 Report Executions.rdl</Name>
-      <FullPath>DC - sub21 Report Executions.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub22 AFCO Inter Company Sales.rdl</Name>
-      <FullPath>DC - sub22 AFCO Inter Company Sales.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub24 Brand TNG vs SMI check.rdl</Name>
-      <FullPath>DC - sub24 Brand TNG vs SMI check.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub25 Data Push Checks - SMI Reporting to AWS.rdl</Name>
-      <FullPath>DC - sub25 Data Push Checks - SMI Reporting to AWS.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub26 tblCSTCustSummary_Rollup Row Count.rdl</Name>
-      <FullPath>DC - sub26 tblCSTCustSummary_Rollup Row Count.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>DC - sub27 LatestDoorSwipe - RETIRED - now part of DC - sub03.rdl</Name>
-      <FullPath>DC - sub27 LatestDoorSwipe - RETIRED - now part of DC - sub03.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Drive Space and Log File size.rdl</Name>
-      <FullPath>Drive Space and Log File size.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Lowest Free Space by Day LNK-DWSTAGING1.rdl</Name>
-      <FullPath>Lowest Free Space by Day LNK-DWSTAGING1.rdl</FullPath>
-    </ProjectItem>
-    <ResourceProjectItem>
-      <Name>RoboCoffee.jpg</Name>
-      <FullPath>RoboCoffee.jpg</FullPath>
+    </Report>
+    <Report Include="Breaking (is) Bad.rdl" />
+    <Report Include="Daily Checks.rdl" />
+    <Report Include="DC - sub01 SKUSnapshot.rdl" />
+    <Report Include="DC - sub02 Data Sources.rdl" />
+    <Report Include="DC - sub03 SKU Transaction.rdl" />
+    <Report Include="DC - sub04 ErrorLog.rdl" />
+    <Report Include="DC - sub05 Table Size Check.rdl" />
+    <Report Include="DC - sub06 NullFlags.rdl" />
+    <Report Include="DC - sub07 OrphanedSKUs.rdl" />
+    <Report Include="DC - sub08 AWS Staging Record Count.rdl" />
+    <Report Include="DC - sub09 O and OL merch costs not same.rdl" />
+    <Report Include="DC - sub10 SKU Snapshot Rowcount.rdl" />
+    <Report Include="DC - sub11 PODetail.rdl" />
+    <Report Include="DC - sub13 ScansWithUnmappedIP.rdl" />
+    <Report Include="DC - sub16 SKU Trans Count by Day.rdl" />
+    <Report Include="DC - sub17 Missing SKU Transactions.rdl" />
+    <Report Include="DC - sub18 SOP Feed Log.rdl" />
+    <Report Include="DC - sub19 Proc Log Errors.rdl" />
+    <Report Include="DC - sub21 Report Executions.rdl" />
+    <Report Include="DC - sub22 AFCO Inter Company Sales.rdl" />
+    <Report Include="DC - sub24 Brand TNG vs SMI check.rdl" />
+    <Report Include="DC - sub25 Data Push Checks - SMI Reporting to AWS.rdl" />
+    <Report Include="DC - sub26 tblCSTCustSummary_Rollup Row Count.rdl" />
+    <Report Include="DC - sub27 LatestDoorSwipe - RETIRED - now part of DC - sub03.rdl" />
+    <Report Include="Drive Space and Log File size.rdl" />
+    <Report Include="Lowest Free Space by Day LNK-DWSTAGING1.rdl" />
+    <Report Include="RoboCoffee-small.jpg">
       <MimeType>image/jpeg</MimeType>
-    </ResourceProjectItem>
-    <ResourceProjectItem>
-      <Name>RoboCoffee-small.jpg</Name>
-      <FullPath>RoboCoffee-small.jpg</FullPath>
+    </Report>
+    <Report Include="RoboCoffee.jpg">
       <MimeType>image/jpeg</MimeType>
-    </ResourceProjectItem>
-    <ResourceProjectItem>
-      <Name>robocorn.jpeg</Name>
-      <FullPath>robocorn.jpeg</FullPath>
+    </Report>
+    <Report Include="robocorn.jpeg">
       <MimeType>image/jpeg</MimeType>
-    </ResourceProjectItem>
-    <ResourceProjectItem>
-      <Name>Speedway-210x72.jpg</Name>
-      <FullPath>Speedway-210x72.jpg</FullPath>
+    </Report>
+    <Report Include="Speedway-210x72.jpg">
       <MimeType>image/jpeg</MimeType>
-    </ResourceProjectItem>
-    <ResourceProjectItem>
-      <Name>SpideyPush.jpg</Name>
-      <FullPath>SpideyPush.jpg</FullPath>
+    </Report>
+    <Report Include="SpideyPush.jpg">
       <MimeType>image/jpeg</MimeType>
-    </ResourceProjectItem>
-    <ProjectItem>
-      <Name>TEMP - column scroll test.rdl</Name>
-      <FullPath>TEMP - column scroll test.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>TEMP.rdl</Name>
-      <FullPath>TEMP.rdl</FullPath>
-    </ProjectItem>
-  </Reports>
-  <Configurations>
-    <Configuration>
-      <Name>Debug</Name>
-      <Platform>Win32</Platform>
-      <Options>
-        <OutputPath>bin\Debug</OutputPath>
-        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetServerURL>http://lnk-sql-live-1/Reports/</TargetServerURL>
-        <TargetFolder>Speedway/Systems/Daily Checks</TargetFolder>
-        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
-      </Options>
-    </Configuration>
-    <Configuration>
-      <Name>DebugLocal</Name>
-      <Platform>Win32</Platform>
-      <Options>
-        <OutputPath>bin\DebugLocal</OutputPath>
-        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetFolder>Daily Checks</TargetFolder>
-        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
-        <TargetDatasetFolder>Datasets</TargetDatasetFolder>
-        <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
-      </Options>
-    </Configuration>
-    <Configuration>
-      <Name>Release</Name>
-      <Platform>Win32</Platform>
-      <Options>
-        <OutputPath>bin\Release</OutputPath>
-        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetFolder>Daily Checks</TargetFolder>
-        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
-        <TargetDatasetFolder>Datasets</TargetDatasetFolder>
-        <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
-      </Options>
-    </Configuration>
-  </Configurations>
+    </Report>
+    <Report Include="TEMP - column scroll test.rdl" />
+    <Report Include="TEMP.rdl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Management", "Management.rptproj", "{030A6594-DC13-4493-91D5-D72BD517196A}"
 EndProject
 Global
@@ -11,8 +13,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{030A6594-DC13-4493-91D5-D72BD517196A}.Debug|Default.ActiveCfg = Debug
-		{030A6594-DC13-4493-91D5-D72BD517196A}.Debug|Default.Build.0 = DebugLocal
-		{030A6594-DC13-4493-91D5-D72BD517196A}.Debug|Default.Deploy.0 = DebugLocal
+		{030A6594-DC13-4493-91D5-D72BD517196A}.Debug|Default.Build.0 = Debug
+		{030A6594-DC13-4493-91D5-D72BD517196A}.Debug|Default.Deploy.0 = Debug
 		{030A6594-DC13-4493-91D5-D72BD517196A}.DebugLocal|Default.ActiveCfg = DebugLocal
 		{030A6594-DC13-4493-91D5-D72BD517196A}.DebugLocal|Default.Build.0 = DebugLocal
 		{030A6594-DC13-4493-91D5-D72BD517196A}.DebugLocal|Default.Deploy.0 = DebugLocal
@@ -22,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78A5660B-6B65-4E24-B2B2-D1C850D0141A}
 	EndGlobalSection
 EndGlobal

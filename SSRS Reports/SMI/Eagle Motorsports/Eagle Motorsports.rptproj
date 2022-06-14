@@ -1,129 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ToolsVersion="2.0">
-  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
-  <DataSources>
-    <ProjectItem>
-      <Name>SMIDW.rds</Name>
-      <FullPath>SMIDW.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SMISQLLIVE.rds</Name>
-      <FullPath>SMISQLLIVE.rds</FullPath>
-    </ProjectItem>
-  </DataSources>
-  <DataSets />
-  <Reports>
-    <ProjectItem>
-      <Name>AFCO Brand Sales by EMI.rdl</Name>
-      <FullPath>AFCO Brand Sales by EMI.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Eagle Customer Accounts.rdl</Name>
-      <FullPath>Eagle Customer Accounts.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Eagle Motorsports Brand Summary.rdl</Name>
-      <FullPath>Eagle Motorsports Brand Summary.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Eagle Motorsports Credit Memo Returns and Adjustments.rdl</Name>
-      <FullPath>Eagle Motorsports Credit Memo Returns and Adjustments.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Eagle Motorsports Revenue via SMI SOP.rdl</Name>
-      <FullPath>Eagle Motorsports Revenue via SMI SOP.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Eagle Motorsports Sales Summary.rdl</Name>
-      <FullPath>Eagle Motorsports Sales Summary.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Eagle Motorsports Shock Sales Summary.rdl</Name>
-      <FullPath>Eagle Motorsports Shock Sales Summary.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>EC Source Code Orders entered by Shock Department.rdl</Name>
-      <FullPath>EC Source Code Orders entered by Shock Department.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>EMI BOM Inventory.rdl</Name>
-      <FullPath>EMI BOM Inventory.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>EMI Vendor Revenue.rdl</Name>
-      <FullPath>EMI Vendor Revenue.rdl</FullPath>
-    </ProjectItem>
-    <ResourceProjectItem>
-      <Name>ExpandAll.jpg</Name>
-      <FullPath>ExpandAll.jpg</FullPath>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <FullPath>Debug</FullPath>
+    <OutputPath>bin\Debug</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>Speedway/Eagle Motorsports</TargetReportFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+    <TargetServerURL>http://lnk-sql-live-1/Reports/</TargetServerURL>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'DebugLocal' ">
+    <FullPath>DebugLocal</FullPath>
+    <OutputPath>bin\DebugLocal</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>Eagle Motorsports</TargetReportFolder>
+    <TargetDatasetFolder>Datasets</TargetDatasetFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+    <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <FullPath>Release</FullPath>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>Eagle Motorsports</TargetReportFolder>
+    <TargetDatasetFolder>Datasets</TargetDatasetFolder>
+    <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
+    <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
+  </PropertyGroup>
+  <PropertyGroup>
+    <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkZGw1MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAiIHhtbG5zOmRkbDUwMF81MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAvNTAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+    <DataSources>@(DataSource)</DataSources>
+    <DataSets>@(DataSet)</DataSets>
+    <Reports>@(Report)</Reports>
+  </PropertyGroup>
+  <ItemGroup>
+    <DataSource Include="SMIDW.rds" />
+    <DataSource Include="SMISQLLIVE.rds" />
+  </ItemGroup>
+  <ItemGroup>
+    <Report Include="AFCO Brand Sales by EMI.rdl" />
+    <Report Include="Eagle Customer Accounts.rdl" />
+    <Report Include="Eagle Motorsports Brand Summary.rdl" />
+    <Report Include="Eagle Motorsports Credit Memo Returns and Adjustments.rdl" />
+    <Report Include="Eagle Motorsports Revenue via SMI SOP.rdl" />
+    <Report Include="Eagle Motorsports Sales Summary.rdl" />
+    <Report Include="Eagle Motorsports Shock Sales Summary.rdl" />
+    <Report Include="EC Source Code Orders entered by Shock Department.rdl" />
+    <Report Include="EMI BOM Inventory.rdl" />
+    <Report Include="EMI Vendor Revenue.rdl" />
+    <Report Include="ExpandAll.jpg">
       <MimeType>image/jpeg</MimeType>
-    </ResourceProjectItem>
-    <ProjectItem>
-      <Name>INTERNAL-EMI Source Code Orders.rdl</Name>
-      <FullPath>INTERNAL-EMI Source Code Orders.rdl</FullPath>
-    </ProjectItem>
-    <ResourceProjectItem>
-      <Name>MinimizeAll.jpg</Name>
-      <FullPath>MinimizeAll.jpg</FullPath>
+    </Report>
+    <Report Include="INTERNAL-EMI Source Code Orders.rdl" />
+    <Report Include="MinimizeAll.jpg">
       <MimeType>image/jpeg</MimeType>
-    </ResourceProjectItem>
-    <ProjectItem>
-      <Name>Orders by EMI employees not credited to EMI.rdl</Name>
-      <FullPath>Orders by EMI employees not credited to EMI.rdl</FullPath>
-    </ProjectItem>
-    <ResourceProjectItem>
-      <Name>Rough Draft.jpg</Name>
-      <FullPath>Rough Draft.jpg</FullPath>
+    </Report>
+    <Report Include="Open Orders with EMI parts.rdl" />
+    <Report Include="Orders by EMI employees not credited to EMI.rdl" />
+    <Report Include="Rough Draft.jpg">
       <MimeType>image/jpeg</MimeType>
-    </ResourceProjectItem>
-    <ProjectItem>
-      <Name>Special Eagle Dealer Account Summary Report.rdl</Name>
-      <FullPath>Special Eagle Dealer Account Summary Report.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Vendor 1410 Sales.rdl</Name>
-      <FullPath>Vendor 1410 Sales.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Open Orders with EMI parts.rdl</Name>
-      <FullPath>Open Orders with EMI parts.rdl</FullPath>
-    </ProjectItem>
-  </Reports>
-  <Configurations>
-    <Configuration>
-      <Name>Debug</Name>
-      <Platform>Win32</Platform>
-      <Options>
-        <OutputPath>bin\Debug</OutputPath>
-        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetServerURL>http://lnk-sql-live-1/Reports/</TargetServerURL>
-        <TargetFolder>Speedway/Eagle Motorsports</TargetFolder>
-        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
-      </Options>
-    </Configuration>
-    <Configuration>
-      <Name>DebugLocal</Name>
-      <Platform>Win32</Platform>
-      <Options>
-        <OutputPath>bin\DebugLocal</OutputPath>
-        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetFolder>Eagle Motorsports</TargetFolder>
-        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
-        <TargetDatasetFolder>Datasets</TargetDatasetFolder>
-        <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
-      </Options>
-    </Configuration>
-    <Configuration>
-      <Name>Release</Name>
-      <Platform>Win32</Platform>
-      <Options>
-        <OutputPath>bin\Release</OutputPath>
-        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetFolder>Eagle Motorsports</TargetFolder>
-        <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
-        <TargetDatasetFolder>Datasets</TargetDatasetFolder>
-        <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
-      </Options>
-    </Configuration>
-  </Configurations>
+    </Report>
+    <Report Include="Special Eagle Dealer Account Summary Report.rdl" />
+    <Report Include="Vendor 1410 Sales.rdl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
