@@ -77,3 +77,28 @@ order by ixCarrier, ixShipMethod
 */
 
 
+SELECT  mPublishedFreight -- NO VALUES
+from tblPackage
+where mPublishedFreight is NULL
+and ixShipDate >= 19725 --'01/01/2022'
+and flgCanceled = 0
+and flgReplaced = 0
+
+
+
+select P.ixOrder, O.iShipMethod,
+					SUM(mSMIEstScaleShippingCost) 'TotEstScaleShippingCost' 
+				from tblPackage  P
+					left join tblOrder O on P.ixOrder = O.ixOrder
+				where P.flgCanceled = 0
+					and P.flgReplaced = 0
+					and O.dtShippedDate BETWEEN '02/25/2022' AND '05/23/2022'
+					and O.sOrderStatus = 'Shipped'
+					and O.iShipMethod <> 1 -- in (2,3,4,5,10,11,12,18,19,32) -- UPS
+					and O.mMerchandise > 0
+				group by P.ixOrder, O.iShipMethod
+order by SUM(mSMIEstScaleShippingCost), O.iShipMethod
+
+-- 238k orders 667 
+
+-- factory shipped
