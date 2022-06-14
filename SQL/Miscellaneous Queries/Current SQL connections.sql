@@ -1,6 +1,6 @@
 -- CURRENT SQL CONNECTIONS
 
-SELECT @@SPID as 'Current SPID' -- 127 
+SELECT @@SPID as 'Current SPID' -- 60 
 
 -- SPIDS with OPEN TRANSACTIONS  
 SELECT * FROM sys.sysprocesses  WHERE open_tran = 1 and program_name <> 'Replication Distribution Agent' and program_name NOT LIKE 'Repl-LogReader%' 
@@ -15,10 +15,10 @@ SELECT * FROM sys.sysprocesses  WHERE open_tran = 1 and program_name <> 'Replica
 
 	EXEC [Util].dbo.usp_who5 X,NULL,NULL,NULL,NULL  
 /*  
-    KILL 54
-    KILL 107
-	KILL 124
-	KILL 108
+    KILL 64
+    KILL 108
+	KILL 129
+	KILL 122
 */   
  -- # of user connections
      SELECT (D.sDayOfWeek3Char + ' ' +FORMAT(getdate(),'MM/dd/yy HH:mm')) 'As Of             ', PC.cntr_value 'UserConnections'
@@ -27,8 +27,7 @@ SELECT * FROM sys.sysprocesses  WHERE open_tran = 1 and program_name <> 'Replica
  /*                     User
     As Of             	Connctns	Range 51-117 (typically 60-85)
     ==================  ========	================================	
-	TUE 06/07/22 10:29	95
-	MON 05/23/22 11:17	85
+	TUE 06/14/22 08:44	68
 
     WED 06/23/21 09:08	83
     MON 05/24/21 09:03	91
