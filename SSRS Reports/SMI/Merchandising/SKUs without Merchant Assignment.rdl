@@ -9,7 +9,7 @@
               <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3in</Width>
+              <Width>3.4in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.6in</Width>
@@ -41,10 +41,13 @@
             <TablixColumn>
               <Width>0.7in</Width>
             </TablixColumn>
+            <TablixColumn>
+              <Width>0.8in</Width>
+            </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.57875in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -201,11 +204,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>*includes SKUs that have WEBFEEDS as the Merchant.</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
-                                <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -221,6 +223,7 @@
                           <Style>None</Style>
                         </Border>
                         <BackgroundColor>White</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -474,6 +477,43 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox25</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <BackgroundColor>White</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox15">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox15</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -918,6 +958,43 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox38</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <BackgroundColor>White</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox26">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox26</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1393,6 +1470,44 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox39">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Merchant</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox39</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>RoyalBlue</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
@@ -1811,12 +1926,48 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="ixMerchant">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!ixMerchant.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>ixMerchant</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
+            <TablixMember />
             <TablixMember />
             <TablixMember />
             <TablixMember />
@@ -1863,15 +2014,15 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Height>0.93in</Height>
-        <Width>12in</Width>
+        <Height>1.25875in</Height>
+        <Width>13.2in</Width>
         <Style />
       </Tablix>
     </ReportItems>
     <Height>1.25875in</Height>
     <Style />
   </Body>
-  <Width>12in</Width>
+  <Width>13.2in</Width>
   <Page>
     <PageFooter>
       <Height>0.39583in</Height>
@@ -1912,10 +2063,9 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>ver 20.18.1</Value>
+                  <Value>ver 22.24.1</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
-                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1977,7 +2127,7 @@ IIf(System.DateTime.Now.Subtract(Globals!ExecutionTime).Seconds &gt; 0, System.D
 )</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
-                    <Color>Silver</Color>
+                    <Color>Gray</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1986,7 +2136,6 @@ IIf(System.DateTime.Now.Subtract(Globals!ExecutionTime).Seconds &gt; 0, System.D
               </Style>
             </Paragraph>
           </Paragraphs>
-          <Top>0.00833in</Top>
           <Left>5.49687in</Left>
           <Height>0.1875in</Height>
           <Width>0.85in</Width>
@@ -2055,8 +2204,14 @@ IIf(System.DateTime.Now.Subtract(Globals!ExecutionTime).Seconds &gt; 0, System.D
     <DataSet Name="DataSet1">
       <Query>
         <DataSourceName>dw_speedway2_com</DataSourceName>
-        <CommandText>-- SMIHD-17456 - SKUs without Merchant Assignment
+        <CommandText>/* SKUs without Merchant Assignment.rdl
 
+CHANGE LOG
+Version Ticket		by	Change
+=======	=========== ===	=================================================
+		SMIHD-17456	PJC	Report created
+22.24.1 SMIHD-24931 PJC Add SKUs with WEBFEEDS as the merchant
+*/
 SELECT S.ixSKU 'SKU',
     ISNULL(S.sWebDescription, S.sDescription) 'SKUDescription',
     S.ixPGC 'PGC',
@@ -2068,14 +2223,16 @@ SELECT S.ixSKU 'SKU',
     S.dtDiscontinuedDate 'DiscontinuedDate',
     SL.iQOS 'QOS',
     SL.iQAV 'QAV',
-    PLC.sProductLifeCycleCode
+    PLC.sProductLifeCycleCode,
+	S.ixMerchant
 FROM tblSKU S
     left join tblVendorSKU VS on S.ixSKU = VS.ixSKU and VS.iOrdinality = 1
     left join tblVendor V on VS.ixVendor = V.ixVendor
     left join tblSKULocation SL on SL.ixSKU = S.ixSKU and SL.ixLocation = 99
     left join tblProductLifeCycle PLC on PLC.ixProductLifeCycleCode = S.ixProductLifeCycleCode
 WHERE flgDeletedFromSOP = 0
-    and ixMerchant is NULL
+   and (ixMerchant is NULL
+		or ixMerchant = 'WEBFEEDS')
 order by S.ixSKU</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
@@ -2126,6 +2283,10 @@ order by S.ixSKU</CommandText>
         </Field>
         <Field Name="sProductLifeCycleCode">
           <DataField>sProductLifeCycleCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ixMerchant">
+          <DataField>ixMerchant</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
