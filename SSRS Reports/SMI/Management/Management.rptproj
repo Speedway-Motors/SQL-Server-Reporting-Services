@@ -8,7 +8,7 @@
     <OverwriteDataSources>False</OverwriteDataSources>
     <TargetServerVersion>SSRS2016</TargetServerVersion>
     <Platform>Win32</Platform>
-    <TargetReportFolder>Deployment</TargetReportFolder>
+    <TargetReportFolder>Speedway/Management</TargetReportFolder>
     <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
     <TargetServerURL>http://lnk-sql-live-1/Reports/</TargetServerURL>
   </PropertyGroup>
@@ -86,7 +86,7 @@
     <Report Include="Sub - GS and Shock Monthly Sales.rdl" />
     <Report Include="Sub - GS and Shock YTD Sales - HC.rdl" />
     <Report Include="Sub - GS and Shock YTD Sales.rdl" />
-    <Report Include="Vendor Purchase History.rdl" />
+    <Report Include="Vendor Purchase History - RETIRED - 6-14-2022.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

@@ -6,7 +6,7 @@
     <ErrorLevel>2</ErrorLevel>
     <OverwriteDatasets>False</OverwriteDatasets>
     <OverwriteDataSources>False</OverwriteDataSources>
-    <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+    <TargetServerVersion>SSRS2016</TargetServerVersion>
     <Platform>Win32</Platform>
     <TargetReportFolder>Speedway/Systems/Daily Checks</TargetReportFolder>
     <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>

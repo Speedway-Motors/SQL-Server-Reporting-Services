@@ -6,7 +6,7 @@
     <ErrorLevel>2</ErrorLevel>
     <OverwriteDatasets>False</OverwriteDatasets>
     <OverwriteDataSources>False</OverwriteDataSources>
-    <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+    <TargetServerVersion>SSRS2016</TargetServerVersion>
     <Platform>Win32</Platform>
     <TargetReportFolder>Speedway/Eagle Motorsports</TargetReportFolder>
     <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
@@ -49,20 +49,20 @@
     <DataSource Include="SMISQLLIVE.rds" />
   </ItemGroup>
   <ItemGroup>
-    <Report Include="AFCO Brand Sales by EMI.rdl" />
+    <Report Include="AFCO Brand Sales by EMI - RETIRED - 06-15-2022.rdl" />
     <Report Include="Eagle Customer Accounts.rdl" />
-    <Report Include="Eagle Motorsports Brand Summary.rdl" />
+    <Report Include="Eagle Motorsports Brand Summary - RETIRED - 06-15-2022.rdl" />
     <Report Include="Eagle Motorsports Credit Memo Returns and Adjustments.rdl" />
     <Report Include="Eagle Motorsports Revenue via SMI SOP.rdl" />
     <Report Include="Eagle Motorsports Sales Summary.rdl" />
-    <Report Include="Eagle Motorsports Shock Sales Summary.rdl" />
-    <Report Include="EC Source Code Orders entered by Shock Department.rdl" />
+    <Report Include="Eagle Motorsports Shock Sales Summary - RETIRED - 06-15-2022.rdl" />
+    <Report Include="EC Source Code Orders entered by Shock Department - RETIRED - 06-15-2022.rdl" />
     <Report Include="EMI BOM Inventory.rdl" />
     <Report Include="EMI Vendor Revenue.rdl" />
     <Report Include="ExpandAll.jpg">
       <MimeType>image/jpeg</MimeType>
     </Report>
-    <Report Include="INTERNAL-EMI Source Code Orders.rdl" />
+    <Report Include="INTERNAL-EMI Source Code Orders - RETIRED - 06-15-2022.rdl" />
     <Report Include="MinimizeAll.jpg">
       <MimeType>image/jpeg</MimeType>
     </Report>

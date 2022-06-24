@@ -63,7 +63,7 @@
     <Report Include="Dropship Revenue.rdl" />
     <Report Include="DT - Credit Memo Detail.rdl" />
     <Report Include="DT - Credit Original Order Detail.rdl" />
-    <Report Include="Eagle Gross Revenue and Order Count by Channel.rdl" />
+    <Report Include="Eagle Gross Revenue and Order Count by Channel - 6-15-2022.rdl" />
     <Report Include="Eagle Motorsports BOM Sales.rdl" />
     <Report Include="ExpandAll.jpg">
       <MimeType>image/jpeg</MimeType>

@@ -52,7 +52,6 @@
     <Report Include="FHCDetail.rdl" />
     <Report Include="Inventory Fails and Commits.rdl" />
     <Report Include="Parts Not Returned - AFCO only - TEMP.rdl" />
-    <Report Include="Parts Not Returned - PROD COPY 2019-07-08.rdl" />
     <Report Include="Parts Not Returned.rdl" />
     <Report Include="Pick Bin by Aisle.rdl" />
     <Report Include="Picking Bin Changes (Min Unit Max).rdl" />

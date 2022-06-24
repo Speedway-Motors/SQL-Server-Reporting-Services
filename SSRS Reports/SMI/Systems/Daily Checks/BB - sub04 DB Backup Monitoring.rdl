@@ -370,7 +370,7 @@
         </TablixRowHierarchy>
         <NoRowsMessage>All Backups are less than 20 hours old</NoRowsMessage>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.375in</Top>
+        <Top>0.41611in</Top>
         <Height>0.43in</Height>
         <Width>4.97083in</Width>
         <Style>
@@ -409,7 +409,8 @@
             </Action>
           </Actions>
         </ActionInfo>
-        <Left>1.85in</Left>
+        <Top>0.04111in</Top>
+        <Left>1.6in</Left>
         <Height>0.25in</Height>
         <Width>2in</Width>
         <ZIndex>1</ZIndex>
@@ -423,11 +424,43 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox7">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>*only checking LNK-SQL-LIVE-1 currently</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox7</rd:DefaultName>
+        <Top>0.01389in</Top>
+        <Left>3.72167in</Left>
+        <Height>0.32in</Height>
+        <Width>1.15833in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>1.18625in</Height>
+    <Height>1.06903in</Height>
     <Style />
   </Body>
-  <Width>5.075in</Width>
+  <Width>4.97083in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -442,11 +475,16 @@
       <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>3708e9a7-05dc-49bb-9033-6cac435d0170</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="SMISQLLIVE">
+      <DataSourceReference>SMISQLLIVE</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>485eb865-e0cf-4c87-8729-fc7463ca70e9</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>SMIDW</DataSourceName>
+        <DataSourceName>SMISQLLIVE</DataSourceName>
         <CommandText>-- DW1
 select
     @@SERVERNAME server_name, database_name COLLATE Latin1_General_CI_AS database_name,
@@ -456,7 +494,7 @@ inner join msdb.dbo.backupset b on b.database_name = d.name and d.owner_sid &lt;
 where type = 'D'
 group by database_name
 having max(backup_finish_date) &lt; DATEADD(hh, -20, getdate()) -- latest back more than X hours old
-
+/*
 UNION ALL
 
 -- DWStaging
@@ -481,6 +519,7 @@ inner join [LNK-WEB2\SQLEXPRESS].msdb.dbo.backupset b on b.database_name = d.nam
 where type = 'D'
 group by database_name
 having max(backup_finish_date) &lt; DATEADD(hh, -20, getdate()) -- latest back more than X hours old
+*/
 /*
 UNION ALL
 

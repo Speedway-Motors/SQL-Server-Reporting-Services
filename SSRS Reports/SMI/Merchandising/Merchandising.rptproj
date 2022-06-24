@@ -54,7 +54,7 @@
     <Report Include="Average Kit Cost.rdl" />
     <Report Include="Camaros and Classics SKU Performance.rdl" />
     <Report Include="CARB Flag SKU Count.rdl" />
-    <Report Include="Catalog Pricing.rdl" />
+    <Report Include="Catalog Pricing - RETIRED - 06-24-2022.rdl" />
     <Report Include="Clearance SKUs.rdl" />
     <Report Include="Dealer Usage by Customer Number.rdl" />
     <Report Include="Dealer Usage.rdl" />
