@@ -390,7 +390,6 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Markets</DataSetName>
-        <Top>0in</Top>
         <Left>2.29396in</Left>
         <Height>0.43in</Height>
         <Width>1.8in</Width>
@@ -446,9 +445,9 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>*These litst are manually maintained in the AFCO Reporting database.  Notify Pat Crews if any changes need to be made.</Value>
+                  <Value>*These litsts are manually maintained in the AFCO Reporting database.  Notify Pat Crews if any changes need to be made.</Value>
                   <Style>
-                    <FontSize>8pt</FontSize>
+                    <FontSize>9pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -457,9 +456,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
           <Top>0.38764in</Top>
-          <Left>2.02541in</Left>
-          <Height>0.4625in</Height>
-          <Width>2.32896in</Width>
+          <Left>1.80041in</Left>
+          <Height>0.51667in</Height>
+          <Width>2.55396in</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -518,7 +517,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>ver 22.15.1</Value>
+                  <Value>ver 22.24.1</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -655,8 +654,8 @@ UNION
 SELECT 'M' AS 'Major PGC', dbo.fnMajorPGC(SUBSTRING('M',1,1)) AS 'Description'
 UNION
 SELECT 'N' AS 'Major PGC', dbo.fnMajorPGC(SUBSTRING('N',1,1)) AS 'Description'
---UNION 
---SELECT 'O' AS 'Major PGC', dbo.fnMajorPGC(SUBSTRING('O',1,1)) AS 'Description'
+UNION 
+SELECT 'O' AS 'Major PGC', dbo.fnMajorPGC(SUBSTRING('O',1,1)) AS 'Description'
 --UNION
 --SELECT 'P' AS 'Major PGC', dbo.fnMajorPGC(SUBSTRING('P',1,1)) AS 'Description'
 UNION 

@@ -76,8 +76,7 @@ GROUP BY E.sFirstname + ' ' + E.sLastname
        , DTJT.ixEmployee
        , ISNULL(Orders.OrdCnt,0)
        , ISNULL(Orders.PkgCnt,0)       
-       , ISNULL(Orders.LineItems,0)
-</CommandText>
+       , ISNULL(Orders.LineItems,0)</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
